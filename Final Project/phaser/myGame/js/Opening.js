@@ -24,7 +24,8 @@ opening.prototype = {
 		//Parses the json file and stores it in dialogue as objects
 		dialogue = JSON.parse(this.game.cache.getText('speech'));
 
-		ground = game.add.tileSprite(0, 600, 1200, 800, 'ground');
+//		ground = game.add.tileSprite(0, 600, 1200, 800, 'ground');
+        game.world.setBounds(0, 0, 2400, 600);
 
 		nextDialogue = 0;
 		//Test: Set currentText to the first dialogue option
@@ -52,8 +53,9 @@ var bedroom = function(game){};
 bedroom.prototype = {
 	preload: function(){
 		this.game.load.atlas('atlas', 'assets/img/spritesheet.png', 'assets/img/textureAtlas.json');
-		game.load.spritesheet('door', 'assets/img/door.png', 80, 96);
+		game.load.spritesheet('door', 'assets/img/door.png', 213, 442);
 		this.game.load.image('bedroom1', 'assets/img/bedroom1.png');
+        this.game.load.image('bedroom2', 'assets/img/bedroom2.png');
 
 	},
 
@@ -62,6 +64,7 @@ bedroom.prototype = {
 
 	ground = game.add.tileSprite(0, 600, 1200, 800, 'ground');
 	background = this.game.add.tileSprite(0, 0, 1200, 600, 'bedroom1');
+    background = this.game.add.tileSprite(1200, 0, 2400, 600, 'bedroom2');
 	currentDialogue(currentText);
 
 	console.log(dialogue); //Test
@@ -72,13 +75,13 @@ bedroom.prototype = {
 	//Adds the player character
 	player = new DeAndre(game, 'atlas', 6);
 	game.add.existing(player);
-
+    game.camera.follow(player);
 	
 
 	
 
 	//Test: Create an interactive item
-	door = game.add.sprite(700, 500, 'door');
+	door = game.add.sprite(1942, 110, 'door');
 	game.physics.enable(door);
 	door.enableBody = true;
 	door.immovable = true;

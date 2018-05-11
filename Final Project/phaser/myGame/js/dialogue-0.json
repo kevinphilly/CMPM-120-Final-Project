@@ -1,7 +1,7 @@
 [
 	{
 		"id":"Alarm",
-		"Text":"Ring Ring! The alarm is going off. asdflk; asdlkfj;ksadasd;klfj; ;lkdfsajkasdjfkjf jfaksdjf ka sfjdfjsdafkj eja;lksdjfkjd klsjadf",
+		"Text":"Ring Ring! The alarm is going off.",
 		"Branch":true,
 		"Choices":[
 			"Snooze",

@@ -2,12 +2,13 @@
 var interactText;
 
 function DeAndre(game, key, frame){
-	Phaser.Sprite.call(this, game, 0, 550, key, frame);
+	Phaser.Sprite.call(this, game, 0, 523, key, frame);
 
 	this.anchor.set(0.5);
 	
 	game.physics.enable(this);
 	this.body.collideWorldBounds = true;
+//    this.body.checkCollision = {up: true, down: true, left:true, right: false};
 	this.enableBody = true;
 
 }
