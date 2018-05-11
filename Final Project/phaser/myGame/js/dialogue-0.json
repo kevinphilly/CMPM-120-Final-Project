@@ -1,12 +1,49 @@
-{
-	"Alarm":[
-		{"Text":"Ring Ring! The alarm is going off."}
-	
-	],
+[
+	{
+		"id":"Alarm",
+		"Text":"Ring Ring! The alarm is going off. asdflk; asdlkfj;ksadasd;klfj; ;lkdfsajkasdjfkjf jfaksdjf ka sfjdfjsdafkj eja;lksdjfkjd klsjadf",
+		"Branch":true,
+		"Choices":[
+			"Snooze",
+			"WakeUp"
+		]	
+	},
 
-	"Snooze":[
-		{"Text":"You decide to sleep in"}
-	]	
-}
+	{
+		"id":"Snooze",
+		"Text":"You stay in bed",
+		"Branch":false
+		
+	},
 
+	{
+		"id":"WakeUp",
+		"Text":"You get out of bed",
+		"Branch":false
+		
+	},
+
+	{
+		"id":"Room",
+		"Text":"Where do you want to go?",
+		"Branch":true,
+		"Choices":[
+			"Kitchen",
+			"LivingRoom"
+		]
+	},
+
+	{
+		"id":"Kitchen",
+		"Text":"You head to the kitchen",
+		"Branch":false
+	},
+
+	{
+		"id":"LivingRoom",
+		"Text":"You head to the living room",
+		"Branch":false	
+	}
+
+]
 
