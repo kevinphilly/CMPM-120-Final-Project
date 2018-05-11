@@ -24,8 +24,8 @@ function currentDialogue(key){
 	if(dialogue[nextDialogue].Branch == true){
 		button1 = game.add.button(100, 700, 'button', choice1, this, 0);
 		text = game.add.text(100, 700, dialogue[nextDialogue + 1].id);
-		button2 = game.add.button(600, 700, 'button', choice2, this, 0);
-		text = game.add.text(600, 700, dialogue[nextDialogue + 2].id);
+		button2 = game.add.button(700, 700, 'button', choice2, this, 0);
+		text = game.add.text(700, 700, dialogue[nextDialogue + 2].id);
 	}else{
 		game.time.events.add(Phaser.Timer.SECOND * 5, destroyText, this);
 	}
@@ -36,6 +36,7 @@ function choice1(){
 	currentText = dialogue[nextDialogue].Text;
 	button1.destroy();
 	button2.destroy();
+
 	currentDialogue(currentText);
 }
 
@@ -44,6 +45,7 @@ function choice2(){
 	currentText = dialogue[nextDialogue].Text;
 	button1.destroy();
 	button2.destroy();
+
 	currentDialogue(currentText);
 }
 

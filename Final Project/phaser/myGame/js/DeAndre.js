@@ -39,6 +39,7 @@ DeAndre.prototype.update = function(){
 
 	if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, door)){
 		nextDialogue = 3;
+		
 		currentText = dialogue[nextDialogue].Text;
 		currentDialogue(currentText);
 	}
