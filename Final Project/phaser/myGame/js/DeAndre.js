@@ -20,30 +20,16 @@ DeAndre.prototype.constructor = DeAndre;
 
 DeAndre.prototype.update = function(){
 	if(cursors.left.isDown ){
-		this.body.velocity.x = -150;
+		this.body.velocity.x = -1000;
 	}else if(cursors.right.isDown ){
-		this.body.velocity.x = 150;
+		this.body.velocity.x = 1000;
 				
 	}else{
 		this.body.velocity.x = 0;
 		this.body.velocity.y = 0;
 	}
 
-	if(game.physics.arcade.overlap(player, door)){
-		interactText = game.add.text(door.x, door.y - 50, 'E', {fill:"#facade"});
-		
-	}
 
-	if(game.physics.arcade.overlap(player, door) == false && interactText != null){
-		interactText.destroy();
-	}
-
-	if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, door)){
-		nextDialogue = 3;
-		
-		currentText = dialogue[nextDialogue].Text;
-		currentDialogue(currentText);
-	}
 	
 
 	// if(game.input.keyboard.justPressed(Phaser.Keyboard.R)){

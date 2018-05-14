@@ -1,0 +1,98 @@
+[
+
+	{
+		"id":"Kitchen",
+		"num": 0,
+		"Text":"You head to the kitchen",
+		"Branch":false
+	},
+
+	{
+		"id":"LivingRoom",
+		"num": 1, 
+		"Text":"You head to the living room",
+		"Branch":false	
+	},
+
+	{
+		"id":"goodMorning",
+		"num": 2,
+		"Text":"Mom: Good Morning Honey!",
+		"Branch":false
+	},
+
+	{
+		"id":"goodMorningReply",
+		"num": 3,
+		"Text":"DeAndre: Morning, momma!",
+		"Branch":false
+	},
+
+	{
+		"id":"wantCereal",
+		"num": 4,
+		"Text":"Mom: Honey, I’m making breakfast for your sister. Do you want some too?",
+		"Branch":true,
+		"Choices":[
+			"Make Cereal",
+			"Have Breakfast"
+		]
+	}, 
+
+	{
+		"id":"goodMorningReply",
+		"num": 5,
+		"Text":"DeAndre: Morning, momma!",
+		"Branch":false
+	},
+
+	{
+		"id":"MakeCereal",
+		"num": 6,
+		"Text":"DeAndre: Nah it’s okay momma. I can just make cereal. I’m going to be late for school if I stay for breakfast.",
+		"Branch":false
+	},
+
+	{
+		"id":"MakeCereal2",
+		"num": 7,
+		"Text":"Mom: Aww okay sweetie. How is school?",
+		"Branch":false
+	},
+
+	{
+		"id":"MakeCereal3",
+		"num": 8,
+		"Text":"DeAndre: School is alright. Mr.Crow’s AP U.S History is dope though. Did you know BBQs and Cookouts were Southern state events that were the killing and burning of Black folks live for the entertainment of the poor/working White folks?",
+		"Branch":false
+	},
+
+	{
+		"id":"MakeCereal4",
+		"num": 9,
+		"Text":"Mom: Oh my god! Really? You learned that in class?!?",
+		"Branch":false
+	},
+
+	{
+		"id":"MakeCereal5",
+		"num": 10,
+		"Text":"Yeah. Mr. Crow don’t play momma. He don’t sugar coat history.",
+		"Branch":false
+	},
+
+	{
+		"id":"MakeCereal6",
+		"num": 11,
+		"Text":"Mom: Wow, I guess not. Are you excited for your game tomorrow?",
+		"Branch":false
+	},
+
+	{
+		"id":"MakeCereal7",
+		"num": 12,
+		"Text":"DeAndre: Man yes! Coach had us running some many drills yesterday. I guess it makes sense since some scouts are going to be there. I’m hoping the scout form UCLA comes because I would love to go there for college and basketball.   ",
+		"Branch":false
+	},
+
+]
