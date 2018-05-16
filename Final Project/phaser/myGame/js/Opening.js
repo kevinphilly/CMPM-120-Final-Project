@@ -2,6 +2,7 @@ var game = new Phaser.Game(1200, 800, Phaser.AUTO);
 
 //Global Variables
 var player;
+var mainMenuMusic;
 var nextText;
 var nextDialogue;
 var door;
@@ -11,24 +12,55 @@ var currentScript;
 var breakfast = false;
 var leaveMom = false;
 
+
+
 var mainMenu = function(game){};
 mainMenu.prototype = {
 	preload: function(){
 		game.load.spritesheet('button', 'assets/img/tempButton.png', 88, 67);
-
+		game.load.image('mainMenu', 'assets/img/mainMenu.png');
+		game.load.spritesheet('mainMenuTV', 'assets/img/mainMenuTV.png', 555, 336);
+		game.load.audio('mainMenuMusic', 'assets/audio/CrazyHeart.MP3');
 		
 	},
 
 	create: function(){
-		playButton = game.add.button(600, 400, 'button', Play, this, 0);
+		menuBackground = this.game.add.tileSprite(0, 0, 1200, 600, 'mainMenu');
+		playButton = game.add.button(304, 100, 'button', play, this, 0);
+		playButton.scale.setTo(6.31, 4.61);
+
+		//Add tv to center of the screen
+		mainMenuTV = game.add.sprite(304, 100, 'mainMenuTV');
+		mainMenuTV.animations.add('static', [1, 2, 3], 8, true);
+		mainMenuTV.animations.play('static');
+		mainMenuTV.animations.add('news', [0], 1, true);
+		mainMenuTV.inputEnabled = true;
+
+		mainMenuMusic = game.add.audio('mainMenuMusic');
+		mainMenuMusic.play('', 0, 1, true);
+
+
 	},
 
 	update: function(){
+		if(mainMenuTV.input.pointerOver()){
+			mainMenuTV.animations.play('news');
+			mainMenuTV.events.onInputDown.add(play, this);
+			this.game.canvas.style.cursor="pointer";
+		}else{
+			mainMenuTV.animations.play('static');
+			this.game.canvas.style.cursor="AUTO";
+		}
+
+	
 		
 	}
 }
 
-function Play(){
+
+function play(){
+	mainMenuMusic.stop();
+
 	game.state.start('opening');
 }
 
