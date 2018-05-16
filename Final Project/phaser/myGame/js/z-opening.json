@@ -3,6 +3,7 @@
 		"id":"Alarm",
 		"num": 0,
 		"Text":"Ring Ring! The alarm is going off.",
+		"continue":false,
 		"Branch":true,
 		"Choices":[
 			"Snooze",
@@ -14,6 +15,7 @@
 		"id":"Snooze",
 		"num": 1,
 		"Text":"You stay in bed",
+		"continue":false,
 		"Branch":false
 		
 	},
@@ -22,6 +24,7 @@
 		"id":"WakeUp",
 		"num": 2,
 		"Text":"You get out of bed",
+		"continue":false,
 		"Branch":false
 		
 	},
@@ -30,6 +33,7 @@
 		"id":"Room",
 		"num": 3,
 		"Text":"Where do you want to go?",
+		"continue":false,
 		"Branch":true,
 		"Choices":[
 			"Kitchen",
@@ -41,6 +45,7 @@
 		"id":"Kitchen",
 		"num": 4,
 		"Text":"You head to the kitchen",
+		"continue":false,
 		"Branch":false
 	},
 
@@ -48,6 +53,7 @@
 		"id":"LivingRoom",
 		"num": 5, 
 		"Text":"You head to the living room",
+		"continue":false,
 		"Branch":false	
 	}
 ]
