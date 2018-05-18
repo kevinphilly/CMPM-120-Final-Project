@@ -218,7 +218,7 @@
 		"num": 25,
 		"Text":". . .",
 		"continue":true,
-		"goto": "21",
+		"goto": 21,
 		"Branch":false
 	}
 

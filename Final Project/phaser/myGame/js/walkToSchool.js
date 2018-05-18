@@ -188,15 +188,17 @@ outsideSchool.prototype = {
 		}
 
 		if(runIntoPolice == true && cutscene == false){
-			
-			game.time.events.add(5000, goStore, this);
+			game.camera.fade(0x000000, 4000);
+			game.time.events.add(4000, goStore, this);
 		}
 	}
 }
 
 function goStore(){
-	game.state.start('afterSchool');
+	game.state.start('insideStore');
 	console.log('goStore');
+
+	
 }
 	
 
