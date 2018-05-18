@@ -1,0 +1,130 @@
+[
+
+	{
+		"id":"sister1",
+		"num": 0,
+		"Text":"DeAndre: What you doing big head?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"sister2",
+		"num": 1,
+		"Text":"Sister: I don’t have a big head!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"sister3",
+		"num": 2,
+		"Text":"DeAndre: Who lied to you? You definitely have a big head.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"sister4",
+		"num": 3,
+		"Text":"Sister: MOM! DEANDRE IS SAID I HAVE A BIG HEAD!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"sister5",
+		"num": 4,
+		"Text":"Mom: DEANDRE! LEAVE THAT GIRL ALONE AND GO TO SCHOOL! DON’T MAKE ME LEAVE THIS KITCHEN!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"sister6",
+		"num": 5,
+		"Text":"DeAndre: ALRIGHT MOMMA! ...Bye Snitch.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"sister7",
+		"num": 6,
+		"Text":"Sister: Bye Loser.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"news1",
+		"num": 7,
+		"Text":"Breaking News! 17 year old, Lisa Yeung was found dead in her car around 10:15 am this morning!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news2",
+		"num": 8,
+		"Text":"Breaking News! 17 year old, Lisa Yeung was found dead in her car around 10:15 am this morning after being missing for 3 days.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news3",
+		"num": 9,
+		"Text":" Lisa was a well-known student at her high school with a lot of potential to go to a prestigious college.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news4",
+		"num": 10,
+		"Text":"Lisa’s mentor had suggested to Lisa that she might have depression based on how she was acting and advised her to speak to a therapist. However, Lisa denied it and said she was fine.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news5",
+		"num": 11,
+		"Text":"She went missing a couple of days after that conversation.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news6",
+		"num": 12,
+		"Text":"Police say the cause of death was carbon monoxide inhalation, which leads them to believe she committed suicide.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news7",
+		"num": 13,
+		"Text":"Studies have shown that Asian-American high school students have the highest rates of depression.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news8",
+		"num": 14,
+		"Text":"Asian American women in high school are also twice as likely to attempt suicide than Asian American males.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news9",
+		"num": 15,
+		"Text":"Further investigation is being held. . .",
+		"continue":false,
+		"Branch":false
+	}
+]

@@ -1,0 +1,227 @@
+[
+
+	{
+		"id":"melvinText1",
+		"num": 0,
+		"Text":"Melvin: Yo DeAndre, Don’t be late to class today because Mrs. Harrison is making us take a test and you know she crazy enough to fail you for being late. And if she does, Coach is going to kill you and take you out of the starters.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"melvinText2",
+		"num": 1,
+		"Text":"DeAndre: Damn, I forgot I needed to be early today. I might have to run..",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Continue walking",
+			"Start running"
+		]
+	},
+
+	{
+		"id":"runningOfficer1",
+		"num": 2,
+		"Text":"Officer David White: “Why are you running?!”",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"I woke up late",
+			"Catch your breath"
+		]
+	},
+
+	{
+		"id":"wokeLate1",
+		"num": 3,
+		"Text":"DeAndre: “I *breathe* woke up *breathe* later today sir”",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"wokeLate2",
+		"num": 4,
+		"Text":" Officer David White: Where are you going?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"wokeLate3",
+		"num": 5,
+		"Text":"Officer David White: “Well you know what time school starts. It never changes so there is no reason for you to be late.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"wokeLate4",
+		"num": 6,
+		"Text":"DeAndre: “Yes sir…”",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"wokeLate5",
+		"num": 7,
+		"Text":". . .",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"wokeLate6",
+		"num": 8,
+		"Text":"Officer David White: Well get going then!",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"catchBreath1",
+		"num": 9,
+		"Text":"*huff* *huff*",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"catchBreath2",
+		"num": 10,
+		"Text":"Officer David White: Boy! Are you deaf? I asked you a question.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"catchBreath3",
+		"num": 11,
+		"Text":"DeAndre: No, I was….",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"catchBreath4",
+		"num": 12,
+		"Text":"Officer David White: I don’t care what your excuse is. You do as I say! Do I make myself clear?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"catchBreath5",
+		"num": 13,
+		"Text":"DeAndre:Yeah alright! I was running to school because I was about to be late!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"catchBreath6",
+		"num": 14,
+		"Text":"Officer David White: Are you getting aggressive?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"catchBreath7",
+		"num": 15,
+		"Text":"DeAndre:  .... No. I did as I was told....",
+		"continue":true,
+		"goto": 5,
+		"Branch":false
+	},
+
+	{
+		"id":"schoolOfficer1",
+		"num": 16,
+		"Text":"Officer: You go here?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"schoolOfficer2",
+		"num": 17,
+		"Text":"DeAndre: ...Yeah",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"schoolOfficer3",
+		"num": 18,
+		"Text":"Officer: Why are you late?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"schoolOfficer4",
+		"num": 19,
+		"Text":"Officer: Why are you late?",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"I overslept",
+			"Don't worry about it"
+		]
+	},
+
+	{
+		"id":"overslept1",
+		"num": 20,
+		"Text":"DeAndre: I..I..um...overslept a little..",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"overslept2",
+		"num": 21,
+		"Text":"Officer: Hmph..Well you better try harder to get here on time next time.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"overslept3",
+		"num": 22,
+		"Text":"Yes sir.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"dontWorry1",
+		"num": 23,
+		"Text":"Don't worry about it.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"dontWorry2",
+		"num": 24,
+		"Text":"Officer: What was that, boy? Who do you think you're talking to? You better watch that mouth of yours.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"dontWorry3",
+		"num": 25,
+		"Text":". . .",
+		"continue":true,
+		"goto": "21",
+		"Branch":false
+	}
+
+
+
+]

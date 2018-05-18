@@ -1,5 +1,5 @@
 var text0;
-
+var text3;
 var button1;
 var button2;
 
@@ -49,7 +49,8 @@ function currentDialogue(key, script){
 	if(script[nextDialogue].continue == true){
 		if(cutscene == true && script[nextDialogue].Branch == false){
 			text3 = game.add.text(400, 750, 'Spacebar to continue');
-		}else{
+			text3.fixedToCamera = true;
+		}else if(text3 != null){
 			text3.destroy();
 		}
 
@@ -58,6 +59,17 @@ function currentDialogue(key, script){
 		console.log('continue');	
 	}else if(cutscene == true && script[nextDialogue].Branch == false){
 		cutscene = false;
+		
+		if(text3 != null){
+			text3.destroy();
+		}
+		game.time.events.add(5000, destroyText, this);
+
+	}else if(cutscene == false){
+		if(text3 != null){
+			text3.destroy();
+		}
+		game.time.events.add(5000, destroyText, this);
 	}
 
 

@@ -1,13 +1,14 @@
 //var nextTextID = Alarm;
 var interactText;
 var cutscene = false;
+var speed;
 
 DeAndre.prototype.preload = function(){
 	this.game.load.atlas('DeAndreAtlas', 'assets/img/DADraft.png', 'assets/img/DADraft.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 }
 
-function DeAndre(game, key, frame){
-	Phaser.Sprite.call(this, game, 0, 390, key, frame);
+function DeAndre(game, posX, posY, key, frame, ){
+	Phaser.Sprite.call(this, game, posX, posY, key, frame);
 
 	this.anchor.set(0.5);
 	
@@ -15,6 +16,7 @@ function DeAndre(game, key, frame){
 	this.body.collideWorldBounds = true;
 //    this.body.checkCollision = {up: true, down: true, left:true, right: false};
 	this.enableBody = true;
+	this.body.setSize(120, 280, 80, 9);
 
 	this.animations.add('walkLeft', [0, 1, 2, 3, 4], 25, true);
 	this.animations.add('walkRight', [6, 7, 8, 9, 10], 25, true);
@@ -30,10 +32,10 @@ DeAndre.prototype.constructor = DeAndre;
 
 DeAndre.prototype.update = function(){
 	if(game.input.keyboard.isDown(Phaser.Keyboard.A) && cutscene == false){
-		this.body.velocity.x = -1000;
+		this.body.velocity.x = -(speed);
 		this.animations.play('walkLeft');
 	}else if(game.input.keyboard.isDown(Phaser.Keyboard.D) && cutscene == false){
-		this.body.velocity.x = 1000;
+		this.body.velocity.x = speed;
 		this.animations.play('walkRight');
 				
 	}else{

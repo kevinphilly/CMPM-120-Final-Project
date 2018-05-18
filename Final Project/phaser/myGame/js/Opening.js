@@ -143,12 +143,13 @@ bedroom.prototype = {
 		cursors = game.input.keyboard.createCursorKeys();
 
 		//Adds the player character
-		player = new DeAndre(game, 'atlas', 6);
+		player = new DeAndre(game, 0, 390, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
 		player.scale.y = 1.14;
+		speed = 1000;
 
-		//Test: Create an interactive item
+		//Add door to rest of the house
 		door = game.add.sprite(1942, 110, 'door');
 		game.physics.enable(door);
 		door.enableBody = true;
@@ -197,6 +198,8 @@ bedroom.prototype = {
 	}
 }
 
+var kitchenDoor;
+
 var kitchen = function(game){};
 kitchen.prototype = {
 	preload: function(){
@@ -208,7 +211,7 @@ kitchen.prototype = {
 
 	create: function(){
 		background = this.game.add.tileSprite(0, 0, 1200, 600, 'kitchen1');
-		game.world.setBounds(0, 0, 1200, 600);
+		game.world.setBounds(0, 0, 1800, 600);
 		dialogueKitchen = JSON.parse(this.game.cache.getText('kitchen'));
 		currentScript = dialogueKitchen;
 
@@ -221,10 +224,16 @@ kitchen.prototype = {
 		
 
 		//Adds the player character
-		player = new DeAndre(game, 'atlas', 6);
+		player = new DeAndre(game, 0, 390, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
 		player.scale.y = 1.12;
+
+		//Adds door to living room
+		kitchenDoor = game.add.sprite(1500, 110, 'door');
+		game.physics.enable(kitchenDoor);
+		kitchenDoor.enableBody = true;
+		kitchenDoor.immovable = true;
 
 		//Adds mom
 		mother = game.add.sprite(350, 252, 'mom');
@@ -238,6 +247,8 @@ kitchen.prototype = {
 		game.physics.enable(fridge1);
 		fridge1.enableBody = true;
 		fridge1.immovable = true;
+
+		
 
 
 	},
@@ -327,9 +338,17 @@ kitchen.prototype = {
 			currentDialogue(nextText, dialogueKitchen);
 
 			console.log('choice 2');
+		}
+
+		if(game.physics.arcade.overlap(player, kitchenDoor)){
+			game.state.start('livingRoom');
 		}	
 	}
 }
+
+var sisterTease = false;
+var news1 = false;
+var interactTextTV;
 
 var livingRoom = function(game){};
 livingRoom.prototype = {
@@ -339,16 +358,23 @@ livingRoom.prototype = {
 		game.load.spritesheet('sister', 'assets/img/placeholderSister.png', 100, 300);
 		game.load.spritesheet('tv', 'assets/img/livingRoomTV1.png', 383, 202, 2);
 		game.load.spritesheet('door2', 'assets/img/door2.png', 213, 442);
+		game.load.text('livingRoom', 'js/z-livingRoom.json');
 
 	},
 
 	create: function(){
+		dialogueLivingRoom = JSON.parse(this.game.cache.getText('livingRoom'));
+		currentScript = dialogueLivingRoom;
+
+		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
+		textBox.fixedToCamera = true;
+
 		background = this.game.add.tileSprite(0, 0, 1200, 600, 'livingRoom1');
 		background = this.game.add.tileSprite(1200, 0, 2400, 600, 'livingRoom2');
 		game.world.setBounds(0, 0, 2400, 600);
 
 		//Adds the player character
-		player = new DeAndre(game, 'atlas', 6);
+		player = new DeAndre(game, 0, 390, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
 		player.scale.y = 1.12;
@@ -360,16 +386,16 @@ livingRoom.prototype = {
 		sister.immovable = true;
 
 		//Create a tv
-		tv = game.add.sprite(415, 55, 'tv');
+		tv = game.add.sprite(415, 65, 'tv');
 		game.physics.enable(tv);
 		tv.enableBody = true;
 		tv.immovable = true;
 		tv.animations.add('flash', [0, 1], 2, true);
 		tv.animations.play('flash');
 
-		//Test: Create a door
+		//Create a door
 		door2 = game.add.sprite(2148, 110, 'door2');
-		game.physics.enable(door);
+		game.physics.enable(door2);
 		door2.enableBody = true;
 		door2.immovable = true;
 
@@ -378,6 +404,53 @@ livingRoom.prototype = {
 	update: function(){
 
 		game.world.bringToTop(player);
+
+		if(game.physics.arcade.overlap(player, tv) == true && interactTextTV == null){
+			interactTextTV = game.add.text(tv.x, tv.y-50, 'E', {fill:"#facade"});
+		}
+
+		if(game.physics.arcade.overlap(player, tv) != true && interactTextTV != null){
+			interactTextTV.destroy();
+			interactTextTV = null;
+		}
+
+		if(game.physics.arcade.overlap(player, tv) && news1 == false && game.input.keyboard.justPressed(Phaser.Keyboard.E)){
+			cutscene = true;
+			news1 = true;
+
+			nextDialogue = 8;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+
+		}
+
+		if(game.physics.arcade.overlap(player, sister) && interactText == null){
+			interactText = game.add.text(sister.x, sister.y - 50, 'E', {fill:"#facade"});
+		}
+
+		if(game.physics.arcade.overlap(player, sister) != true && interactText != null){
+			interactText.destroy();
+			interactText = null;
+		}
+
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+			console.log('spacePressed');
+			currentDialogue(nextText, currentScript);
+		}
+
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, sister) && sisterTease == false){
+
+			cutscene = true;
+			sisterTease = true;
+
+			nextDialogue = 0;
+			nextText = dialogueLivingRoom[nextDialogue].Text;
+			currentDialogue(nextText, dialogueLivingRoom);
+		}
+
+		if(game.physics.arcade.overlap(player, door2)){
+			game.state.start('walkToSchool');
+		}
 
 	}
 }
