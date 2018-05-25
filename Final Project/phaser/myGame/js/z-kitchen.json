@@ -19,6 +19,7 @@
 	{
 		"id":"goodMorning",
 		"num": 2,
+		"speaker": "mom",
 		"Text":"Mom: Good Morning Honey!",
 		"continue":false,
 		"Branch":false
@@ -27,6 +28,7 @@
 	{
 		"id":"goodMorningReply",
 		"num": 3,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: Morning, momma!",
 		"continue":true,
 		"Branch":false
@@ -35,6 +37,7 @@
 	{
 		"id":"wantCereal",
 		"num": 4,
+		"speaker": "mom",
 		"Text":"Mom: Honey, I’m making breakfast for your sister. Do you want some too?",
 		"continue":false,
 		"Branch":true,
@@ -47,6 +50,7 @@
 	{
 		"id":"MakeCereal",
 		"num": 5,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: Nah it’s okay momma. I can just make cereal. I’m going to be late for school if I stay for breakfast.",
 		"continue":true,
 		"goto": 7,
@@ -56,6 +60,7 @@
 	{
 		"id":"Have Breakfast",
 		"num": 6,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: Yes please momma! Why would I ever choose cereal over pancakes?",
 		"continue":true,
 		"goto": 8,
@@ -65,6 +70,7 @@
 	{
 		"id":"MakeCereal2",
 		"num": 7,
+		"speaker": "mom",
 		"Text":"Mom: Aww okay sweetie. How is school?",
 		"continue":true,
 		"goto": 9,
@@ -74,6 +80,7 @@
 	{
 		"id":"HaveBreakfast2",
 		"num": 8,
+		"speaker": "mom",
 		"Text":"Mom: Here you go sweetie. How's school been?",
 		"continue":true,
 		"Branch":false
@@ -82,6 +89,7 @@
 	{
 		"id":"MakeCereal3",
 		"num": 9,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: School is alright. Mr.Crow’s AP U.S History is dope though. Did you know BBQs and Cookouts were Southern state events that were the killing and burning of Black folks live for the entertainment of the poor/working White folks?",
 		"continue":true,
 		"Branch":false
@@ -90,6 +98,7 @@
 	{
 		"id":"MakeCereal4",
 		"num": 10,
+		"speaker": "mom",
 		"Text":"Mom: Oh my god! Really? You learned that in class?!?",
 		"continue":true,
 		"Branch":false
@@ -98,6 +107,7 @@
 	{
 		"id":"MakeCereal5",
 		"num": 11,
+		"speaker":"DeAndre",
 		"Text":"Yeah. Mr. Crow don’t play momma. He don’t sugar coat history.",
 		"continue":true,
 		"Branch":false
@@ -106,6 +116,7 @@
 	{
 		"id":"MakeCereal6",
 		"num": 12,
+		"speaker": "mom",
 		"Text":"Mom: Wow, I guess not. Are you excited for your game tomorrow?",
 		"continue":true,
 		"Branch":false
@@ -114,6 +125,7 @@
 	{
 		"id":"MakeCereal7",
 		"num": 13,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: Man yes! Coach had us running some many drills yesterday. I guess it makes sense since some scouts are going to be there. I’m hoping the scout form UCLA comes because I would love to go there for college and basketball.",
 		"continue":true,
 		"Branch":false
@@ -122,6 +134,7 @@
 	{
 		"id":"MakeCereal8",
 		"num": 14,
+		"speaker": "mom",
 		"Text":"Mom: Honey, you got this! You're a starter and been having a great season. You're going to get in!",
 		"continue":true,
 		"Branch":false
@@ -130,6 +143,7 @@
 	{
 		"id":"MakeCereal9",
 		"num": 15,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: Haha, thanks Momma. But right now, I just gotta worry about getting to school on time.",
 		"continue":true,
 		"Branch":false
@@ -158,6 +172,7 @@
 	{
 		"id":"Kiss mom goodbye2",
 		"num": 18,
+		"speaker":"DeAndre",
 		"Text":"Good bye mom, I love you and I'll see you later!",
 		"continue":true,
 		"goto": 20,
@@ -168,6 +183,7 @@
 	{
 		"id":"Rush out the house",
 		"num": 19,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: Gotta run mom, I love you and I’ll see you later!",
 		"continue":true,
 		"Branch":false
@@ -177,6 +193,7 @@
 	{
 		"id":"Bye mom1",
 		"num": 20,
+		"speaker": "mom",
 		"Text":"Mom: I love you too honey. Be Safe. Oh! Be home around 7 because I’m making smothered chicken with rice, cabbage, and cornbread.",
 		"continue":true,
 		"Branch":false

@@ -3,6 +3,7 @@
 	{
 		"id":"melvinText1",
 		"num": 0,
+		"speaker": "Melvin",
 		"Text":"Melvin: Yo DeAndre, Don’t be late to class today because Mrs. Harrison is making us take a test and you know she crazy enough to fail you for being late. And if she does, Coach is going to kill you and take you out of the starters.",
 		"continue":true,
 		"Branch":false
@@ -11,6 +12,7 @@
 	{
 		"id":"melvinText2",
 		"num": 1,
+		"speaker": "DeAndre",
 		"Text":"DeAndre: Damn, I forgot I needed to be early today. I might have to run..",
 		"continue":false,
 		"Branch":true,
@@ -23,6 +25,7 @@
 	{
 		"id":"runningOfficer1",
 		"num": 2,
+		"speaker": "DavidWhite",
 		"Text":"Officer David White: “Why are you running?!”",
 		"continue":false,
 		"Branch":true,
@@ -35,6 +38,7 @@
 	{
 		"id":"wokeLate1",
 		"num": 3,
+		"speaker": "DeAndre",
 		"Text":"DeAndre: “I *breathe* woke up *breathe* later today sir”",
 		"continue":true,
 		"Branch":false
@@ -43,6 +47,7 @@
 	{
 		"id":"wokeLate2",
 		"num": 4,
+		"speaker": "DavidWhite",
 		"Text":" Officer David White: Where are you going?",
 		"continue":true,
 		"Branch":false
@@ -51,6 +56,7 @@
 	{
 		"id":"wokeLate3",
 		"num": 5,
+		"speaker": "DavidWhite",
 		"Text":"Officer David White: “Well you know what time school starts. It never changes so there is no reason for you to be late.",
 		"continue":true,
 		"Branch":false
@@ -59,6 +65,7 @@
 	{
 		"id":"wokeLate4",
 		"num": 6,
+		"speaker": "DeAndre",
 		"Text":"DeAndre: “Yes sir…”",
 		"continue":true,
 		"Branch":false
@@ -75,6 +82,7 @@
 	{
 		"id":"wokeLate6",
 		"num": 8,
+		"speaker": "DavidWhite",
 		"Text":"Officer David White: Well get going then!",
 		"continue":false,
 		"Branch":false
@@ -83,6 +91,7 @@
 	{
 		"id":"catchBreath1",
 		"num": 9,
+		"speaker": "DeAndre",
 		"Text":"*huff* *huff*",
 		"continue":true,
 		"Branch":false
@@ -91,6 +100,7 @@
 	{
 		"id":"catchBreath2",
 		"num": 10,
+		"speaker": "DavidWhite",
 		"Text":"Officer David White: Boy! Are you deaf? I asked you a question.",
 		"continue":true,
 		"Branch":false
@@ -99,6 +109,7 @@
 	{
 		"id":"catchBreath3",
 		"num": 11,
+		"speaker": "DeAndre",
 		"Text":"DeAndre: No, I was….",
 		"continue":true,
 		"Branch":false
@@ -107,6 +118,7 @@
 	{
 		"id":"catchBreath4",
 		"num": 12,
+		"speaker": "DavidWhite",
 		"Text":"Officer David White: I don’t care what your excuse is. You do as I say! Do I make myself clear?",
 		"continue":true,
 		"Branch":false
@@ -115,6 +127,7 @@
 	{
 		"id":"catchBreath5",
 		"num": 13,
+		"speaker": "DeAndre",
 		"Text":"DeAndre:Yeah alright! I was running to school because I was about to be late!",
 		"continue":true,
 		"Branch":false
@@ -123,6 +136,7 @@
 	{
 		"id":"catchBreath6",
 		"num": 14,
+		"speaker": "DavidWhite",
 		"Text":"Officer David White: Are you getting aggressive?",
 		"continue":true,
 		"Branch":false
@@ -131,6 +145,7 @@
 	{
 		"id":"catchBreath7",
 		"num": 15,
+		"speaker": "DeAndre",
 		"Text":"DeAndre:  .... No. I did as I was told....",
 		"continue":true,
 		"goto": 5,
@@ -140,6 +155,7 @@
 	{
 		"id":"schoolOfficer1",
 		"num": 16,
+		"speaker": "schoolCop",
 		"Text":"Officer: You go here?",
 		"continue":true,
 		"Branch":false
@@ -148,6 +164,7 @@
 	{
 		"id":"schoolOfficer2",
 		"num": 17,
+		"speaker": "DeAndre",
 		"Text":"DeAndre: ...Yeah",
 		"continue":true,
 		"Branch":false
@@ -156,6 +173,7 @@
 	{
 		"id":"schoolOfficer3",
 		"num": 18,
+		"speaker": "schoolCop",
 		"Text":"Officer: Why are you late?",
 		"continue":true,
 		"Branch":false
@@ -164,6 +182,7 @@
 	{
 		"id":"schoolOfficer4",
 		"num": 19,
+		"speaker": "schoolCop",
 		"Text":"Officer: Why are you late?",
 		"continue":false,
 		"Branch":true,
@@ -176,6 +195,7 @@
 	{
 		"id":"overslept1",
 		"num": 20,
+		"speaker": "DeAndre",
 		"Text":"DeAndre: I..I..um...overslept a little..",
 		"continue":true,
 		"Branch":false
@@ -184,6 +204,7 @@
 	{
 		"id":"overslept2",
 		"num": 21,
+		"speaker": "schoolCop",
 		"Text":"Officer: Hmph..Well you better try harder to get here on time next time.",
 		"continue":true,
 		"Branch":false
@@ -192,6 +213,7 @@
 	{
 		"id":"overslept3",
 		"num": 22,
+		"speaker": "DeAndre",
 		"Text":"Yes sir.",
 		"continue":false,
 		"Branch":false
@@ -200,6 +222,7 @@
 	{
 		"id":"dontWorry1",
 		"num": 23,
+		"speaker": "DeAndre",
 		"Text":"Don't worry about it.",
 		"continue":true,
 		"Branch":false
@@ -208,6 +231,7 @@
 	{
 		"id":"dontWorry2",
 		"num": 24,
+		"speaker": "schoolCop",
 		"Text":"Officer: What was that, boy? Who do you think you're talking to? You better watch that mouth of yours.",
 		"continue":true,
 		"Branch":false
@@ -219,6 +243,15 @@
 		"Text":". . .",
 		"continue":true,
 		"goto": 21,
+		"Branch":false
+	},
+
+	{
+		"id":"hurryUp1",
+		"num": 26,
+		"speaker": "schoolCop",
+		"Text":"You better hurry up, boy. Classes are about to start.",
+		"continue":false,
 		"Branch":false
 	}
 

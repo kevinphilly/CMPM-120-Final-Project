@@ -170,12 +170,25 @@ outsideSchool.prototype = {
 			
 		}
 
+		if(game.physics.arcade.overlap(player, police1) && runIntoPolice == true && cutscene == false){
+
+			cutscene = true;
+			nextDialogue = 26
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+
+			game.camera.fade(0x000000, 4000);
+			game.time.events.add(4000, goSchool, this);
+
+		}
+
 		if(lastChoice == 1){
 			lastChoice = 0;
 
 			nextDialogue = 20;
 			nextText = currentScript[nextDialogue].Text;
 			currentDialogue(nextText, currentScript);
+
 
 		}
 
@@ -187,16 +200,16 @@ outsideSchool.prototype = {
 			currentDialogue(nextText, currentScript);
 		}
 
-		if(runIntoPolice == true && cutscene == false){
-			game.camera.fade(0x000000, 4000);
-			game.time.events.add(4000, goStore, this);
-		}
+		// if(runIntoPolice == true && cutscene == false){
+		// 	game.camera.fade(0x000000, 4000);
+		// 	game.time.events.add(4000, goStore, this);
+		// }
 	}
 }
 
-function goStore(){
-	game.state.start('insideStore');
-	console.log('goStore');
+function goSchool(){
+	game.state.start('afterSchool');
+	console.log('goSchool');
 
 	
 }

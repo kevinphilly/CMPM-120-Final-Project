@@ -21,6 +21,9 @@ mainMenu.prototype = {
 		game.load.image('mainMenu', 'assets/img/mainMenu.png');
 		game.load.spritesheet('mainMenuTV', 'assets/img/mainMenuTV.png', 555, 336);
 		game.load.audio('mainMenuMusic', 'assets/audio/CrazyHeart.MP3');
+		game.load.image('DeAndrePortrait', 'assets/img/deAndrePortrait.png', 100, 100);
+		game.load.image('momPortrait', 'assets/img/momPortrait.png', 112, 143);
+		game.load.image('sisterPortrait', 'assets/img/sisterPortrait.png', 76, 100);
 		
 	},
 
@@ -355,7 +358,7 @@ livingRoom.prototype = {
 	preload: function(){
 		game.load.image('livingRoom1', 'assets/img/livingRoom1.png');
 		game.load.image('livingRoom2', 'assets/img/livingRoom2.png');
-		game.load.spritesheet('sister', 'assets/img/placeholderSister.png', 100, 300);
+		game.load.spritesheet('sister', 'assets/img/sisterSofa.png', 32, 32, 3);
 		game.load.spritesheet('tv', 'assets/img/livingRoomTV1.png', 383, 202, 2);
 		game.load.spritesheet('door2', 'assets/img/door2.png', 213, 442);
 		game.load.text('livingRoom', 'js/z-livingRoom.json');
@@ -379,11 +382,7 @@ livingRoom.prototype = {
 		game.camera.follow(player);
 		player.scale.y = 1.12;
 
-		//Adds sister
-		sister = game.add.sprite(700, 252, 'sister');
-		game.physics.enable(sister);
-		sister.enableBody = true;
-		sister.immovable = true;
+		
 
 		//Create a tv
 		tv = game.add.sprite(415, 65, 'tv');
@@ -392,6 +391,16 @@ livingRoom.prototype = {
 		tv.immovable = true;
 		tv.animations.add('flash', [0, 1], 2, true);
 		tv.animations.play('flash');
+
+		//Adds sister
+		sister = game.add.sprite(310, 130, 'sister');
+		sister.scale.x = 19;
+		sister.scale.y = 18.5;
+		game.physics.enable(sister);
+		sister.enableBody = true;
+		sister.immovable = true;
+		sister.frame = 1;
+
 
 		//Create a door
 		door2 = game.add.sprite(2148, 110, 'door2');
@@ -404,6 +413,8 @@ livingRoom.prototype = {
 	update: function(){
 
 		game.world.bringToTop(player);
+
+
 
 		if(game.physics.arcade.overlap(player, tv) == true && interactTextTV == null){
 			interactTextTV = game.add.text(tv.x, tv.y-50, 'E', {fill:"#facade"});
@@ -440,12 +451,18 @@ livingRoom.prototype = {
 
 		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, sister) && sisterTease == false){
 
+			sister.frame = 2;
+
 			cutscene = true;
 			sisterTease = true;
 
 			nextDialogue = 0;
 			nextText = dialogueLivingRoom[nextDialogue].Text;
 			currentDialogue(nextText, dialogueLivingRoom);
+		}
+
+		if(sisterTease == true && cutscene == false){
+			sister.frame = 0;
 		}
 
 		if(game.physics.arcade.overlap(player, door2)){

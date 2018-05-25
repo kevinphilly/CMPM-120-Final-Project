@@ -3,6 +3,7 @@
 	{
 		"id":"sister1",
 		"num": 0,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: What you doing big head?",
 		"continue":true,
 		"Branch":false
@@ -11,6 +12,7 @@
 	{
 		"id":"sister2",
 		"num": 1,
+		"speaker": "sister",
 		"Text":"Sister: I don’t have a big head!",
 		"continue":true,
 		"Branch":false
@@ -19,6 +21,7 @@
 	{
 		"id":"sister3",
 		"num": 2,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: Who lied to you? You definitely have a big head.",
 		"continue":true,
 		"Branch":false
@@ -27,6 +30,7 @@
 	{
 		"id":"sister4",
 		"num": 3,
+		"speaker": "sister",
 		"Text":"Sister: MOM! DEANDRE IS SAID I HAVE A BIG HEAD!",
 		"continue":true,
 		"Branch":false
@@ -35,6 +39,7 @@
 	{
 		"id":"sister5",
 		"num": 4,
+		"speaker": "mom",
 		"Text":"Mom: DEANDRE! LEAVE THAT GIRL ALONE AND GO TO SCHOOL! DON’T MAKE ME LEAVE THIS KITCHEN!",
 		"continue":true,
 		"Branch":false
@@ -43,6 +48,7 @@
 	{
 		"id":"sister6",
 		"num": 5,
+		"speaker":"DeAndre",
 		"Text":"DeAndre: ALRIGHT MOMMA! ...Bye Snitch.",
 		"continue":true,
 		"Branch":false
@@ -51,6 +57,7 @@
 	{
 		"id":"sister7",
 		"num": 6,
+		"speaker": "sister",
 		"Text":"Sister: Bye Loser.",
 		"continue":false,
 		"Branch":false

@@ -1,0 +1,137 @@
+[
+	{
+		"id":"afterSchool0",
+		"num": 0,
+		"speaker":"Reggie",
+		"Text":"Yo DeAndre, how you feeling after that practice?",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool1",
+		"num": 1,
+		"speaker":"DeAndre",
+		"Text":"Damn man, coach is playing no games with these practices.",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool2",
+		"num": 2,
+		"speaker":"Reggie",
+		"Text":"Of course not, he wants us to win the championship this year. We were so close last year. The finals were crazy!",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool3",
+		"num": 3,
+		"speaker":"Shawn",
+		"Text":"True, we definitely got it this year though.",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool4",
+		"num": 4,
+		"speaker":"Melvin",
+		"Text":"Yo, but what about Mrs. Harrison's test though? That shit was hard as hell!",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool5",
+		"num": 5,
+		"speaker":"Shawn",
+		"Text":"I know man. I swear she wants everyone to fail her class.",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool6",
+		"num": 6,
+		"speaker":"DeAndre",
+		"Text":"Yeah, true that.",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool7",
+		"num": 7,
+		"speaker":"Reggie",
+		"Text":"It wasn't even that hard though...",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool8",
+		"num": 8,
+		"speaker":"Melvin",
+		"Text":"Damn, alright smartass.",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool9",
+		"num": 9,
+		"speaker":"Shawn",
+		"Text":"Haha Reggie can pass any test without even studying. Don't talk to us anymore.",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool10",
+		"num": 10,
+		"speaker":"Reggie",
+		"Text":"Y'all just get on my level then.",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool11",
+		"num": 11,
+		"speaker":"Shawn",
+		"Text":"Hey, on a real note though. I'm hungry as hell. Do y'all want to go to the 24/7 mart real quick?",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool12",
+		"num": 12,
+		"speaker":"Reggie",
+		"Text":"Yeah I'm down",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool13",
+		"num": 13,
+		"speaker":"Melvin",
+		"Text":"Yeah for sure",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"afterSchool14",
+		"num": 14,
+		"speaker":"DeAndre",
+		"Text":"Let's go then.",
+		"continue":false,
+		"Branch":false
+	}
+
+]
