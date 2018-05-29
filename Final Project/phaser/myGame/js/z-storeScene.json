@@ -1,0 +1,366 @@
+[
+	{
+		"id":"reggieStore1",
+		"num": 0,
+		"speaker":"Reggie",
+		"Text":"Reggie: Bro, do you remember when JB's used to be here?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"reggieStore2",
+		"num": 1,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Yo that used to be the spot!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"reggieStore3",
+		"num": 2,
+		"speaker":"Reggie",
+		"Text":"Reggie: Yeah, it's messed up that they're starting to gentrify our hood like that. They're pushing out all the people of color and local businesses that used to put this city on the map.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"reggieStore4",
+		"num": 3,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Preach.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"shawnStore1",
+		"num": 4,
+		"speaker":"Shawn",
+		"Text":"Shawn: Man, I don't know what to get. This place is new but it's definitely letting me down.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"shawnStore2",
+		"num": 5,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Yeah I feel it.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"shawnStore3",
+		"num": 6,
+		"speaker":"Shawn",
+		"Text":"Shawn: There's a reason why this place is so empty all the time haha.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"shawnStore4",
+		"num": 7,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: I don't like it. Clerk's just been watching us the whole time.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"shawnStore5",
+		"num": 8,
+		"speaker":"Shawn",
+		"Text":"Shawn: He ain't got much else to do I guess.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"melvinStore1",
+		"num": 9,
+		"speaker":"Melvin",
+		"Text":"Melvin: Can you guys hurry it up?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"melvinStore2",
+		"num": 10,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Hey chill out Melvin, you already know what you're getting?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"melvinStore3",
+		"num": 11,
+		"speaker":"Melvin",
+		"Text":"Melvin: Of course! Can't go wrong with an ice tea and some cheesy puffs.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"melvinStore4",
+		"num": 12,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Man, you always get the same things. We like to spice it up every once in a while.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"melvinStore5",
+		"num": 13,
+		"speaker":"Melvin",
+		"Text":"Melvin: Yeah whatever man",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict1",
+		"num": 14,
+		"speaker":"Clerk",
+		"Text":"Clerk: Are all of you going to buy something or not?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict2",
+		"num": 15,
+		"speaker":"Shawn",
+		"Text":"Shawn: Um what?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict3",
+		"num": 16,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Sorry, are we doing something wrong?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict4",
+		"num": 17,
+		"speaker":"Clerk",
+		"Text":"Clerk: You've all been here for a while and haven't bought anything. If you aren't going to buy anything, please leave my store.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict5",
+		"num": 18,
+		"speaker":"Melvin",
+		"Text":"Melvin: Well, some of us are still looking around.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict6",
+		"num": 19,
+		"speaker":"Clerk",
+		"Text":"Clerk: Well, why does it take you so long to look around?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict7",
+		"num": 20,
+		"speaker":"Shawn",
+		"Text":"Shawn: Because we don't know what we want to buy yet. Bruh, just calm down.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict8",
+		"num": 21,
+		"speaker":"Clerk",
+		"Text":"Clerk: Don't tell me to calm down. I've seen way too many people like you come in and steal from my store.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict9",
+		"num": 22,
+		"speaker":"Reggie",
+		"Text":"Reggie: People like US?! Who do you think we are??",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict10",
+		"num": 23,
+		"speaker":"Clerk",
+		"Text":"Clerk: Put all of my stuff back and leave my store.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict11",
+		"num": 24,
+		"speaker":"Shawn",
+		"Text":"Shawn: No, for what reason? We haven't done anything wrong.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"clerkConflict12",
+		"num": 25,
+		"speaker":"Clerk",
+		"Text":"Clerk: If the four of you don't leave right now, I'm calliing the police!",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Stay",
+			"Leave"
+		]
+	},
+
+	{
+		"id":"stay1",
+		"num": 26,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: All we want to do is buy some snacks and we'll be out of here!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay2",
+		"num": 27,
+		"speaker":"Clerk",
+		"Text":"Clerk: I don't care! I want you all out right now!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay3",
+		"num": 28,
+		"speaker":"Shawn",
+		"Text":"Shawn: Dude, how can you open a store in our neighborhood and then discriminate against us?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay4",
+		"num": 29,
+		"speaker":"Clerk",
+		"Text":"Clerk: I'm calling the police.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay5",
+		"num": 30,
+		"speaker":"Melvin",
+		"Text":"Melvin: Yo, we need to leave. Right now!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay6",
+		"num": 31,
+		"speaker":"Shawn",
+		"Text": "Shawn: For what? We have a right to be here and purchase something. We did nothing wrong.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay7",
+		"num": 32,
+		"speaker":"Reggie",
+		"Text":"Reggie: Okay but he's calling the police!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay8",
+		"num": 33,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Reggie's right bro, we can't get arrested. Our parents are gonna kill us and we got a game tomorrow!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay9",
+		"num": 34,
+		"speaker":"Shawn",
+		"Text": "Shawn: Why are you thinking about the game right now?!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay10",
+		"num": 35,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Why are you NOT thinking about the game right now? We're about to get ARRESTED. Let's GO!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stay11",
+		"num": 36,
+		"speaker":"DavidWhite",
+		"Text":"Police: This is the police. Come outside and place your hands on your head!",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"leave1",
+		"num": 37,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Yo Shawn, let's just go!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"leave2",
+		"num": 38,
+		"speaker":"Shawn",
+		"Text": "Shawn: Nah, why should we leave? We got the right to buy something here.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"leave3",
+		"num": 39,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Man, I'm leaving. Y'all can stay here if you want.",
+		"continue":false,
+		"Branch":false
+	}
+
+]

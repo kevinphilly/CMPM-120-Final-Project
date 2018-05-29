@@ -7,6 +7,7 @@ walkToSchool.prototype = {
 		game.load.text('walkToSchool', 'js/z-walkToSchool.json');
 		game.load.image('street1', 'assets/img/street1.png');
 		game.load.spritesheet('police1', 'assets/img/police1.png', 110, 200);
+		game.load.image('DavidWhitePortrait', 'assets/img/policePortrait.png', 200, 200);
 	},
 
 	create: function(){
@@ -211,7 +212,6 @@ function goSchool(){
 	game.state.start('afterSchool');
 	console.log('goSchool');
 
-	
 }
 	
 

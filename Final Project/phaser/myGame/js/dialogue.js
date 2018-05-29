@@ -38,7 +38,8 @@ function currentDialogue(key, script){
 	}
 
 	if(script[nextDialogue].speaker != undefined){
-		portrait = game.add.sprite(60, 630, script[nextDialogue].speaker+'Portrait')
+		portrait = game.add.sprite(0, 600, script[nextDialogue].speaker+'Portrait');
+		portrait.fixedToCamera = true;
 	}
 	
 
@@ -72,7 +73,9 @@ function currentDialogue(key, script){
 		console.log('continue');	
 	}else if(cutscene == true && script[nextDialogue].Branch == false){
 		cutscene = false;
-		
+		if(portrait != undefined){
+			portrait.destroy();
+		}
 		if(text3 != null){
 			text3.destroy();
 		}
@@ -85,6 +88,7 @@ function currentDialogue(key, script){
 		if(text3 != null){
 			text3.destroy();
 		}
+		
 		game.time.events.add(5000, destroyText, this);
 	}
 
@@ -140,6 +144,8 @@ function nextLine(script){
 
 
 function destroyText(){
-	text0.destroy();
+	if(cutscene == false){
+		text0.destroy();
+	}
 }
 

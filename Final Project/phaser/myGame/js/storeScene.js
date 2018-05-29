@@ -1,12 +1,14 @@
-var interactFriend1;
-var interactFriend2;
-var interactFriend3;
+var interactReggie;
+var interactShawn;
+var interactMelvin;
 var talkFriends = false;
 
 var afterSchool = function(game){};
 afterSchool.prototype = {
 	preload: function(){
-		game.load.spritesheet('friend', 'assets/img/friend.png');
+		game.load.spritesheet('shawn', 'assets/img/shawn.png');
+		game.load.spritesheet('reggie', 'assets/img/reggie.png');
+		game.load.spritesheet('melvin', 'assets/img/melvin.png');
 		game.load.text('afterSchoolScript', 'js/z-afterSchoolText.json');
 	},
 
@@ -28,20 +30,20 @@ afterSchool.prototype = {
 		game.camera.follow(player);
 		player.scale.y = 1.12;
 
-		friend1 = game.add.sprite(800, 300, 'friend');
-		game.physics.enable(friend1);
-		friend1.enableBody = true;
-		friend1.immovable = true;
+		Reggie = game.add.sprite(800, 300, 'reggie');
+		game.physics.enable(Reggie);
+		Reggie.enableBody = true;
+		Reggie.immovable = true;
 
-		friend2 = game.add.sprite(600, 300, 'friend');
-		game.physics.enable(friend2);
-		friend2.enableBody = true;
-		friend2.immovable = true;
+		Shawn = game.add.sprite(600, 300, 'shawn');
+		game.physics.enable(Shawn);
+		Shawn.enableBody = true;
+		Shawn.immovable = true;
 
-		friend3 = game.add.sprite(1000, 300, 'friend');
-		game.physics.enable(friend3);
-		friend3.enableBody = true;
-		friend3.immovable = true;
+		Melvin = game.add.sprite(1000, 300, 'melvin');
+		game.physics.enable(Melvin);
+		Melvin.enableBody = true;
+		Melvin.immovable = true;
 	},
 
 	update: function(){
@@ -54,16 +56,16 @@ afterSchool.prototype = {
 			currentDialogue(nextText, currentScript);
 		}
 
-		if(game.physics.arcade.overlap(player, friend1) == true && interactFriend1 == null && talkFriends == false){
-			interactFriend1 = game.add.text(friend1.x, friend1.y-50, 'E', {fill:"#facade"});
+		if(game.physics.arcade.overlap(player, Reggie) == true && interactReggie == null && talkFriends == false){
+			interactReggie = game.add.text(Reggie.x, Reggie.y-50, 'E', {fill:"#facade"});
 		}
 
-		if(game.physics.arcade.overlap(player, friend1) != true && interactFriend1 != null){
-			interactFriend1.destroy();
-			interactFriend1 = null;
+		if(game.physics.arcade.overlap(player, Reggie) != true && interactReggie != null){
+			interactReggie.destroy();
+			interactReggie = null;
 		}
 
-		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, friend1) == true && talkFriends == false){
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, Reggie) == true && talkFriends == false){
 			cutscene = true;
 			
 			currentScript[0].speaker = "Reggie";
@@ -74,16 +76,16 @@ afterSchool.prototype = {
 			talkFriends = true;
 		}
 
-		if(game.physics.arcade.overlap(player, friend2) == true && interactFriend2 == null){
-			interactFriend2 = game.add.text(friend2.x, friend2.y-50, 'E', {fill:"#facade"});
+		if(game.physics.arcade.overlap(player, Shawn) == true && interactShawn == null){
+			interactShawn = game.add.text(Shawn.x, Shawn.y-50, 'E', {fill:"#facade"});
 		}
 
-		if(game.physics.arcade.overlap(player, friend2) != true && interactFriend2 != null){
-			interactFriend2.destroy();
-			interactFriend2 = null;
+		if(game.physics.arcade.overlap(player, Shawn) != true && interactShawn != null){
+			interactShawn.destroy();
+			interactShawn = null;
 		}
 
-		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, friend2) == true && talkFriends == false){
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, Shawn) == true && talkFriends == false){
 			cutscene = true;
 			
 			currentScript[0].speaker = "Shawn";
@@ -94,16 +96,16 @@ afterSchool.prototype = {
 			talkFriends = true;
 		}
 
-		if(game.physics.arcade.overlap(player, friend3) == true && interactFriend3 == null){
-			interactFriend3 = game.add.text(friend3.x, friend3.y-50, 'E', {fill:"#facade"});
+		if(game.physics.arcade.overlap(player, Melvin) == true && interactMelvin == null){
+			interactMelvin = game.add.text(Melvin.x, Melvin.y-50, 'E', {fill:"#facade"});
 		}
 
-		if(game.physics.arcade.overlap(player, friend3) != true && interactFriend3 != null){
-			interactFriend3.destroy();
-			interactFriend3 = null;
+		if(game.physics.arcade.overlap(player, Melvin) != true && interactMelvin != null){
+			interactMelvin.destroy();
+			interactMelvin = null;
 		}
 
-		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, friend3) == true && talkFriends == false){
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, Melvin) == true && talkFriends == false){
 			cutscene = true;
 			
 			currentScript[0].speaker = "Melvin";
@@ -132,12 +134,19 @@ function goStore(){
 	
 }
 
+var talkReggie = false;
+var talkShawn = false;
+var talkMelvin = false;
+var clerkConflict = false;
+var policeArrive = false;
+var interactions = 0;
+
 var insideStore = function(game){};
 insideStore.prototype = {
 	preload: function(){
 		game.load.image('store1', 'assets/img/store1.png');
 		game.load.spritesheet('clerk', 'assets/img/clerk.png');
-		game.load.spritesheet('friend', 'assets/img/friend.png');
+		game.load.text('storeScene', 'js/z-storeScene.json');
 	},
 
 	create: function(){
@@ -145,13 +154,29 @@ insideStore.prototype = {
 		textBox.fixedToCamera = true;
 		background = this.game.add.tileSprite(0, 0, 1200, 600, 'store1');
 
+		storeDialogue = JSON.parse(this.game.cache.getText('storeScene'));
+		currentScript = storeDialogue;
+
 		//Adds the player character
-		player = new DeAndre(game, 500, 420, 'atlas', 6);
+		player = new DeAndre(game, 900, 390, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
-		player.scale.x = .75;
-		player.scale.y = .9;
-		speed = 1000;
+		player.scale.y = 1.12;
+
+		Reggie = game.add.sprite(1000, 300, 'reggie');
+		game.physics.enable(Reggie);
+		Reggie.enableBody = true;
+		Reggie.immovable = true;
+
+		Shawn = game.add.sprite(300, 300, 'shawn');
+		game.physics.enable(Shawn);
+		Shawn.enableBody = true;
+		Shawn.immovable = true;
+
+		Melvin = game.add.sprite(800, 300, 'melvin');
+		game.physics.enable(Melvin);
+		Melvin.enableBody = true;
+		Melvin.immovable = true;
 
 		//Adds the store clerk
 		clerk = game.add.sprite(0, 300, 'clerk');
@@ -159,10 +184,6 @@ insideStore.prototype = {
 		clerk.enableBody = true;
 		clerk.immovable = true;
 
-		friend1 = game.add.sprite(800, 300, 'friend');
-
-		friend2 = game.add.sprite(600, 300, 'friend');
-		
 	},
 
 	update: function(){
@@ -174,7 +195,113 @@ insideStore.prototype = {
 			console.log('spacePressed');
 			currentDialogue(nextText, currentScript);
 		}
+
+		if(game.physics.arcade.overlap(player, Reggie) == true && interactReggie == null && talkReggie == false){
+			interactReggie = game.add.text(Reggie.x, Reggie.y-50, 'E', {fill:"#facade"});
+		}
+
+		if(game.physics.arcade.overlap(player, Reggie) != true && interactReggie != null){
+			interactReggie.destroy();
+			interactReggie = null;
+		}
+
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, Reggie) == true && talkReggie == false){
+			cutscene = true;
+			
+			nextDialogue = 0;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+
+			talkReggie = true;
+			interactions++;
+		}
+
+		if(game.physics.arcade.overlap(player, Shawn) == true && interactShawn == null){
+			interactShawn = game.add.text(Shawn.x, Shawn.y-50, 'E', {fill:"#facade"});
+		}
+
+		if(game.physics.arcade.overlap(player, Shawn) != true && interactShawn != null){
+			interactShawn.destroy();
+			interactShawn = null;
+		}
+
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, Shawn) == true && talkShawn == false){
+			cutscene = true;
+			
+			nextDialogue = 4;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+
+			talkShawn = true;
+			interactions++;
+		}
+
+		if(game.physics.arcade.overlap(player, Melvin) == true && interactMelvin == null){
+			interactMelvin = game.add.text(Melvin.x, Melvin.y-50, 'E', {fill:"#facade"});
+		}
+
+		if(game.physics.arcade.overlap(player, Melvin) != true && interactMelvin != null){
+			interactMelvin.destroy();
+			interactMelvin = null;
+		}
+
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, Melvin) == true && talkMelvin == false){
+			cutscene = true;
+			
+			nextDialogue = 9;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+
+			talkMelvin = true;
+			interactions++;
+		}
+
+		if(interactions == 3 && cutscene == false && clerkConflict == false){
+			cutscene = true;
+
+			nextDialogue = 14;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+
+			clerkConflict = true;
+		}
+
+		if(lastChoice == 1 && clerkConflict == true){
+			lastChoice = 0;			
+
+			nextDialogue = 26;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+
+			policeArrive = true;
+		}
+
+		if(lastChoice == 2 && clerkConflict == true){
+			lastChoice = 0;			
+
+			nextDialogue = 37;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+
+			policeArrive = true;
+		}
+
+		if(policeArrive == true && cutscene == false){
+			game.camera.flash(0xff0000, 500);
+			game.camera.flash(0x0000ff, 500);
+
+			game.camera.fade(0x000000, 2000);
+			game.time.events.add(4000, exitStore, this);
+		}
+
 	}
+}
+
+function exitStore(){
+	game.state.start('outsideStore');
+	console.log('exitStore');
+
+	
 }
 
 var outsideStore = function(game){};
