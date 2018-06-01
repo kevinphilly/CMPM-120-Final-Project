@@ -208,7 +208,7 @@ kitchen.prototype = {
 	preload: function(){
 		game.load.image('kitchen1', 'assets/img/kitchen1.png');
 		game.load.spritesheet('fridge1', 'assets/img/fridge1.png', 259, 459);
-		game.load.spritesheet('mom', 'assets/img/placeholder.png', 100, 300);
+		game.load.spritesheet('mom', 'assets/img/deAndreMom.png', 256, 256, 3);
 		game.load.text('kitchen', 'js/z-kitchen.json');
 	},
 
@@ -358,7 +358,7 @@ livingRoom.prototype = {
 	preload: function(){
 		game.load.image('livingRoom1', 'assets/img/livingRoom1.png');
 		game.load.image('livingRoom2', 'assets/img/livingRoom2.png');
-		game.load.spritesheet('sister', 'assets/img/sisterSofa.png', 32, 32, 3);
+		game.load.spritesheet('sister', 'assets/img/sisterSofa.png', 512, 512, 3);
 		game.load.spritesheet('tv', 'assets/img/livingRoomTV1.png', 383, 202, 2);
 		game.load.spritesheet('door2', 'assets/img/door2.png', 213, 442);
 		game.load.text('livingRoom', 'js/z-livingRoom.json');
@@ -391,15 +391,15 @@ livingRoom.prototype = {
 		tv.immovable = true;
 		tv.animations.add('flash', [0, 1], 2, true);
 		tv.animations.play('flash');
+		tv.body.setSize(200, 202, 0, 0);
 
 		//Adds sister
-		sister = game.add.sprite(310, 130, 'sister');
-		sister.scale.x = 19;
-		sister.scale.y = 18.5;
+		sister = game.add.sprite(345, 40, 'sister');
 		game.physics.enable(sister);
 		sister.enableBody = true;
 		sister.immovable = true;
-		sister.frame = 1;
+		sister.body.setSize(200, 256, 400, 256);
+		// sister.frame = 1;
 
 
 		//Create a door
@@ -436,7 +436,7 @@ livingRoom.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, sister) && interactText == null){
-			interactText = game.add.text(sister.x, sister.y - 50, 'E', {fill:"#facade"});
+			interactText = game.add.text(sister.body.x + 100, sister.body.y - 70, 'E', {fill:"#facade"});
 		}
 
 		if(game.physics.arcade.overlap(player, sister) != true && interactText != null){
@@ -468,6 +468,14 @@ livingRoom.prototype = {
 		if(game.physics.arcade.overlap(player, door2)){
 			game.state.start('walkToSchool');
 		}
+
+	},
+
+	render: function() {
+
+    // Sprite debug info
+
+    	game.debug.body(tv);
 
 	}
 }

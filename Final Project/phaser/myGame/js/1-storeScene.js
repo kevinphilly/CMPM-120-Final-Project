@@ -288,10 +288,10 @@ insideStore.prototype = {
 
 		if(policeArrive == true && cutscene == false){
 			game.camera.flash(0xff0000, 500);
-			game.camera.flash(0x0000ff, 500);
+			game.camera.flash(0x0000ff, 1000);
 
 			game.camera.fade(0x000000, 2000);
-			game.time.events.add(4000, exitStore, this);
+			game.time.events.add(3000, exitStore, this);
 		}
 
 	}
@@ -303,6 +303,7 @@ function exitStore(){
 
 	
 }
+var kickedOut = false;
 
 var outsideStore = function(game){};
 outsideStore.prototype = {
@@ -322,10 +323,41 @@ outsideStore.prototype = {
 		player.scale.x = .75;
 		player.scale.y = .9;
 		speed = 1000;
+
+		nextDialogue = 40;
+		nextText = currentScript[nextDialogue].Text;
+		currentDialogue(nextText, currentScript);
 	},
 
 	update: function(){
-		
+		game.world.bringToTop(player);
+
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+			text3.destroy();
+
+			console.log('spacePressed');
+			currentDialogue(nextText, currentScript);
+		}
+
+		if(lastChoice == 1 && kickedOut == false){
+			lastChoice = 0;
+			cutscene = true;
+			kickOut = true;
+
+			nextDialogue = 41;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+		}
+
+		if(lastChoice == 2 && kickedOut == false){
+			lastChoice = 0;
+			cutscene = true;
+			kickOut = true;
+
+			nextDialogue = 52;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+		}
 	}
 }
 

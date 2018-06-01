@@ -1,0 +1,67 @@
+[	
+	{
+		"id":"coffeeShop1",
+		"num": 0,
+		"speaker":"Carla",
+		"Text":"Carla: Come on...they always take so long to make my Passion tea..",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"coffeeShop2",
+		"num": 1,
+		"speaker":"Isabel",
+		"Text":"Isabel: Oh! Looks like there's breaking news on the tv.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"news1",
+		"num": 2,
+		"Text":"....a 16 year old male, identified as DeAndre Parker, was shot and killed this afternoon by an officer at the local 24-7 Mart.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news2",
+		"num": 3,
+		"Text":"Witnesses say that the teenager was accompanied by three other teenage males and were all acting aggressive towards the police officer.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news3",
+		"num": 4,
+		"Text":"Officer David White was initially called to the scene by the store owner, who believed that the group had intended to rob the store.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news4",
+		"num": 5,
+		"Text":"Officer White says that he feared for his life after being outnumbered by the four aggressors.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news5",
+		"num": 6,
+		"Text":"He also claims that they were acting violently and that he belived they could have been armed and dangerous.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news6",
+		"num": 7,
+		"Text":"Upon further investigation, there was no weapon found on Parker's body.",
+		"continue":false,
+		"Branch":false
+	},
+]

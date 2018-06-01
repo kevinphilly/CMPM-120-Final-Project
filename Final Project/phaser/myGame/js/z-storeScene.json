@@ -361,6 +361,240 @@
 		"Text":"DeAndre: Man, I'm leaving. Y'all can stay here if you want.",
 		"continue":false,
 		"Branch":false
+	},
+
+	{
+		"id":"outsideStore1",
+		"num": 40,
+		"speaker":"DavidWhite",
+		"Text":"Police: Get up against the car and put your hands on your head!",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Comply",
+			"Explain"
+		]
+	},
+
+	{
+		"id":"comply1",
+		"num": 41,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Alright, please don't arrest us.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply2",
+		"num": 42,
+		"speaker":"Shawn",
+		"Text":"Shawn: Yo, why are we doing this? We're the ones being mistreated here! You should be arresting this bogus cashier!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply3",
+		"num": 43,
+		"speaker":"DavidWhite",
+		"Text":"Police: Just shut up and place your hands on top of your head!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply4",
+		"num": 44,
+		"speaker":"Shawn",
+		"Text":"Shawn: Can you just listen to us for a minute?!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply5",
+		"num": 45,
+		"speaker":"DavidWhite",
+		"Text":"Police: Boy, you better think about what you're doing before I have to force you to comply.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply6",
+		"num": 46,
+		"speaker":"Reggie",
+		"Text":"Reggie: FOR FUCKS SAKE SHAWN, PLEASE JUST DO WHAT HE SAYS!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply7",
+		"num": 47,
+		"Text":"DeAndre feels a buzzing in his pocket. His phone is vibrating.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply8",
+		"num": 48,
+		"Text":"Out of instict, DeAndre reaches for his phone without thinking.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply9",
+		"num": 49,
+		"speaker":"DavidWhite",
+		"Text":"Police: HEY! Boy you better rethink what you're about to do. This is your last warning.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply10",
+		"num": 50,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Huh? Sir, it's my phone. I think my mom...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"comply11",
+		"num": 51,
+		"Text":"DeAndre begins removing his phone from his pocket to show the officer..",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"explain1",
+		"num": 52,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Officer please, this is a misunderstanding. The cashier is a racist and thought we were gonna steal! We weren't doing anything wrong!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain2",
+		"num": 53,
+		"speaker":"DavidWhite",
+		"Text":"Police: That's for me to decide. Now don't move and place your hands on your head!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain3",
+		"num": 54,
+		"speaker":"Shawn",
+		"Text":"Shawn: Can you just listen to us for a minute?!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain4",
+		"num": 55,
+		"speaker":"DavidWhite",
+		"Text":"Police: Boy, you better think about what you're doing before I have to force you to comply.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain5",
+		"num": 56,
+		"speaker":"Reggie",
+		"Text":"Reggie: FOR FUCKS SAKE GUYS, PLEASE JUST DO WHAT HE SAYS!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain6",
+		"num": 57,
+		"Text":"DeAndre feels a buzzing in his pocket. His phone is vibrating.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain7",
+		"num": 58,
+		"Text":"Out of instict, DeAndre reaches for his phone without thinking.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain8",
+		"num": 59,
+		"speaker":"DavidWhite",
+		"Text":"Police: HEY! Boy you better rethink what you're about to do. This is your last warning.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain9",
+		"num": 60,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Huh? Sir, it's my phone. I think my mom...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain10",
+		"num": 61,
+		"speaker":"DavidWhite",
+		"Text":"Police: Shut it! Don't move another muscle while I figure out just what the hell is happening here!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain11",
+		"num": 62,
+		"speaker":"Clerk",
+		"Text":"Cashier: They were trying to steal from my store!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain12",
+		"num": 63,
+		"speaker":"Shawn",
+		"Text":"Shawn: He's lying!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain13",
+		"num": 64,
+		"speaker":"DavidWhite",
+		"Text":"Police: I DON'T WANT TO HEAR ANOTHER WORD OUT OF YOU, DO YOU UNDERSTAND ME?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"explain14",
+		"num": 65,
+		"Text":"Once again, DeAndre feels his phone vibrating in his pocket. He reaches into his pocket to silence his phone.",
+		"continue":false,
+		"Branch":false
 	}
+
+
 
 ]

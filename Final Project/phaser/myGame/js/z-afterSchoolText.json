@@ -2,7 +2,7 @@
 	{
 		"id":"afterSchool0",
 		"num": 0,
-		"speaker":"Reggie",
+		"speaker":"",
 		"Text":"Yo DeAndre, how you feeling after that practice?",
 		"continue":true,
 		"Branch":false
