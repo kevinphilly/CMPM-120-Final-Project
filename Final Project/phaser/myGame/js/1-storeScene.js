@@ -128,6 +128,7 @@ afterSchool.prototype = {
 }
 
 function goStore(){
+	walkMusic.stop();
 	game.state.start('insideStore');
 	console.log('goStore');
 
@@ -145,6 +146,7 @@ var insideStore = function(game){};
 insideStore.prototype = {
 	preload: function(){
 		game.load.image('store1', 'assets/img/store1.png');
+		game.load.image('store2', 'assets/img/store2.png');
 		game.load.spritesheet('clerk', 'assets/img/clerk.png');
 		game.load.text('storeScene', 'js/z-storeScene.json');
 	},
@@ -152,7 +154,10 @@ insideStore.prototype = {
 	create: function(){
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
+
 		background = this.game.add.tileSprite(0, 0, 1200, 600, 'store1');
+		background = this.game.add.tileSprite(1200, 0, 1800, 600, 'store2');
+		game.world.setBounds(0, 0, 1800, 600);
 
 		storeDialogue = JSON.parse(this.game.cache.getText('storeScene'));
 		currentScript = storeDialogue;
@@ -323,7 +328,9 @@ outsideStore.prototype = {
 		player.scale.x = .75;
 		player.scale.y = .9;
 		speed = 1000;
+		player.animations.add('deAndreDeath', [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], 2, false);
 
+		cutscene = true;
 		nextDialogue = 40;
 		nextText = currentScript[nextDialogue].Text;
 		currentDialogue(nextText, currentScript);
@@ -342,7 +349,7 @@ outsideStore.prototype = {
 		if(lastChoice == 1 && kickedOut == false){
 			lastChoice = 0;
 			cutscene = true;
-			kickOut = true;
+			kickedOut = true;
 
 			nextDialogue = 41;
 			nextText = currentScript[nextDialogue].Text;
@@ -352,11 +359,18 @@ outsideStore.prototype = {
 		if(lastChoice == 2 && kickedOut == false){
 			lastChoice = 0;
 			cutscene = true;
-			kickOut = true;
+			kickedOut = true;
 
 			nextDialogue = 52;
 			nextText = currentScript[nextDialogue].Text;
 			currentDialogue(nextText, currentScript);
+		}
+
+		if(cutscene == false && kickedOut == true){
+			cutscene = true;
+			game.camera.fade(0x000000, 7469);
+			player.animations.play('deAndreDeath');
+
 		}
 	}
 }

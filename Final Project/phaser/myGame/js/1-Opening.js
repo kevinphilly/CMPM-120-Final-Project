@@ -118,6 +118,10 @@ opening.prototype = {
 	},
 }
 
+var bedroomNews = false;
+var interactTV, interactDoor;
+var houseMusic;
+
 var bedroom = function(game){};
 bedroom.prototype = {
 	preload: function(){
@@ -125,13 +129,18 @@ bedroom.prototype = {
 		game.load.spritesheet('door', 'assets/img/door.png', 213, 442);
 		this.game.load.image('bedroom1', 'assets/img/bedroom1.png');
 		this.game.load.image('bedroom2', 'assets/img/bedroom2.png');
-
+		game.load.spritesheet('tv', 'assets/img/livingRoomTV1.png', 383, 202, 2);
+		game.load.audio('houseMusic', 'assets/audio/DanceOfLife.MP3');
 	},
 
 	create: function(){
 
 		nextDialogue = 2;
 		nextText = dialogue[nextDialogue].Text;
+
+		houseMusic = game.add.audio('houseMusic');
+		houseMusic.play('', 0, .3, true);
+
 
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
@@ -158,48 +167,87 @@ bedroom.prototype = {
 		door.enableBody = true;
 		door.immovable = true;
 
+		tv = game.add.sprite(895, 235, 'tv');
+		game.physics.enable(tv);
+		tv.enableBody = true;
+		tv.scale.x = .5;
+		tv.scale.y = .5;
+		tv.animations.add('flash', [0, 1], 2, true);
+		tv.animations.play('flash');
+		tv.body.setSize(360, 200, 0, 0);
+
 	},
 
 	update: function(){
 
 		game.world.bringToTop(player);
 
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+			console.log('spacePressed');
+			currentDialogue(nextText, currentScript);
+		}
+
 		//Player can interact with the door
-		if(game.physics.arcade.overlap(player, door) && interactText == null){
-			interactText = game.add.text(door.x, door.y - 50, 'E', {fill:"#facade"});
+		if(game.physics.arcade.overlap(player, door) && interactDoor == null){
+			interactDoor = game.add.text(door.x, door.y - 50, 'E', {fill:"#facade"});
 		}
 
 		//Remove the text if the player steps away from the door
-		if(game.physics.arcade.overlap(player, door) != true && interactText != null){
-			interactText.destroy();
-			text0.destroy();
-			text1.destroy();
-			text2.destroy();
-			button1.destroy();
-			button2.destroy();
-			interactText = null;
+		if(game.physics.arcade.overlap(player, door) != true && interactDoor != null){
+			interactDoor.destroy();
+			interactDoor = null;
 		}
 
 		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, door)){
+			cutscene = true;
 			nextDialogue = 3;
 			
 			nextText = dialogue[nextDialogue].Text;
 			currentDialogue(nextText, dialogue);
 		}
 
+		//Interact with the tv in the room
+		if(game.physics.arcade.overlap(player, tv) && interactTV == null && bedroomNews == false){
+			interactTV = game.add.text(tv.x, tv.y - 50, 'E', {fill:"#facade"});
+		}
+
+		//Remove the text if the player steps away from the tv
+		if(game.physics.arcade.overlap(player, tv) != true && interactTV != null){
+			interactTV.destroy();
+			interactTV = null;
+		}
+
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, tv) && bedroomNews == false){
+			cutscene = true;
+			nextDialogue = 6;
+			
+			bedroomNews = true;
+			nextText = dialogue[nextDialogue].Text;
+			currentDialogue(nextText, dialogue);
+		}
+
 		//Go to the kitchen
 		if(lastChoice == 1){
+			cutscene = false;
 			game.state.start('kitchen');
 			lastChoice = 0;
+
 		}
 
 		//Go to the living room
 		if(lastChoice == 2){
+			cutscene = false;
 			game.state.start('livingRoom');
 			lastChoice = 0;
 		}
+	},
+
+	render: function() {
+    // Sprite debug info
+    //	game.debug.body(tv);
 	}
 }
+
 
 var kitchenDoor;
 
@@ -239,10 +287,11 @@ kitchen.prototype = {
 		kitchenDoor.immovable = true;
 
 		//Adds mom
-		mother = game.add.sprite(350, 252, 'mom');
+		mother = game.add.sprite(350, 258, 'mom');
 		game.physics.enable(mother);
 		mother.enableBody = true;
 		mother.immovable = true;
+		mother.scale.y = 1.15;
 
 
 		//Create a fridge
@@ -359,7 +408,6 @@ livingRoom.prototype = {
 		game.load.image('livingRoom1', 'assets/img/livingRoom1.png');
 		game.load.image('livingRoom2', 'assets/img/livingRoom2.png');
 		game.load.spritesheet('sister', 'assets/img/sisterSofa.png', 512, 512, 3);
-		game.load.spritesheet('tv', 'assets/img/livingRoomTV1.png', 383, 202, 2);
 		game.load.spritesheet('door2', 'assets/img/door2.png', 213, 442);
 		game.load.text('livingRoom', 'js/z-livingRoom.json');
 
@@ -462,10 +510,11 @@ livingRoom.prototype = {
 		}
 
 		if(sisterTease == true && cutscene == false){
-			sister.frame = 0;
+			sister.frame = 1;
 		}
 
 		if(game.physics.arcade.overlap(player, door2)){
+			houseMusic.stop();
 			game.state.start('walkToSchool');
 		}
 

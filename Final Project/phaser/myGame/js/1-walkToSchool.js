@@ -6,8 +6,9 @@ walkToSchool.prototype = {
 	preload: function(){
 		game.load.text('walkToSchool', 'js/z-walkToSchool.json');
 		game.load.image('street1', 'assets/img/street1.png');
-		game.load.spritesheet('police1', 'assets/img/police1.png', 110, 200);
+		game.load.spritesheet('police1', 'assets/img/police1.png', 256, 256, 2);
 		game.load.image('DavidWhitePortrait', 'assets/img/policePortrait.png', 200, 200);
+		game.load.audio('walking', 'assets/audio/MusicOfMagic.MP3');
 	},
 
 	create: function(){
@@ -15,6 +16,9 @@ walkToSchool.prototype = {
 		streetBackground = this.game.add.tileSprite(0, 0, 4800, 600, 'street1');
 		dialogueWalk = JSON.parse(this.game.cache.getText('walkToSchool'));
 		currentScript = dialogueWalk;
+
+		walkMusic = game.add.audio('walking');
+		walkMusic.play('', 0, 1, true);
 
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
@@ -28,10 +32,12 @@ walkToSchool.prototype = {
 		speed = 300;
 
 		//Adds a police officer
-		police1 = game.add.sprite(3000, 380, 'police1');
+		police1 = game.add.sprite(3000, 400, 'police1');
 		game.physics.enable(police1);
 		police1.enableBody = true;
 		police1.immovable = true;
+		police1.scale.x = .7;
+		police1.scale.y = .7;
 
 	
 		game.time.events.add(5000, getText, this);
@@ -73,6 +79,7 @@ walkToSchool.prototype = {
 			runIntoPolice = true;
 			nextDialogue = 2;
 			cutscene = true;
+			police1.frame = 1;
 			
 			nextText = currentScript[nextDialogue].Text;
 			currentDialogue(nextText, currentScript);

@@ -55,5 +55,21 @@
 		"Text":"You head to the living room",
 		"continue":false,
 		"Branch":false	
+	},
+
+	{
+		"id":"bedroomTV1",
+		"num": 6, 
+		"Text":"Breaking news!",
+		"continue":true,
+		"Branch":false	
+	},
+
+	{
+		"id":"bedroomTV2",
+		"num": 7, 
+		"Text":"More news!!",
+		"continue":false,
+		"Branch":false	
 	}
 ]

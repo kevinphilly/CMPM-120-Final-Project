@@ -146,6 +146,7 @@ function nextLine(script){
 function destroyText(){
 	if(cutscene == false){
 		text0.destroy();
+		console.log('destroyText()');
 	}
 }
 
