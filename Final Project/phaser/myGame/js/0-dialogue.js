@@ -3,6 +3,7 @@ var text3;
 var button1;
 var button2;
 var portrait;
+var textbox2;
 
 //Style the text in the dialogue boxes
 var style = {
@@ -14,6 +15,7 @@ var style = {
 	fontSize: 24
 };
 
+
 //Function to print out the current dialogue
 function currentDialogue(key, script){
 
@@ -24,13 +26,12 @@ function currentDialogue(key, script){
 		text0.destroy();
 		text1.destroy();
 		text2.destroy();
-
 	}
 
 	//Print out current text
 	text0 = game.add.text(0, 0, key, style);
 	text0.fixedToCamera = true;
-	text0.setTextBounds(200, 600, 800, 100);
+	text0.setTextBounds(200, 605, 800, 100);
 
 	//Print out correct portrait
 	if(portrait != null){
@@ -38,23 +39,44 @@ function currentDialogue(key, script){
 	}
 
 	if(script[nextDialogue].speaker != undefined){
+		textbox2 = game.add.sprite(0, 600, 'textBox2');
+		game.world.sendToBack(textbox2);
+		game.world.moveUp(textbox2);
+		game.world.moveUp(textbox2);
+		game.world.moveUp(textbox2);
 		portrait = game.add.sprite(0, 600, script[nextDialogue].speaker+'Portrait');
 		portrait.fixedToCamera = true;
+		text0.setTextBounds(200, 605, 1000, 100);
+
 	}
 	
 
 	//If the dialogue requires choices, print out next 2 chunks
-	if(script[nextDialogue].Branch == true){
-		button1 = game.add.button(212, 700, 'button', choice1, this, 0); //first choice
+	if(script[nextDialogue].Branch == true && script[nextDialogue].speaker == undefined){
+		button1 = game.add.button(10, 724, 'button2', choice1, this, 0); //first choice
 		button1.fixedToCamera = true;
-		text1 = game.add.text(212, 700, script[nextDialogue].Choices[0]);
+		text1 = game.add.text(0, 0, script[nextDialogue].Choices[0], style);
+		text1.setTextBounds(10, 724, 590, 200);
 		text1.fixedToCamera = true;
 
-		button2 = game.add.button(900, 700, 'button', choice2, this, 0); //second choice
+		button2 = game.add.button(600, 724, 'button2', choice2, this, 0); //second choice
 		button2.fixedToCamera = true;
-		text2 = game.add.text(900, 700, script[nextDialogue].Choices[1]);
+		text2 = game.add.text(0, 0, script[nextDialogue].Choices[1], style);
+		text2.setTextBounds(610, 724, 590, 200);
 		text2.fixedToCamera = true;
 
+	}else if(script[nextDialogue].Branch == true && script[nextDialogue].speaker != undefined){
+		button1 = game.add.button(210, 724, 'button1', choice1, this, 0); //first choice
+		button1.fixedToCamera = true;
+		text1 = game.add.text(0, 0, script[nextDialogue].Choices[0], style);
+		text1.setTextBounds(210, 724, 490, 200);
+		text1.fixedToCamera = true;
+
+		button2 = game.add.button(700, 724, 'button1', choice2, this, 0); //second choice
+		button2.fixedToCamera = true;
+		text2 = game.add.text(0, 0, script[nextDialogue].Choices[1], style);
+		text2.setTextBounds(700, 724, 490, 200);
+		text2.fixedToCamera = true;
 	}
 
 	if(script[nextDialogue].continue == true){
@@ -62,7 +84,7 @@ function currentDialogue(key, script){
 			if(text3 != null){
 				text3.destroy();
 			}
-			text3 = game.add.text(400, 750, 'Spacebar to continue');
+			text3 = game.add.text(450, 750, 'Spacebar to continue', style);
 			text3.fixedToCamera = true;
 		}else if(text3 != null){
 			text3.destroy();
@@ -75,6 +97,7 @@ function currentDialogue(key, script){
 		cutscene = false;
 		if(portrait != undefined){
 			portrait.destroy();
+			textbox2.destroy();
 		}
 		if(text3 != null){
 			text3.destroy();

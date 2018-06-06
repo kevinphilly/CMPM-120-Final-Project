@@ -25,22 +25,22 @@ afterSchool.prototype = {
 		textBox.fixedToCamera = true;
 
 		//Adds the player character
-		player = new DeAndre(game, 0, 390, 'atlas', 6);
+		player = new DeAndre(game, 0, 417, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
-		player.scale.y = 1.12;
 
-		Reggie = game.add.sprite(800, 300, 'reggie');
-		game.physics.enable(Reggie);
+
+		Reggie = game.add.sprite(800, 272, 'reggie');
+		game.physics.enable(Reggie);	
 		Reggie.enableBody = true;
 		Reggie.immovable = true;
 
-		Shawn = game.add.sprite(600, 300, 'shawn');
+		Shawn = game.add.sprite(600, 272, 'shawn');
 		game.physics.enable(Shawn);
 		Shawn.enableBody = true;
 		Shawn.immovable = true;
 
-		Melvin = game.add.sprite(1000, 300, 'melvin');
+		Melvin = game.add.sprite(1000, 272, 'melvin');
 		game.physics.enable(Melvin);
 		Melvin.enableBody = true;
 		Melvin.immovable = true;
@@ -168,23 +168,23 @@ insideStore.prototype = {
 		game.camera.follow(player);
 		player.scale.y = 1.12;
 
-		Reggie = game.add.sprite(1000, 300, 'reggie');
+		Reggie = game.add.sprite(1000, 272, 'reggie');
 		game.physics.enable(Reggie);
 		Reggie.enableBody = true;
 		Reggie.immovable = true;
 
-		Shawn = game.add.sprite(300, 300, 'shawn');
+		Shawn = game.add.sprite(300, 272, 'shawn');
 		game.physics.enable(Shawn);
 		Shawn.enableBody = true;
 		Shawn.immovable = true;
 
-		Melvin = game.add.sprite(800, 300, 'melvin');
+		Melvin = game.add.sprite(800, 272, 'melvin');
 		game.physics.enable(Melvin);
 		Melvin.enableBody = true;
 		Melvin.immovable = true;
 
 		//Adds the store clerk
-		clerk = game.add.sprite(0, 300, 'clerk');
+		clerk = game.add.sprite(0, 272, 'clerk');
 		game.physics.enable(clerk);
 		clerk.enableBody = true;
 		clerk.immovable = true;

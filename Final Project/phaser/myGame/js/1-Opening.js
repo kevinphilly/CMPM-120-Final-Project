@@ -17,7 +17,8 @@ var leaveMom = false;
 var mainMenu = function(game){};
 mainMenu.prototype = {
 	preload: function(){
-		game.load.spritesheet('button', 'assets/img/tempButton.png', 88, 67);
+		game.load.spritesheet('button1', 'assets/img/button1.png', 495, 67);
+		game.load.spritesheet('button2', 'assets/img/button2.png', 590, 67);
 		game.load.image('mainMenu', 'assets/img/mainMenu.png');
 		game.load.spritesheet('mainMenuTV', 'assets/img/mainMenuTV.png', 555, 336);
 		game.load.audio('mainMenuMusic', 'assets/audio/CrazyHeart.MP3');
@@ -29,8 +30,8 @@ mainMenu.prototype = {
 
 	create: function(){
 		menuBackground = this.game.add.tileSprite(0, 0, 1200, 600, 'mainMenu');
-		playButton = game.add.button(304, 100, 'button', play, this, 0);
-		playButton.scale.setTo(6.31, 4.61);
+		playButton = game.add.button(304, 100, 'button1', play, this, 0);
+		playButton.scale.setTo(1.1, 4.61);
 
 		//Add tv to center of the screen
 		mainMenuTV = game.add.sprite(304, 100, 'mainMenuTV');
@@ -76,6 +77,7 @@ opening.prototype = {
 		//Preload assets for opening scene
 		game.load.text('speech', 'js/z-opening.json');
 		game.load.image('textBox', 'assets/img/floor.png');
+		game.load.image('textBox2', 'assets/img/floor2.png');
 		
 
 		
