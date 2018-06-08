@@ -7,6 +7,7 @@ walkToSchool.prototype = {
 		game.load.text('walkToSchool', 'js/z-walkToSchool.json');
 		game.load.image('street1', 'assets/img/street1.png');
 		game.load.spritesheet('police1', 'assets/img/police1.png', 256, 256, 2);
+		game.load.image('MelvinPortrait', 'assets/img/melvinPortrait.png');
 		game.load.image('DavidWhitePortrait', 'assets/img/policePortrait.png', 200, 200);
 		game.load.audio('walking', 'assets/audio/MusicOfMagic.MP3');
 	},
@@ -30,6 +31,7 @@ walkToSchool.prototype = {
 		player.scale.x = .6;
 		player.scale.y = .7;
 		speed = 300;
+		player.animations.add('phoneRings', [12, 13, 14, 15, 16, 12, 13, 14, 15, 16], 6, false);
 
 		//Adds a police officer
 		police1 = game.add.sprite(3000, 400, 'police1');
@@ -51,7 +53,7 @@ walkToSchool.prototype = {
 
 		game.world.bringToTop(player);
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			text3.destroy();
 
 			console.log('spacePressed');
@@ -119,7 +121,7 @@ walkToSchool.prototype = {
 function getText(){
 	nextDialogue = 0;
 	cutscene = true;
-
+	player.animations.play('phoneRings');
 	nextText = currentScript[nextDialogue].Text;
 	currentDialogue(nextText, currentScript);
 
@@ -142,13 +144,13 @@ outsideSchool.prototype = {
 		textBox.fixedToCamera = true;
 
 		//Adds the player character
-		player = new DeAndre(game, 0, 390, 'atlas', 6);
+		player = new DeAndre(game, 0, 400, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
 		player.scale.y = 1.12;
 
 		//Adds a police officer
-		police1 = game.add.sprite(600, 380, 'police1');
+		police1 = game.add.sprite(600, 305, 'police1');
 		game.physics.enable(police1);
 		police1.enableBody = true;
 		police1.immovable = true;
@@ -157,7 +159,7 @@ outsideSchool.prototype = {
 	update: function(){
 		game.world.bringToTop(player);
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			text3.destroy();
 
 			console.log('spacePressed');
@@ -185,6 +187,7 @@ outsideSchool.prototype = {
 			nextText = currentScript[nextDialogue].Text;
 			currentDialogue(nextText, currentScript);
 
+			cutscene = true;
 			game.camera.fade(0x000000, 4000);
 			game.time.events.add(4000, goSchool, this);
 
@@ -216,6 +219,7 @@ outsideSchool.prototype = {
 }
 
 function goSchool(){
+	cutscene = false;
 	game.state.start('afterSchool');
 	console.log('goSchool');
 

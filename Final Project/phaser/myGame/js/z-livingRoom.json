@@ -4,7 +4,7 @@
 		"id":"sister1",
 		"num": 0,
 		"speaker":"DeAndre",
-		"Text":"DeAndre: What you doing big head?",
+		"Text":"DeAndre: What're you doing big head?",
 		"continue":true,
 		"Branch":false
 	},

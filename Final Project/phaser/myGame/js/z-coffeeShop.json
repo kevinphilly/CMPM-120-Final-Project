@@ -13,7 +13,7 @@
 		"num": 1,
 		"speaker":"Isabel",
 		"Text":"Isabel: Oh! Looks like there's breaking news on the tv.",
-		"continue":false,
+		"continue":true,
 		"Branch":false
 	},
 
@@ -61,7 +61,60 @@
 		"id":"news6",
 		"num": 7,
 		"Text":"Upon further investigation, there was no weapon found on Parker's body.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news7",
+		"num": 8,
+		"Text":". . .",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news8",
+		"num": 9,
+		"speaker":"Emily",
+		"Text":"Emily: Damn. That sucks.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news9",
+		"num": 10,
+		"speaker":"Isabel",
+		"Text":"Isabel: Mhmm",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news10",
+		"num": 11,
+		"speaker":"Emily",
+		"Text":"Emily: Looks like our drinks are ready though.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"news11",
+		"num": 12,
+		"speaker":"Carla",
+		"Text":"Carla: I go grab them!",
 		"continue":false,
 		"Branch":false
 	},
+
+	{
+		"id":"gotDrinks1",
+		"num": 13,
+		"speaker":"Isabel",
+		"Text":"Isabel: Ok now lets get out of here.",
+		"continue":false,
+		"Branch":false
+	}
 ]

@@ -1,6 +1,7 @@
 var game = new Phaser.Game(1200, 800, Phaser.AUTO);
 
 //Global Variables
+var currentArc = 'deAndre';
 var player;
 var mainMenuMusic;
 var nextText;
@@ -64,8 +65,12 @@ mainMenu.prototype = {
 
 function play(){
 	mainMenuMusic.stop();
-
-	game.state.start('opening');
+	if(currentArc === 'deAndre'){
+		game.state.start('opening');
+	}
+	if(currentArc === 'carla'){
+		game.state.start('coffeeShop');
+	}
 }
 
 
@@ -121,8 +126,8 @@ opening.prototype = {
 }
 
 var bedroomNews = false;
-var interactTV, interactDoor;
-var houseMusic;
+var interactTV, interactDoor, interactShelf;
+var houseMusic, lastInteraction;
 
 var bedroom = function(game){};
 bedroom.prototype = {
@@ -169,6 +174,7 @@ bedroom.prototype = {
 		door.enableBody = true;
 		door.immovable = true;
 
+		//Create interactive tv
 		tv = game.add.sprite(895, 235, 'tv');
 		game.physics.enable(tv);
 		tv.enableBody = true;
@@ -178,13 +184,18 @@ bedroom.prototype = {
 		tv.animations.play('flash');
 		tv.body.setSize(360, 200, 0, 0);
 
+		shelf = game.add.sprite(600, 250, '');
+		game.physics.enable(shelf);
+		shelf.enableBody = true;
+		shelf.body.setSize(150, 300, 20, 0);
+
 	},
 
 	update: function(){
 
 		game.world.bringToTop(player);
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			console.log('spacePressed');
 			currentDialogue(nextText, currentScript);
 		}
@@ -203,6 +214,7 @@ bedroom.prototype = {
 		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, door)){
 			cutscene = true;
 			nextDialogue = 3;
+			lastInteraction = 'door';
 			
 			nextText = dialogue[nextDialogue].Text;
 			currentDialogue(nextText, dialogue);
@@ -221,15 +233,56 @@ bedroom.prototype = {
 
 		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, tv) && bedroomNews == false){
 			cutscene = true;
-			nextDialogue = 6;
+			nextDialogue = 9;
 			
 			bedroomNews = true;
 			nextText = dialogue[nextDialogue].Text;
 			currentDialogue(nextText, dialogue);
 		}
 
+		//Code to interact with shelf
+		if(game.physics.arcade.overlap(player, shelf) && interactShelf == null && bedroomNews == false){
+			interactShelf = game.add.text(shelf.x, shelf.y - 50, 'E', {fill:"#facade"});
+		}
+
+		//Remove the text if the player steps away from the shelf
+		if(game.physics.arcade.overlap(player, shelf) != true && interactShelf != null){
+			interactShelf.destroy();
+			interactShelf = null;
+		}
+
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, shelf)){
+			cutscene = true;
+			nextDialogue = 6;
+			lastInteraction = 'shelf';
+			
+			nextText = dialogue[nextDialogue].Text;
+			currentDialogue(nextText, dialogue);
+		}
+
 		//Go to the kitchen
-		if(lastChoice == 1){
+		if(lastChoice == 1 && lastInteraction === 'shelf'){
+			cutscene = false;
+			lastChoice = 0;
+
+			nextDialogue = 7;
+			nextText = dialogue[nextDialogue].Text;
+			currentDialogue(nextText, dialogue);
+
+		}
+
+		//Go to the living room
+		if(lastChoice == 2 && lastInteraction === 'shelf'){
+			cutscene = false;
+			lastChoice = 0;
+
+			nextDialogue = 8;
+			nextText = dialogue[nextDialogue].Text;
+			currentDialogue(nextText, dialogue);
+		}
+
+		//Go to the kitchen
+		if(lastChoice == 1 && lastInteraction === 'door'){
 			cutscene = false;
 			game.state.start('kitchen');
 			lastChoice = 0;
@@ -237,7 +290,7 @@ bedroom.prototype = {
 		}
 
 		//Go to the living room
-		if(lastChoice == 2){
+		if(lastChoice == 2 && lastInteraction === 'door'){
 			cutscene = false;
 			game.state.start('livingRoom');
 			lastChoice = 0;
@@ -245,26 +298,29 @@ bedroom.prototype = {
 	},
 
 	render: function() {
-    // Sprite debug info
-    //	game.debug.body(tv);
+   	// Sprite debug info
+  	  	game.debug.body(shelf);
 	}
 }
 
 
-var kitchenDoor;
+var kitchenDoor, interactKitchenDoor;
 
 var kitchen = function(game){};
 kitchen.prototype = {
 	preload: function(){
 		game.load.image('kitchen1', 'assets/img/kitchen1.png');
+		game.load.image('kitchen2', 'assets/img/kitchen2.png');
 		game.load.spritesheet('fridge1', 'assets/img/fridge1.png', 259, 459);
 		game.load.spritesheet('mom', 'assets/img/deAndreMom.png', 256, 256, 3);
+		game.load.spritesheet('kitchenDoor', 'assets/img/kitchenDoor.png', 213, 442);
 		game.load.text('kitchen', 'js/z-kitchen.json');
 	},
 
 	create: function(){
 		background = this.game.add.tileSprite(0, 0, 1200, 600, 'kitchen1');
-		game.world.setBounds(0, 0, 1800, 600);
+		background = this.game.add.tileSprite(1200, 0, 2000, 600, 'kitchen2');
+		game.world.setBounds(0, 0, 2000, 600);
 		dialogueKitchen = JSON.parse(this.game.cache.getText('kitchen'));
 		currentScript = dialogueKitchen;
 
@@ -283,7 +339,7 @@ kitchen.prototype = {
 		player.scale.y = 1.12;
 
 		//Adds door to living room
-		kitchenDoor = game.add.sprite(1500, 110, 'door');
+		kitchenDoor = game.add.sprite(1775, 110, 'kitchenDoor');
 		game.physics.enable(kitchenDoor);
 		kitchenDoor.enableBody = true;
 		kitchenDoor.immovable = true;
@@ -294,6 +350,7 @@ kitchen.prototype = {
 		mother.enableBody = true;
 		mother.immovable = true;
 		mother.scale.y = 1.15;
+		mother.body.setSize(150, 250, 70, 0);
 
 
 		//Create a fridge
@@ -315,7 +372,7 @@ kitchen.prototype = {
 			interactText = game.add.text(mother.x, mother.y - 50, 'E', {fill:"#facade"});
 		}
 
-		//Remove the text if the player steps away from the door
+		//Remove the text if the player steps away from mother
 		if(game.physics.arcade.overlap(player, mother) != true && interactText != null){
 			interactText.destroy();
 			text0.destroy();
@@ -365,7 +422,7 @@ kitchen.prototype = {
 			console.log('choice 2');
 		}
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			console.log('spacePressed');
 			currentDialogue(nextText, currentScript);
 		}
@@ -394,15 +451,36 @@ kitchen.prototype = {
 			console.log('choice 2');
 		}
 
-		if(game.physics.arcade.overlap(player, kitchenDoor)){
-			game.state.start('livingRoom');
-		}	
+		//Player can interact with the door
+		if(game.physics.arcade.overlap(player, kitchenDoor) && interactKitchenDoor == null){
+			interactKitchenDoor = game.add.text(kitchenDoor.x, kitchenDoor.y - 50, 'E', {fill:"#facade"});
+		}
+
+		//Remove the text if the player steps away from the door
+		if(game.physics.arcade.overlap(player, kitchenDoor) != true && interactKitchenDoor != null){
+			interactKitchenDoor.destroy();
+			interactKitchenDoor = null;
+		}
+
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, kitchenDoor)){
+				game.state.start('livingRoom');
+		}
+
+
+	},
+
+	render: function() {
+
+    // Sprite debug info
+
+    	game.debug.body(mother);
+
 	}
 }
 
 var sisterTease = false;
 var news1 = false;
-var interactTextTV;
+var interactTextTV, interactDoor2;
 
 var livingRoom = function(game){};
 livingRoom.prototype = {
@@ -422,9 +500,9 @@ livingRoom.prototype = {
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
 
-		background = this.game.add.tileSprite(0, 0, 1200, 600, 'livingRoom1');
-		background = this.game.add.tileSprite(1200, 0, 2400, 600, 'livingRoom2');
-		game.world.setBounds(0, 0, 2400, 600);
+		background = this.game.add.tileSprite(0, 0, 1450, 600, 'livingRoom1');
+		background = this.game.add.tileSprite(1450, 0, 2650, 600, 'livingRoom2');
+		game.world.setBounds(0, 0, 2650, 600);
 
 		//Adds the player character
 		player = new DeAndre(game, 0, 390, 'atlas', 6);
@@ -435,7 +513,7 @@ livingRoom.prototype = {
 		
 
 		//Create a tv
-		tv = game.add.sprite(415, 65, 'tv');
+		tv = game.add.sprite(665, 65, 'tv');
 		game.physics.enable(tv);
 		tv.enableBody = true;
 		tv.immovable = true;
@@ -444,7 +522,7 @@ livingRoom.prototype = {
 		tv.body.setSize(200, 202, 0, 0);
 
 		//Adds sister
-		sister = game.add.sprite(345, 40, 'sister');
+		sister = game.add.sprite(595, 40, 'sister');
 		game.physics.enable(sister);
 		sister.enableBody = true;
 		sister.immovable = true;
@@ -453,10 +531,16 @@ livingRoom.prototype = {
 
 
 		//Create a door
-		door2 = game.add.sprite(2148, 110, 'door2');
+		door2 = game.add.sprite(2398, 110, 'door2');
 		game.physics.enable(door2);
 		door2.enableBody = true;
 		door2.immovable = true;
+
+		//Create a door
+		livingRoomDoor = game.add.sprite(32, 110, 'door2');
+		game.physics.enable(livingRoomDoor);
+		livingRoomDoor.enableBody = true;
+		livingRoomDoor.immovable = true;
 
 	},
 
@@ -494,7 +578,7 @@ livingRoom.prototype = {
 			interactText = null;
 		}
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			console.log('spacePressed');
 			currentDialogue(nextText, currentScript);
 		}
@@ -515,20 +599,26 @@ livingRoom.prototype = {
 			sister.frame = 1;
 		}
 
-		if(game.physics.arcade.overlap(player, door2)){
-			houseMusic.stop();
-			game.state.start('walkToSchool');
+
+		//Player can interact with the door
+		if(game.physics.arcade.overlap(player, door2) && interactDoor2 == null){
+			interactDoor2 = game.add.text(door2.x, door2.y - 50, 'E', {fill:"#facade"});
+		}
+
+		//Remove the text if the player steps away from the door
+		if(game.physics.arcade.overlap(player, door2) != true && interactDoor2 != null){
+			interactDoor2.destroy();
+			interactDoor2 = null;
+		}
+
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, door2) && bedroomNews == false){
+				houseMusic.stop();
+				game.state.start('walkToSchool');
 		}
 
 	},
 
-	render: function() {
-
-    // Sprite debug info
-
-    	game.debug.body(tv);
-
-	}
+	
 }
 
 //Add game states to StateManager

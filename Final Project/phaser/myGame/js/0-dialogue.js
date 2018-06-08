@@ -5,6 +5,11 @@ var button2;
 var portrait;
 var textbox2;
 
+var wordLock;
+var line = [];
+var wordIndex = 0;
+var wordDelay = 0;
+
 //Style the text in the dialogue boxes
 var style = {
 	fill: "#fff",
@@ -28,14 +33,26 @@ function currentDialogue(key, script){
 		text2.destroy();
 	}
 
+	// //Print out current text
+	// text0 = game.add.text(0, 0, key, style);
+	// text0.fixedToCamera = true;
+	// text0.setTextBounds(200, 605, 800, 100);
+
 	//Print out current text
-	text0 = game.add.text(0, 0, key, style);
+	text0 = game.add.text(0, 0, '', style);
 	text0.fixedToCamera = true;
 	text0.setTextBounds(200, 605, 800, 100);
+	printText(key);
+
+
 
 	//Print out correct portrait
 	if(portrait != null){
 		portrait.destroy();
+	}
+
+	if(textbox2 != null){
+		textbox2.destroy();
 	}
 
 	if(script[nextDialogue].speaker != undefined){
@@ -44,6 +61,7 @@ function currentDialogue(key, script){
 		game.world.moveUp(textbox2);
 		game.world.moveUp(textbox2);
 		game.world.moveUp(textbox2);
+		textbox2.fixedToCamera = true;
 		portrait = game.add.sprite(0, 600, script[nextDialogue].speaker+'Portrait');
 		portrait.fixedToCamera = true;
 		text0.setTextBounds(200, 605, 1000, 100);
@@ -52,7 +70,7 @@ function currentDialogue(key, script){
 	
 
 	//If the dialogue requires choices, print out next 2 chunks
-	if(script[nextDialogue].Branch == true && script[nextDialogue].speaker == undefined){
+	if(script[nextDialogue].Branch == true && script[nextDialogue].speaker == undefined ){
 		button1 = game.add.button(10, 724, 'button2', choice1, this, 0); //first choice
 		button1.fixedToCamera = true;
 		text1 = game.add.text(0, 0, script[nextDialogue].Choices[0], style);
@@ -112,11 +130,30 @@ function currentDialogue(key, script){
 			text3.destroy();
 		}
 		
-		game.time.events.add(5000, destroyText, this);
+		//destroyTextTimer = game.time.events.add(5000, destroyText, this);
 	}
 
 
 	
+}
+
+function printText(key){
+
+	line = key.split(' ');
+
+	wordLock = true;
+	wordIndex = 0;
+
+	game.time.events.repeat(wordDelay, line.length, nextWord, this);
+}
+
+function nextWord(){
+	text0.text = text0.text.concat(line[wordIndex] + " ");
+	wordIndex++;
+	if(wordIndex === line.length){
+		wordLock = false;
+		return;
+	}
 }
 
 

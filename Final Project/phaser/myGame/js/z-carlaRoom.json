@@ -1,0 +1,56 @@
+[
+
+	{
+		"id":"carlaRoom1",
+		"num": 1,
+		"Text":"Soon after entering the room, tears begin to form under Carla's eyes once again.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaRoom2",
+		"num": 2,
+		"speaker":"Isabel",
+		"Text":"Isabel: Hey, remember what Mamá said?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaRoom3",
+		"num": 3,
+		"speaker":"Carla",
+		"Text":"Carla: ...stay strong.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaRoom4",
+		"num": 4,
+		"speaker":"Isabel",
+		"Text":"Isabel: Right! She needs you to stay strong for her. It's going to be okay.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaRoom5",
+		"num": 5,
+		"speaker":"Carla",
+		"Text":"Carla: ... ",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaRoom6",
+		"num": 6,
+		"speaker":"Isabel",
+		"Text":"Isabel: Right! She needs you to stay strong for her. It's going to be okay.",
+		"continue":true,
+		"Branch":false
+	}
+
+]

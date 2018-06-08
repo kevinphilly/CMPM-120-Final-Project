@@ -1,0 +1,158 @@
+[
+
+	{
+		"id":"momCrying1",
+		"num": 0,
+		"speaker":"Carla",
+		"Text":"Carla: Mamá?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying2",
+		"num": 1,
+		"Text":"Your mom looks up at the two of you. Her cheeks glistening from the tears. She has clearly been crying.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying3",
+		"num": 2,
+		"speaker":"Emma",
+		"Text":"Emma: ¿Mamá, porque estás llorando?\n(Mom, why are you crying?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying4",
+		"num": 3,
+		"speaker":"Mama",
+		"Text":"Mamá: ¡Se llevaron a tu hermano!\n(They took your brother!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying5",
+		"num": 4,
+		"speaker":"Carla",
+		"Text":"Carla: Jonathan! No, Mamá!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying6",
+		"num": 5,
+		"speaker":"Isabel",
+		"Text":"Isabel: Carla, por favor, no llores. ¿Qué pasó, mamá?\n(Carla, please don't cry. What happened mom?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying7",
+		"num": 6,
+		"speaker":"Mama",
+		"Text":"Mamá: Un policía paró a tu hermano por tener su luz de la cola rota.\n(An officer pulled him over for a broken tail light)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying8",
+		"num": 7,
+		"speaker":"Mama",
+		"Text":"Mamá: Entonces le pidieron su información y se averiguaron que tenía una orden de deportación.\n(They asked for his information but saw that he had a deportation order.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying9",
+		"num": 8,
+		"speaker":"Mama",
+		"Text":"Mamá: ¡Lo arrestaron y lo van a deportar mañana!\n(They arrested him and are deporting him tomorrow morning!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying10",
+		"num": 9,
+		"speaker":"Carla",
+		"Text":"Carla: ...Mamá...¿Podrá Jonathan regresar?\n(Mamá, will Jonathan be able to return?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying11",
+		"num": 10,
+		"speaker":"Mama",
+		"Text":"Mamá: No lo sé...Mi hijo...ay Dios mío.\n(I don't know...My son...Oh my God.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying12",
+		"num": 11,
+		"speaker":"Emma",
+		"Text":"Emma: Mamá, todo va a estar bien. Vamos a arreglar esto.\n(Mamá, it’s going to be okay. We’re going to figure something out.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying13",
+		"num": 12,
+		"speaker":"Emma",
+		"Text":"Emma: ¿Dónde está Papá?\n(Where is papá?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying14",
+		"num": 13,
+		"speaker":"Isabel",
+		"Text":"Isabel: Vente, Carla. Vamos a tu cuarto.\n(Come on, Carla. Let's go to your room.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying15",
+		"num": 14,
+		"speaker":"Carla",
+		"Text":"Carla: ¡No! ¡Quiero quedarme con mamá!\n(No! I want to stay with mamá!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying16",
+		"num": 15,
+		"speaker":"Mama",
+		"Text":"Mamá: No Carla, ve a tu cuarto. Necesito que seas fuerte.\n(No Carla, go to your room. I need you to be strong.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"momCrying17",
+		"num": 16,
+		"speaker":"Mama",
+		"Text":"Mamá: Estoy bien. No te preocupes por mi.\n(I'm fine. Don't worry about me.)",
+		"continue":false,
+		"Branch":false
+	}
+
+
+
+
+]

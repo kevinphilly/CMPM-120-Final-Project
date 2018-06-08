@@ -1,0 +1,227 @@
+[
+
+	{
+		"id":"carScene1",
+		"num": 0,
+		"Text":". . ? Seems like there's a heated conversation in the car.",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Mute music",
+			"Take off headphones"
+		]
+	},
+
+	{
+		"id":"muteMusic1",
+		"num": 1,
+		"speaker":"Isabel",
+		"Text":"Isabel: So what? They just gonna keep running?!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic2",
+		"num": 2,
+		"speaker":"Emma",
+		"Text":"Emma: What do you want them to do? They did the best they could. It's not their fault.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic3",
+		"num": 3,
+		"speaker":"Isabel",
+		"Text":"Isabel: Okay, but they have a family to take care of! What are we going to do while they're running?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic4",
+		"num": 4,
+		"Text":"You notice Emma glance over at you, but you just pretend to be immersed in your music.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic5",
+		"num": 5,
+		"speaker":"Emma",
+		"Text":"Emma: Do you not understand that they have to run in order to take care of us? Plus, it's not like they have money anyways.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic6",
+		"num": 6,
+		"speaker":"Isabel",
+		"Text":"Isabel: I just can't believe they got played like that...No green cards and all their money's gone too.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic7",
+		"num": 7,
+		"speaker":"Emma",
+		"Text":"Emma: They didn't know it was a scam Isabel, papa and Jonathan just tried to do the right thing.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic8",
+		"num": 8,
+		"speaker":"Emma",
+		"Text":"Emma: It's not like they were born here like you...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic9",
+		"num": 9,
+		"speaker":"Isabel",
+		"Text":"Isabel: Huh?! What's that supposed to mean?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic10",
+		"num": 10,
+		"speaker":"Emma",
+		"Text":"Emma: I'm just saying to stop being so damn selfish! You and Carla were blessed to be born as American citizens!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic11",
+		"num": 11,
+		"speaker":"Emma",
+		"Text":"Emma: Me, Papá, Mamá, and Jonathan are all here “illegally”.  So don’t sit here and get mad at us for doing the best we can do.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic12",
+		"num": 12,
+		"speaker":"Emma",
+		"Text":"Emma: We work our ass off every single day to support you and Carla! We sacrifice so much so the both of you don't have to live like us.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic13",
+		"num": 13,
+		"speaker":"Emma",
+		"Text":"Emma: So stop fucking complaining and do your part to help with the family. Figure out a way for us to get our papers.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic14",
+		"num": 14,
+		"speaker":"Isabel",
+		"Text":"Isabel: Our lives aren't that easy just because we're “Americans”, and you know that.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic15",
+		"num": 15,
+		"speaker":"Emma",
+		"Text":"Emma: Whatever. We're almost home anyways.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic16",
+		"num": 16,
+		"Text":"Carla bows her head and silently says a prayer to herself",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"muteMusic17",
+		"num": 17,
+		"speaker": "Carla",
+		"Text":"Carla: God, please watch over my daddy and brother. Keep them safe and have them return home soon! Amen.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"removeHeadphones1",
+		"num": 18,
+		"speaker":"Isabel",
+		"Text":"Isabel: So what? They just gonna keep running?!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"removeHeadphones2",
+		"num": 19,
+		"speaker":"Emma",
+		"Text":"Emma: What do you want them to do? They did the best they could. It's not their fault.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"removeHeadphones3",
+		"num": 20,
+		"speaker":"Isabel",
+		"Text":"Isabel: Okay, but they have a family to take care of!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"removeHeadphones4",
+		"num": 21,
+		"Text":"You notice Emma glance over at you, but she quickly turns away.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"removeHeadphones5",
+		"num": 22,
+		"speaker":"Emma",
+		"Text":"..Let's not have this conversation right now.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"removeHeadphones6",
+		"num": 23,
+		"speaker":"Isabel",
+		"Text":"Isabel: Fine. We're almost home anyways.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"removeHeadphones7",
+		"num": 21,
+		"Text":"Damn, I wonder what they could've been talking about...",
+		"continue":false,
+		"Branch":false
+	}
+
+]

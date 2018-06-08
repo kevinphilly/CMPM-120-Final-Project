@@ -58,8 +58,40 @@
 	},
 
 	{
-		"id":"bedroomTV1",
+		"id":"bedroomShelf1",
 		"num": 6, 
+		"Text":"There's a lot of cool stuff here. What caught your eye?",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"The globe",
+			"The cat"
+		]
+	},
+
+	{
+		"id":"globe1",
+		"num": 7, 
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Oh yeah, that's that globe mama got me last year. As soon as I finish school, I'm outta here and traveling the world.",
+		"continue":false,
+		"Branch":false	
+	},
+
+	{
+		"id":"cat1",
+		"num": 8, 
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Hey Nelson! Get down from there! Damn furball just does what he wants...lucky cat.",
+		"continue":false,
+		"Branch":false	
+	},
+
+
+
+	{
+		"id":"bedroomTV1",
+		"num": 9, 
 		"Text":"Breaking news!",
 		"continue":true,
 		"Branch":false	
@@ -67,7 +99,7 @@
 
 	{
 		"id":"bedroomTV2",
-		"num": 7, 
+		"num": 10, 
 		"Text":"More news!!",
 		"continue":false,
 		"Branch":false	

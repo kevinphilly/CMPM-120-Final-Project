@@ -50,15 +50,6 @@ DeAndre.prototype.update = function(){
 		this.body.velocity.y = 0;
 		this.animations.play('idleRight');
 	}
-
-
-
-
-	
-
-	// if(game.input.keyboard.justPressed(Phaser.Keyboard.R)){
-	// 	this.startConversation("alarm");
-	// }
 			
 }
 

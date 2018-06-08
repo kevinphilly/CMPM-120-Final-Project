@@ -9,6 +9,9 @@ afterSchool.prototype = {
 		game.load.spritesheet('shawn', 'assets/img/shawn.png');
 		game.load.spritesheet('reggie', 'assets/img/reggie.png');
 		game.load.spritesheet('melvin', 'assets/img/melvin.png');
+		game.load.image('MelvinPortrait', 'assets/img/melvinPortrait.png');
+		game.load.image('ShawnPortrait', 'assets/img/shawnPortrait.png');
+		//game.load.image('ReggiePortrait', 'assets/img/reggiePortrait.png');
 		game.load.text('afterSchoolScript', 'js/z-afterSchoolText.json');
 	},
 
@@ -25,22 +28,22 @@ afterSchool.prototype = {
 		textBox.fixedToCamera = true;
 
 		//Adds the player character
-		player = new DeAndre(game, 0, 417, 'atlas', 6);
+		player = new DeAndre(game, 500, 417, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
 
 
-		Reggie = game.add.sprite(800, 272, 'reggie');
+		Reggie = game.add.sprite(10, 272, 'reggie');
 		game.physics.enable(Reggie);	
 		Reggie.enableBody = true;
 		Reggie.immovable = true;
 
-		Shawn = game.add.sprite(600, 272, 'shawn');
+		Shawn = game.add.sprite(700, 272, 'shawn');
 		game.physics.enable(Shawn);
 		Shawn.enableBody = true;
 		Shawn.immovable = true;
 
-		Melvin = game.add.sprite(1000, 272, 'melvin');
+		Melvin = game.add.sprite(900, 272, 'melvin');
 		game.physics.enable(Melvin);
 		Melvin.enableBody = true;
 		Melvin.immovable = true;
@@ -49,7 +52,7 @@ afterSchool.prototype = {
 	update: function(){
 		game.world.bringToTop(player);
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			text3.destroy();
 
 			console.log('spacePressed');
@@ -163,7 +166,7 @@ insideStore.prototype = {
 		currentScript = storeDialogue;
 
 		//Adds the player character
-		player = new DeAndre(game, 900, 390, 'atlas', 6);
+		player = new DeAndre(game, 1333, 390, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
 		player.scale.y = 1.12;
@@ -178,7 +181,7 @@ insideStore.prototype = {
 		Shawn.enableBody = true;
 		Shawn.immovable = true;
 
-		Melvin = game.add.sprite(800, 272, 'melvin');
+		Melvin = game.add.sprite(700, 272, 'melvin');
 		game.physics.enable(Melvin);
 		Melvin.enableBody = true;
 		Melvin.immovable = true;
@@ -194,7 +197,7 @@ insideStore.prototype = {
 	update: function(){
 		game.world.bringToTop(player);
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			text3.destroy();
 
 			console.log('spacePressed');
@@ -309,11 +312,14 @@ function exitStore(){
 	
 }
 var kickedOut = false;
+var gunDrawn = false;
+var phoneRang = false;
 
 var outsideStore = function(game){};
 outsideStore.prototype = {
 	preload: function(){
 		game.load.image('storeExterior', 'assets/img/storeExterior.png');
+		game.load.spritesheet('DAcop', 'assets/img/DAcop.png', 288, 288, 7);
 	},
 
 	create: function(){
@@ -322,13 +328,24 @@ outsideStore.prototype = {
 		background = this.game.add.tileSprite(0, 0, 1200, 600, 'storeExterior');
 
 		//Adds the player character
-		player = new DeAndre(game, 500, 420, 'atlas', 6);
+		player = new DeAndre(game, 360, 400, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
 		player.scale.x = .75;
 		player.scale.y = .9;
 		speed = 1000;
+		player.frame = 16;
 		player.animations.add('deAndreDeath', [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], 2, false);
+		player.animations.add('phoneRings', [12, 13, 14, 15, 16, 12, 13, 14, 15, 16], 6, false);
+
+		DAcop = game.add.sprite(600, 270, 'DAcop');
+		DAcop.enableBody = true;
+		game.physics.enable(DAcop);
+		DAcop.scale.x = 0.8;
+		DAcop.scale.y = 0.95;
+		DAcop.frame = 3;
+		DAcop.animations.add('drawGun', [3, 4, 5], 4, false);
+		DAcop.animations.add('fireGun', [6], 1, false);
 
 		cutscene = true;
 		nextDialogue = 40;
@@ -339,11 +356,21 @@ outsideStore.prototype = {
 	update: function(){
 		game.world.bringToTop(player);
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			text3.destroy();
 
 			console.log('spacePressed');
 			currentDialogue(nextText, currentScript);
+		}
+
+		if(cutscene == true && (nextDialogue == 50 || nextDialogue == 60) && gunDrawn == false){
+			gunDrawn = true;
+			DAcop.animations.play('drawGun');
+		}
+
+		if(cutscene == true && (nextDialogue == 48 || nextDialogue == 58) && phoneRang == false){
+			phoneRang = true;
+			player.animations.play('phoneRings');
 		}
 
 		if(lastChoice == 1 && kickedOut == false){
@@ -368,11 +395,23 @@ outsideStore.prototype = {
 
 		if(cutscene == false && kickedOut == true){
 			cutscene = true;
-			game.camera.fade(0x000000, 7469);
-			player.animations.play('deAndreDeath');
-
+			currentArc = 'carla';
+			game.time.events.add(1500, deAndreDie, this);
 		}
 	}
+}
+
+function deAndreDie(){
+	game.camera.fade(0x000000, 7469);
+			player.animations.play('deAndreDeath');
+			DAcop.animations.play('fireGun');
+			game.time.events.add(8000, backToMenu, this);
+}
+
+function backToMenu(){
+	cutscene = false;
+	game.state.start('mainMenu');
+
 }
 
 game.state.add('afterSchool', afterSchool);
