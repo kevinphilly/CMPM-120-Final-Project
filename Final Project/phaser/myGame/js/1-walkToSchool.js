@@ -189,7 +189,7 @@ outsideSchool.prototype = {
 
 			cutscene = true;
 			game.camera.fade(0x000000, 4000);
-			game.time.events.add(4000, goSchool, this);
+			game.time.events.add(2500, goSchool, this);
 
 		}
 

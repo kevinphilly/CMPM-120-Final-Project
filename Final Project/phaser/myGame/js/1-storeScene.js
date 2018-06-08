@@ -9,9 +9,8 @@ afterSchool.prototype = {
 		game.load.spritesheet('shawn', 'assets/img/shawn.png');
 		game.load.spritesheet('reggie', 'assets/img/reggie.png');
 		game.load.spritesheet('melvin', 'assets/img/melvin.png');
-		game.load.image('MelvinPortrait', 'assets/img/melvinPortrait.png');
 		game.load.image('ShawnPortrait', 'assets/img/shawnPortrait.png');
-		//game.load.image('ReggiePortrait', 'assets/img/reggiePortrait.png');
+		game.load.image('ReggiePortrait', 'assets/img/reggiePortrait.png');
 		game.load.text('afterSchoolScript', 'js/z-afterSchoolText.json');
 	},
 
@@ -38,15 +37,16 @@ afterSchool.prototype = {
 		Reggie.enableBody = true;
 		Reggie.immovable = true;
 
-		Shawn = game.add.sprite(700, 272, 'shawn');
+		Shawn = game.add.sprite(650, 272, 'shawn');
 		game.physics.enable(Shawn);
 		Shawn.enableBody = true;
 		Shawn.immovable = true;
 
-		Melvin = game.add.sprite(900, 272, 'melvin');
+		Melvin = game.add.sprite(900, 292, 'melvin');
 		game.physics.enable(Melvin);
 		Melvin.enableBody = true;
 		Melvin.immovable = true;
+		Melvin.scale.y = 1.2
 	},
 
 	update: function(){
@@ -181,10 +181,11 @@ insideStore.prototype = {
 		Shawn.enableBody = true;
 		Shawn.immovable = true;
 
-		Melvin = game.add.sprite(700, 272, 'melvin');
+		Melvin = game.add.sprite(700, 281, 'melvin');
 		game.physics.enable(Melvin);
 		Melvin.enableBody = true;
 		Melvin.immovable = true;
+		Melvin.scale.y = 1.2
 
 		//Adds the store clerk
 		clerk = game.add.sprite(0, 272, 'clerk');

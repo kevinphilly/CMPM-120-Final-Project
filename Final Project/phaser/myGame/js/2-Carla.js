@@ -4,10 +4,10 @@ var cutscene = false;
 var speed;
 
 Carla.prototype.preload = function(){
-	this.game.load.atlas('carlaAtlas', 'assets/img/DADraft.png', 'assets/img/DADraft.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+	this.game.load.atlas('carlaAtlas', 'assets/img/CAself.png', 'assets/img/CAself.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 }
 
-function Carla(game, posX, posY, key, frame, ){
+function Carla(game, posX, posY, key, frame){
 	Phaser.Sprite.call(this, game, posX, posY, key, frame);
 
 	this.anchor.set(0.5);

@@ -26,6 +26,7 @@ mainMenu.prototype = {
 		game.load.image('DeAndrePortrait', 'assets/img/deAndrePortrait.png', 100, 100);
 		game.load.image('momPortrait', 'assets/img/momPortrait.png', 112, 143);
 		game.load.image('sisterPortrait', 'assets/img/sisterPortrait.png', 76, 100);
+		game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
 		
 	},
 

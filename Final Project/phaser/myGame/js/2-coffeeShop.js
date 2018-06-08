@@ -5,7 +5,7 @@ var coffee, interactCoffee;
 var coffeeShop = function(game){};
 coffeeShop.prototype = {
 	preload: function(){
-		this.game.load.atlas('carlaAtlas', 'assets/img/DADraft.png', 'assets/img/DADraft.json');
+		this.game.load.atlas('carlaAtlas', 'assets/img/CAself.png', 'assets/img/CAself.json');
 		game.load.image('coffeeShop', 'assets/img/coffeeShop.png');
 		game.load.image('coffeeShop2', 'assets/img/coffeeShop2.png');
 		game.load.image('coffee', 'assets/img/coffee.png');
@@ -23,9 +23,10 @@ coffeeShop.prototype = {
 		background = this.game.add.tileSprite(0, 0, 1200, 600, 'coffeeShop');
 		background = this.game.add.tileSprite(1200, 0, 2400, 600, 'coffeeShop2');
 
-		player = new Carla(game, 500, 420, 'carlaAtlas', 6);
+		player = new Carla(game, 500, 425, 'carlaAtlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
+		player.scale.y = 1.2;
 
 		cutscene = true;
 
@@ -37,7 +38,7 @@ coffeeShop.prototype = {
 	update: function(){
 		game.world.bringToTop(player);
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			text3.destroy();
 
 			console.log('spacePressed');
@@ -71,7 +72,6 @@ coffeeShop.prototype = {
 			}
 		}
 
-
 	}
 }
 
@@ -80,24 +80,22 @@ var listenIn = false;
 var carScene = function(game){};
 carScene.prototype = {
 	preload: function(){
-		game.load.image('roadBackground', 'assets/img/roadBackground.png');
+
 		game.load.image('car1', 'assets/img/car1.png');
 		game.load.text('carSceneText', 'js/z-carScene.json');
 	},
 
 	create: function(){
+		background = this.game.add.tileSprite(0, 0, 1200, 600, 'car1');
+		game.world.setBounds(0, 0, 1200, 600);
+
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
 
 		carSceneDialogue = JSON.parse(this.game.cache.getText('carSceneText'));
 		currentScript = carSceneDialogue;
 
-		road = game.add.tileSprite(0, 0, 1200, 600, 'roadBackground');
-
-		car1 = game.add.sprite(400, 305, 'car1');
-		game.physics.enable(car1);
-		car1.enableBody = true;
-		car1.immovable = true;
+		
 
 		cutscene = true;
 
@@ -107,9 +105,9 @@ carScene.prototype = {
 	},
 
 	update: function(){
-		road.tilePosition.x -= 5;
+	
 
-		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR)){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			text3.destroy();
 
 			console.log('spacePressed');

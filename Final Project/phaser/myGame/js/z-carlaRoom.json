@@ -2,7 +2,7 @@
 
 	{
 		"id":"carlaRoom1",
-		"num": 1,
+		"num": 0,
 		"Text":"Soon after entering the room, tears begin to form under Carla's eyes once again.",
 		"continue":true,
 		"Branch":false
@@ -10,7 +10,7 @@
 
 	{
 		"id":"carlaRoom2",
-		"num": 2,
+		"num": 1,
 		"speaker":"Isabel",
 		"Text":"Isabel: Hey, remember what Mamá said?",
 		"continue":true,
@@ -19,7 +19,7 @@
 
 	{
 		"id":"carlaRoom3",
-		"num": 3,
+		"num": 2,
 		"speaker":"Carla",
 		"Text":"Carla: ...stay strong.",
 		"continue":true,
@@ -28,7 +28,7 @@
 
 	{
 		"id":"carlaRoom4",
-		"num": 4,
+		"num": 3,
 		"speaker":"Isabel",
 		"Text":"Isabel: Right! She needs you to stay strong for her. It's going to be okay.",
 		"continue":true,
@@ -37,7 +37,7 @@
 
 	{
 		"id":"carlaRoom5",
-		"num": 5,
+		"num": 4,
 		"speaker":"Carla",
 		"Text":"Carla: ... ",
 		"continue":true,
@@ -46,10 +46,181 @@
 
 	{
 		"id":"carlaRoom6",
-		"num": 6,
+		"num": 5,
 		"speaker":"Isabel",
-		"Text":"Isabel: Right! She needs you to stay strong for her. It's going to be okay.",
+		"Text":"Isabel: What's wrong?",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"I need space",
+			"I love you"
+		]
+	},
+
+	{
+		"id":"iNeedSpace1",
+		"num": 6,
+		"speaker":"Carla",
+		"Text":"Carla: Can I just be alone for a little bit? I just want to clear my head.",
 		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iNeedSpace2",
+		"num": 7,
+		"speaker":"Isabel",
+		"Text":"Isabel: ...Sure",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iNeedSpace3",
+		"num": 8,
+		"speaker":"Carla",
+		"Text":"Carla: Thank you.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iNeedSpace4",
+		"num": 9,
+		"speaker":"Isabel",
+		"Text":"Isabel: Carla?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iNeedSpace5",
+		"num": 10,
+		"speaker":"Carla",
+		"Text":"Carla: Yeah?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iNeedSpace6",
+		"num": 11,
+		"speaker":"Isabel",
+		"Text":"Isabel: You know I always got your back right?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iNeedSpace7",
+		"num": 12,
+		"speaker":"Carla",
+		"Text":"Carla: Yes I know, you and me against the world right?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iNeedSpace8",
+		"num": 13,
+		"speaker":"Isabel",
+		"Text":"Isabel: Exactly",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"iNeedSpace9",
+		"num": 14,
+		"Text":"Before going to bed, Carla says a prayer for herself and her family, hoping that everything will be alright.",
+		"continue":true,
+		"Branch":false
+	},	
+
+	{
+		"id":"prayer1",
+		"num": 15,
+		"Text":"Our Father, who art in heaven,\nhallowed by thy name, thy kingdom come,\nthy will be done,\non earth as it is in heaven.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"prayer2",
+		"num": 16,
+		"Text":"Give us this day our daily bread.\nAnd forgive us our trespasses,\nas we forgive those\nwho trespass against us.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"prayer3",
+		"num": 17,
+		"Text":"And lead us not into temptation,\n but deliver us from evil.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"prayer4",
+		"num": 18,
+		"Text":"For thine is the kingdom,\nand the power, and the glory,\nnow and forever.\nAmen.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"iLoveYou1",
+		"num": 19,
+		"speaker":"Carla",
+		"Text":"I love you Isabel. Thank you for being the best older sister.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iLoveYou2",
+		"num": 20,
+		"speaker":"Isabel",
+		"Text":"Aww I love you too, silly. And don't worry too much. Jonathan is going to be back soon.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iLoveYou3",
+		"num": 21,
+		"speaker":"Isabel",
+		"Text":"Isabel: He's going to get his green card and continue to harass all the little boys that try to talk to you.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iLoveYou4",
+		"num": 22,
+		"speaker":"Carla",
+		"Text":"Carla: Shut up, you big dummy..",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iLoveYou5",
+		"num": 23,
+		"speaker":"Isabel",
+		"Text":"Isabel: Haha, come on, let's say a prayer for him and head to bed.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"iLoveYou6",
+		"num": 24,
+		"speaker":"Carla",
+		"Text":"Carla: Okay!",
+		"continue":true,
+		"goto": 15,
 		"Branch":false
 	}
 

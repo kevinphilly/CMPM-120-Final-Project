@@ -16,11 +16,11 @@ carlaHouse.prototype = {
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
 
-		game.world.setBounds(0, 0, 1200, 600);
-		background = this.game.add.tileSprite(0, 0, 1200, 600, 'carlaLivingRoom');
+		game.world.setBounds(0, 0, 1800, 600);
+		background = this.game.add.tileSprite(0, 0, 1800, 600, 'carlaLivingRoom');
 
 
-		player = new Carla(game, 500, 456, 'carlaAtlas', 6);
+		player = new Carla(game, 500, 415, 'carlaAtlas', 7);
 		game.add.existing(player);
 		game.camera.follow(player);
 
@@ -55,8 +55,21 @@ carlaHouse.prototype = {
 			nextText = currentScript[nextDialogue].Text;
 			currentDialogue(nextText, currentScript);
 		}
+
+		if(interactMama == true && cutscene == false){
+			game.camera.fade(0x000000, 2000);
+			game.time.events.add(3000, goCarlaRoom, this);
+		}
 	}
 }
+
+function goCarlaRoom(){
+	game.state.start('carlaRoom');
+}
+
+var prayer = false;
+var sceneComplete = false;
+var nextMorning = true;
 
 var carlaRoom = function(game){};
 carlaRoom.prototype = {
@@ -72,12 +85,17 @@ carlaRoom.prototype = {
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
 
-		background = this.game.add.tileSprite(0, 0, 1200, 600, 'carlaRoom');
-		game.world.setBounds(0, 0, 1200, 600);
+		background = this.game.add.tileSprite(0, 0, 1800, 600, 'carlaRoom');
+		game.world.setBounds(0, 0, 1800, 600);
 
 		player = new Carla(game, 500, 420, 'carlaAtlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
+
+		cutscene = true;
+		nextDialogue = 0;
+		nextText = currentScript[nextDialogue].Text;
+		currentDialogue(nextText, currentScript);
 	},
 
 	update: function(){
@@ -89,7 +107,38 @@ carlaRoom.prototype = {
 			console.log('spacePressed');
 			currentDialogue(nextText, currentScript);
 		}
+
+		if(lastChoice == 1){
+			lastChoice = 0;
+			prayer = true;
+
+			nextDialogue = 6;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+		}
+
+		if(lastChoice == 2){
+			lastChoice = 0;
+			prayer = true;
+
+			nextDialogue = 19;
+			nextText = currentScript[nextDialogue].Text;
+			currentDialogue(nextText, currentScript);
+		}
+
+
+		if(cutscene == false && nextDialogue == 18 && nextMorning == false){
+			cutscene = true;
+			game.camera.fade(0x000000, 2000);
+			game.time.events.add(3000, goNextMorning, this);
+		}
 	}
+}
+
+function goNextMorning(){
+	game.camera.resetFX();
+	nextMorning = true;
+	cutscene = false;
 }
 
 game.state.add('carlaHouse', carlaHouse);

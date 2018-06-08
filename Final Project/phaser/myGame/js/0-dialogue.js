@@ -10,6 +10,15 @@ var line = [];
 var wordIndex = 0;
 var wordDelay = 0;
 
+WebFontConfig = {
+	active: function(){
+		game.time.events.add(Phaser.Timer.SECOND, createText, this);
+	},
+	google:{
+		families: ['VT323']
+	}
+};
+
 //Style the text in the dialogue boxes
 var style = {
 	fill: "#fff",
@@ -17,7 +26,8 @@ var style = {
 	boundsAlignV: "top",
 	wordWrap: true,
 	wordWrapWidth: 800,
-	fontSize: 24
+	fontSize: 30,
+	font: 'VT323'
 };
 
 
@@ -40,6 +50,7 @@ function currentDialogue(key, script){
 
 	//Print out current text
 	text0 = game.add.text(0, 0, '', style);
+	game.world.bringToTop(text0);
 	text0.fixedToCamera = true;
 	text0.setTextBounds(200, 605, 800, 100);
 	printText(key);

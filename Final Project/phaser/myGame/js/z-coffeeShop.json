@@ -104,7 +104,7 @@
 		"id":"news11",
 		"num": 12,
 		"speaker":"Carla",
-		"Text":"Carla: I go grab them!",
+		"Text":"Carla: I'll go grab them!",
 		"continue":false,
 		"Branch":false
 	},
