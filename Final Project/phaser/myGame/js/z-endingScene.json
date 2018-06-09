@@ -1,0 +1,175 @@
+[
+
+	{
+		"id":"carlaNewsStory1",
+		"num": 0,
+		"Text":"Breaking News!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaNewsStory2",
+		"num": 1,
+		"Text":"Around 2pm today, ICE agents had set up checkpoints around Los Angeles county. Over 100 people are estimated to be deported by tonight.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaNewsStory3",
+		"num": 2,
+		"Text":"Local residents say that no one had expected or were ready for these checkpoints. It came as a surprise to the whole neighborhood.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaNewsStory4",
+		"num": 3,
+		"Text":"Many families were split up today and the children of those families suffered for it the most.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"carlaNewsStory5",
+		"num": 4,
+		"Text":"Children who were born in the U.S. had to watch their parents be arrested. Many of those children will be going into foster care...",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Turn TV off",
+			"Change the channel"
+		]	
+	},
+
+	{
+		"id":"taliyahNewsStory1",
+		"num": 5,
+		"Text":"Earlier today, Taliyah Atlun, a 21 year old woman, was attacked while walking home.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"taliyahNewsStory2",
+		"num": 6,
+		"Text":"The attackers supposedly grabbed Atlun's hijab from behind and dragged her to down to the ground.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"taliyahNewsStory3",
+		"num": 7,
+		"Text":"The assault continued with a series of kicks and stomps. She also said that they might have been spitting on her.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"taliyahNewsStory4",
+		"num": 8,
+		"Text":"Atlun observed 4 attackers, 3 males and 1 female. She recalls the female recording the whole event on her phone while the men assaulted her.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"taliyahNewsStory4",
+		"num": 9,
+		"Text":"In just a moment, we'll be showing you the sketches of the suspects. If you see them, please contact your local authorities.",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Turn TV off",
+			"Change the channel"
+		]
+	},
+
+	{
+		"id":"schoolShootingStory1",
+		"num": 10,
+		"Text":"At 1:27pm today, there was an active shooter situation at LaPierre High School. 17 people were killed and 14 were injured and are recieving medical attention.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"schoolShootingStory2",
+		"num": 11,
+		"Text":"The shooter was identified as 19 year old Eric Collins.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"schoolShootingStory3",
+		"num": 12,
+		"Text":"Collins was notorious for being a problem child when he attended LaPierre High and was later expelled.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"schoolShootingStory4",
+		"num": 13,
+		"Text":"Collins used an AR-15 semi-automatic rifle that he purchased a mothn ago to commit these acts of violence.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"schoolShootingStory5",
+		"num": 14,
+		"Text":"Officers were on the scene to arrest Collins immediately following the shooting. They stated that there were many signs of Collins dealing with mental illness.",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Turn TV off",
+			"Change the channel"
+		]
+	},
+
+	{
+		"id":"transgenderStory1",
+		"num": 15,
+		"Text":"27 year old Vanessa Smith was shot several times and killed last night. Smith's body was found in an alleyway around 6am this morning.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"transgenderStory2",
+		"num": 16,
+		"Text":"Smith was a prevalent face in the transgender community around the area, but not all shared her beliefs.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"transgenderStory3",
+		"num": 17,
+		"Text":"Her body was found next to a few painted messages of hateful natures.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"transgenderStory4",
+		"num": 18,
+		"Text":"No arrests have been made...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"theEnd",
+		"num": 19,
+		"Text":"Damn, is it just the news that is on right now? Fuck it, I'm not watching TV anymore. I'm just going to play a video game...",
+		"continue":false,
+		"Branch":false
+	}
+
+]

@@ -12,6 +12,7 @@ var momScene = false;
 var currentScript;
 var breakfast = false;
 var leaveMom = false;
+var showingInfo = false;
 
 
 
@@ -20,44 +21,72 @@ mainMenu.prototype = {
 	preload: function(){
 		game.load.spritesheet('button1', 'assets/img/button1.png', 495, 67);
 		game.load.spritesheet('button2', 'assets/img/button2.png', 590, 67);
+		game.load.spritesheet('controlsButton', 'assets/img/controlsButton.png', 300, 150, 2);
+		game.load.spritesheet('creditsButton', 'assets/img/creditsButton.png', 300, 150, 2);
 		game.load.image('mainMenu', 'assets/img/mainMenu.png');
-		game.load.spritesheet('mainMenuTV', 'assets/img/mainMenuTV.png', 555, 336);
+		game.load.image('mainMenuDA', 'assets/img/mainMenuDA.png');
+		game.load.spritesheet('mainMenuTV', 'assets/img/mainMenuTV.png', 555, 336, 20);
 		game.load.audio('mainMenuMusic', 'assets/audio/CrazyHeart.MP3');
-		game.load.image('DeAndrePortrait', 'assets/img/deAndrePortrait.png', 100, 100);
-		game.load.image('momPortrait', 'assets/img/momPortrait.png', 112, 143);
-		game.load.image('sisterPortrait', 'assets/img/sisterPortrait.png', 76, 100);
+		game.load.image('DeAndrePortrait', 'assets/img/deAndrePortrait.png', 200, 200);
+		game.load.image('momPortrait', 'assets/img/momPortrait.png', 200, 200);
+		game.load.image('sisterPortrait', 'assets/img/sisterPortrait.png', 200, 200);
 		game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
 		
 	},
 
 	create: function(){
-		menuBackground = this.game.add.tileSprite(0, 0, 1200, 600, 'mainMenu');
+
+		if(currentArc === 'carla'){
+			menuBackground = this.game.add.tileSprite(0, 0, 1200, 600, 'mainMenuDA');
+		}else{
+			menuBackground = this.game.add.tileSprite(0, 0, 1200, 600, 'mainMenu');
+		}
+		
 		playButton = game.add.button(304, 100, 'button1', play, this, 0);
 		playButton.scale.setTo(1.1, 4.61);
 
+		controlsButton = game.add.button(200, 600, 'controlsButton', showControls, this, 0);
+
+		creditsButton = game.add.button(700, 600, 'creditsButton', showCredits, this, 0);
+
 		//Add tv to center of the screen
 		mainMenuTV = game.add.sprite(304, 100, 'mainMenuTV');
-		mainMenuTV.animations.add('static', [1, 2, 3], 8, true);
+		mainMenuTV.animations.add('static', [1, 5, 6], 8, true);
 		mainMenuTV.animations.play('static');
 		mainMenuTV.animations.add('news', [0], 1, true);
+		mainMenuTV.animations.add('controls', [2, 3, 2, 3, 7, 8, 7, 8, 10, 11, 10, 11], 1, false);
+		mainMenuTV.animations.add('credits', [12, 13, 15, 16, 17], .2, false);
 		mainMenuTV.inputEnabled = true;
 
 		mainMenuMusic = game.add.audio('mainMenuMusic');
 		mainMenuMusic.play('', 0, 1, true);
 
 
+
+
 	},
 
 	update: function(){
-		if(mainMenuTV.input.pointerOver()){
+		if(mainMenuTV.input.pointerOver() && showingInfo == false){
 			mainMenuTV.animations.play('news');
 			mainMenuTV.events.onInputDown.add(play, this);
 			this.game.canvas.style.cursor="pointer";
-		}else{
+		}else if(showingInfo == false){
 			mainMenuTV.animations.play('static');
 			this.game.canvas.style.cursor="AUTO";
 		}
 
+		if(controlsButton.input.pointerOver()){
+			controlsButton.frame = 1;
+		}else{
+			controlsButton.frame = 0;
+		}
+
+		if(creditsButton.input.pointerOver()){
+			creditsButton.frame = 1;
+		}else{
+			creditsButton.frame = 0;
+		}
 	
 		
 	}
@@ -65,13 +94,31 @@ mainMenu.prototype = {
 
 
 function play(){
-	mainMenuMusic.stop();
-	if(currentArc === 'deAndre'){
-		game.state.start('opening');
+	if(showingInfo == false){
+		mainMenuMusic.stop();
+		if(currentArc === 'deAndre'){
+			game.state.start('opening');
+		}
+		if(currentArc === 'carla'){
+			game.state.start('coffeeShop');
+		}
 	}
-	if(currentArc === 'carla'){
-		game.state.start('coffeeShop');
-	}
+}
+
+function showControls(){
+	showingInfo = true;
+	mainMenuTV.animations.play('controls');
+	game.time.events.add(12000, resumeStatic, this);
+}
+
+function showCredits(){
+	showingInfo = true;
+	mainMenuTV.animations.play('credits');
+	game.time.events.add(25000, resumeStatic, this);
+}
+
+function resumeStatic(){
+	showingInfo = false;
 }
 
 
@@ -298,10 +345,7 @@ bedroom.prototype = {
 		}
 	},
 
-	render: function() {
-   	// Sprite debug info
-  	  	game.debug.body(shelf);
-	}
+	
 }
 
 
@@ -612,7 +656,7 @@ livingRoom.prototype = {
 			interactDoor2 = null;
 		}
 
-		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, door2) && bedroomNews == false){
+		if(game.input.keyboard.justPressed(Phaser.Keyboard.E) && game.physics.arcade.overlap(player, door2)){
 				houseMusic.stop();
 				game.state.start('walkToSchool');
 		}

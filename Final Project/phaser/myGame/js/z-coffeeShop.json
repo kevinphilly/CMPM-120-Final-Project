@@ -76,8 +76,8 @@
 	{
 		"id":"news8",
 		"num": 9,
-		"speaker":"Emily",
-		"Text":"Emily: Damn. That sucks.",
+		"speaker":"Emma",
+		"Text":"Emma: Damn. That sucks.",
 		"continue":true,
 		"Branch":false
 	},
@@ -94,8 +94,8 @@
 	{
 		"id":"news10",
 		"num": 11,
-		"speaker":"Emily",
-		"Text":"Emily: Looks like our drinks are ready though.",
+		"speaker":"Emma",
+		"Text":"Emma: Looks like our drinks are ready though.",
 		"continue":true,
 		"Branch":false
 	},

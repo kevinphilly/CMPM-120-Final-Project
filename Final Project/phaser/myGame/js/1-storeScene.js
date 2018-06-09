@@ -171,7 +171,7 @@ insideStore.prototype = {
 		game.camera.follow(player);
 		player.scale.y = 1.12;
 
-		Reggie = game.add.sprite(1000, 272, 'reggie');
+		Reggie = game.add.sprite(1000, 262, 'reggie');
 		game.physics.enable(Reggie);
 		Reggie.enableBody = true;
 		Reggie.immovable = true;
@@ -347,6 +347,10 @@ outsideStore.prototype = {
 		DAcop.frame = 3;
 		DAcop.animations.add('drawGun', [3, 4, 5], 4, false);
 		DAcop.animations.add('fireGun', [6], 1, false);
+
+		Reggie = game.add.sprite(50, 250, 'reggie');
+		Reggie.scale.x = 0.8;
+		Reggie.scale.y = 0.8;
 
 		cutscene = true;
 		nextDialogue = 40;

@@ -1,6 +1,7 @@
 //var nextTextID = Alarm;
 var interactText;
 var cutscene = false;
+var lockMovement = false;
 var speed;
 
 Carla.prototype.preload = function(){
@@ -19,9 +20,9 @@ function Carla(game, posX, posY, key, frame){
 	this.body.setSize(120, 280, 80, 9);
 
 	this.animations.add('walkLeft', [0, 1, 2, 3, 4], 25, true);
-	this.animations.add('walkRight', [7, 8, 9, 10, 11], 25, true);
+	this.animations.add('walkRight', [8, 9, 10, 11, 12], 25, true);
 	this.animations.add('idleLeft', [5], 80, true);
-	this.animations.add('idleRight', [6], 80, true);
+	this.animations.add('idleRight', [7], 80, true);
 
 
 }
@@ -40,11 +41,11 @@ Carla.prototype.update = function(){
 		this.body.velocity.x = speed;
 		this.animations.play('walkRight');
 		lastMove = "right"		
-	}else if (lastMove === "left"){
+	}else if (lastMove === "left" && lockMovement == false){
 		this.body.velocity.x = 0;
 		this.body.velocity.y = 0;
 		this.animations.play('idleLeft');
-	}else if (lastMove === "right"){
+	}else if (lastMove === "right" && lockMovement == false){
 		this.body.velocity.x = 0;
 		this.body.velocity.y = 0;
 		this.animations.play('idleRight');

@@ -228,7 +228,7 @@
 		"id":"clerkConflict12",
 		"num": 25,
 		"speaker":"Clerk",
-		"Text":"Clerk: If the four of you don't leave right now, I'm calliing the police!",
+		"Text":"Clerk: If the four of you don't leave right now, I'm calling the police!",
 		"continue":false,
 		"Branch":true,
 		"Choices":[
@@ -359,7 +359,8 @@
 		"num": 39,
 		"speaker":"DeAndre",
 		"Text":"DeAndre: Man, I'm leaving. Y'all can stay here if you want.",
-		"continue":false,
+		"continue":true,
+		"goto": 66,
 		"Branch":false
 	},
 
@@ -592,6 +593,34 @@
 		"num": 65,
 		"Text":"Once again, DeAndre feels his phone vibrating in his pocket. He reaches into his pocket to silence his phone.",
 		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"leave4",
+		"num": 66,
+		"speaker":"Reggie",
+		"Text":"Reggie: Oh shit, it's too late. Unlucky for us, there's a cop right outside.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"leave5",
+		"num": 67,
+		"speaker":"Clerk",
+		"Text":"Clerk: Police! Arrest these criminals! They're stealing from my store!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"leave5",
+		"num": 68,
+		"speaker":"DeAndre",
+		"Text":"DeAndre: Wait what?! NO!",
+		"continue":true,
+		"goto": 36,
 		"Branch":false
 	}
 

@@ -1,0 +1,805 @@
+[
+
+	{
+		"id":"nextMorning1",
+		"num": 0,
+		"speaker":"Mama",
+		"Text":"Mamá: Buenos días Carla.\n(Good morning Carla)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning2",
+		"num": 1,
+		"speaker":"Carla",
+		"Text":"Carla: ¡Buenos días Mamá! ¿A donde están Isabel y Emma?\n(Good morning Mamá! Where are Isabel and Emma?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning3",
+		"num": 2,
+		"speaker":"Mama",
+		"Text":"Mamá: Fueron a la estación de policía para dejar algunas cosas de tu hermano.\n(They went to the police station to drop off some of your brother's stuff)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning4",
+		"num": 3,
+		"speaker":"Carla",
+		"Text":"Carla: ¡¿Qué?! ¡Quiero ir a verlo antes de que se vaya también!\n(What?! I want to go see him before he leaves too!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning5",
+		"num": 4,
+		"speaker":"Mama",
+		"Text":"Mamá: No, necesito que estés conmigo. No puedo estar solo ahora.\n(No, I need you with me. I can't be alone right now.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning6",
+		"num": 5,
+		"speaker":"Carla",
+		"Text":"Carla: Ah okay, Mamá...yo entiendo.\n(Oh okay, Mamá… I understand.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning7",
+		"num": 6,
+		"speaker":"Mama",
+		"Text":"Mamá: Gracias, Carla. Eres una buena hija. ¡Ey, vamos a hacer pozole!\n(Thanks Carla. You're such a good kid. Hey, let's make pozole!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning8",
+		"num": 7,
+		"speaker":"Carla",
+		"Text":"Carla: ¡Sí, por favor!\n(Yes please!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning9",
+		"num": 8,
+		"speaker":"Mama",
+		"Text":"Mamá: Bueno, pero primero tenemos que ir al mercado.\n(Okay, but we need to go to the market first.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"nextMorning10",
+		"num": 9,
+		"speaker":"Carla",
+		"Text":"!Vamos!",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket1",
+		"num": 10,
+		"speaker":"Carla",
+		"Text":"Carla: Entonces Mamá, porque estamos cocinando tanta comida?\n(So Mamá, why are we cooking so much food?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket2",
+		"num": 11,
+		"speaker":"Mama",
+		"Text":"Mamá: Papá viena a casa este noche.\n(Papá is coming home this weekend)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket3",
+		"num": 12,
+		"speaker":"Carla",
+		"Text":"Carla: ¡¿Que?! ¡¿En serio?!\n(What?! Seriously?!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket4",
+		"num": 13,
+		"speaker":"Mama",
+		"Text":"Mamá: Sí. Debe de estar en casa a la hora que lleguemos nosotras ahí.\n(Yes. He should be home by the time we get back.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket5",
+		"num": 14,
+		"speaker":"Carla",
+		"Text":"Carla: ¿Porque no dijiste algo má temprano?\n(Why didn't you say something earlier?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket6",
+		"num": 15,
+		"speaker":"Mama",
+		"Text":"Mamá: Yo quería que fuera una sorpresa para ti\n(I wanted it to be a surprise for you.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket7",
+		"num": 16,
+		"speaker":"Carla",
+		"Text":"Carla: ¡Es una gran sorpresa!\n(It's a great surprise!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket8",
+		"num": 17,
+		"speaker":"Mama",
+		"Text":"Mamá: Bueno, me alegra.\n(Good, I'm glad.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket9",
+		"num": 18,
+		"speaker":"Carla",
+		"Text":"Carla: Las cosas se van a mejorar ya que Papá esté en casa.\n(Things will be better when Papá is home.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket10",
+		"num": 19,
+		"speaker":"Mama",
+		"Text":"Mamá: Tienes razón. Eso es porque tenemos que celebrar su regresada. \n(You're right, that's why we are going to celebrate his return.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket11",
+		"num": 20,
+		"speaker":"Carla",
+		"Text":"Carla: ¡Si! ¡Hagamos un pastel también Mamá!\n(Yes! Let's bake a cake too Mamá!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket12",
+		"num": 21,
+		"speaker":"Mama",
+		"Text":"Mamá: Jaja bueno. Pero no estoy segura si podremos comer toda esta comida.\n(Haha okay. But I'm not sure we can aeat all this food though.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket13",
+		"num": 22,
+		"speaker":"Carla",
+		"Text":"Carla: Claro que si...\n(Of course we will...)",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"walkToMarket14",
+		"num": 23,
+		"speaker":"Mama",
+		"Text":"Mamá: Que pasa? (What’s going on?)",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Stay with mamá",
+			"Get closer to see"
+		]
+	},
+
+	{
+		"id":"stayWithMama1",
+		"num": 24,
+		"Text":"Carla and her mom keep their distance. Looking around for clues as to what might be happening. They see their neighbor, Rosa.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayWithMama2",
+		"num": 25,
+		"speaker":"Mama",
+		"Text":"Mamá: Hola, Rosa. ¿Qué es lo que sucede?\n(Hey, Rosa. What is happening?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayWithMama3",
+		"num": 26,
+		"speaker":"Rosa",
+		"Text":"Rosa: Es ICE. Están chequeando si la gente tiene órdenes de deportación.\n(It's the ICE. They're checking for deportation orders at the checkpoint.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayWithMama4",
+		"num": 27,
+		"speaker":"Mama",
+		"Text":"Mamá: ¡¿Que?! ¡No puede ser! ¡Mi esposo está para regresar hoy dia!\n(What?! My husband is supposed to be coming back today!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayWithMama5",
+		"num": 28,
+		"speaker":"Rosa",
+		"Text":"Rosa: Oh...lo siento Lupe.\n(Oh...I'm sorry Lupe.)",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Run to the checkpoint",
+			"Stay behind"
+		]
+	},
+
+	{
+		"id":"runToCheckpoint1",
+		"num": 29,
+		"speaker":"Mamá",
+		"Text":"Mamá: CARLA!!",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint2",
+		"num": 30,
+		"speaker":"Carla",
+		"Text":"Carla: PAPA!!!!!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint3",
+		"num": 31,
+		"speaker":"Papa",
+		"Text":"Papá: Carla!!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint2",
+		"num": 32,
+		"speaker":"Carla",
+		"Text":"Carla: Let go of my Papá!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint3",
+		"num": 33,
+		"speaker":"ICECop",
+		"Text":"Officer: Listen, you don't want to get involved. Don't get any closer.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint4",
+		"num": 34,
+		"speaker":"Carla",
+		"Text":"Carla: Let him go!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint5",
+		"num": 35,
+		"speaker":"ICECop",
+		"Text":"Officer: Just go home little girl.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint6",
+		"num": 36,
+		"speaker":"Papa",
+		"Text":"Papá: Carla, escucha a la policía. Portate bien.\n(Carla, listen to the officer. Be good.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint7",
+		"num": 37,
+		"speaker":"Carla",
+		"Text":"Carla: Papá...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint8",
+		"num": 38,
+		"speaker":"Papa",
+		"Text":"Papá: Ser fuerte y cuidar a la familia. Siempre.\n(Be strong and take care of the family. Always.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint9",
+		"num": 39,
+		"speaker":"ICECop",
+		"Text":"Officer: Alright! Everyone inside the truck!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"runToCheckpoint10",
+		"num": 40,
+		"speaker":"Carla",
+		"Text":"Carla: NO PLEASE!! PAPA!",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"stayBehind1",
+		"num": 41,
+		"speaker":"Mamá",
+		"Text":"Mamá: No...no, no, NO. Vamos Carla. Vamos a casa.\n(No...no, no, NO. Let's go Carla. We're going home.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayBehind2",
+		"num": 42,
+		"speaker":"Carla",
+		"Text":"Carla: Espera Mamá...y si...\n(Wait Mamá...what if...)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayBehind3",
+		"num": 43,
+		"speaker":"Mamá",
+		"Text":"Mamá: No! Nos vamos ahorita!\n(No! We're going home now!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayBehind4",
+		"num": 44,
+		"speaker":"Carla",
+		"Text":"Carla: ....Okay Mamá.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"stayBehindEnding1",
+		"num": 45,
+		"speaker":"Mama",
+		"Text":"Mamá: ¡¿Alonso....Alonso!! Estás aqui?!\n(Alonso....Alonso!! Are you here?!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayBehindEnding2",
+		"num": 46,
+		"Text":". . . .",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayBehindEnding3",
+		"num": 47,
+		"speaker":"Mama",
+		"Text":"Mamá: No...Alonso...no...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"stayBehind4",
+		"num": 48,
+		"speaker":"Carla",
+		"Text":"Carla: Se fuerte, Mamá...siempre fuerte.\n(Stay strong, Mamá...always strong.)",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee1",
+		"num": 49,
+		"speaker":"Carla",
+		"Text":"Carla: Quédate aquí Mamá.\n(Stay here Mamá.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee2",
+		"num": 50,
+		"speaker":"Mama",
+		"Text":"Mamá: Carla, no! Vente!\n(Carla, no! Come back!)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee3",
+		"num": 51,
+		"speaker":"Carla",
+		"Text":"Carla: Solo voy para ver mejor. Quédate aquí, no quiero que la policía le reconozca.\n(I just want a closer look. Stay here, so the plice don't ID you.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee4",
+		"num": 52,
+		"speaker":"Mama",
+		"Text":"Mamá: Okay, solo ten cuidado por favor.\n(Okay, just be careful please.)",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee5",
+		"num": 53,
+		"speaker":"Carla",
+		"Text":"Carla: PAPA!!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee6",
+		"num": 54,
+		"speaker":"Papa",
+		"Text":"Papá: ¡Carla! ¿Porque estás aquí?\n(Carla! Why are you here?)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee7",
+		"num": 55,
+		"speaker":"Carla",
+		"Text":"Carla: Mamá y yo íbamos al mercado a preparar una cena especial para tu regreso.\n(Mamá and I were going to the marker to make a special dinner for your return.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee8",
+		"num": 56,
+		"speaker":"Papa",
+		"Text":"Papá: Lo siento Carla. Intenté lo mejor para ti y la familia.\n(I'm sorry Carla, I tried my best for you and the family.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee9",
+		"num": 57,
+		"speaker":"Carla",
+		"Text":"Carla: Yo sé...\n(I know...)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee10",
+		"num": 58,
+		"speaker":"Papa",
+		"Text":"Papá: Mantén tu cabeza en alto y siempre se fuerte.\n(Keep your head held high and always be strong.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee11",
+		"num": 59,
+		"speaker":"Carla",
+		"Text":"Carla: Lo haré Papá...\n(I will Papá…) ",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee12",
+		"num": 60,
+		"speaker":"Papa",
+		"Text":"Papá: Ve ahora. No quiero que tu madre sea arrestada también.\n(Go now. I don't want your mother to be arrested too.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee13",
+		"num": 61,
+		"speaker":"Carla",
+		"Text":"Carla: Okay...te amo Papá.\n(I love you.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee14",
+		"num": 62,
+		"speaker":"Papa",
+		"Text":"Papá: Te amo mucho. Adiós mija.\n(I love you too.)",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee15",
+		"num": 63,
+		"speaker":"Carla",
+		"Text":"Carla: Mamá...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"getCloserToSee16",
+		"num": 64,
+		"speaker":"Mama",
+		"Text":"Mamá: ¿Viste a tu padre? ¿Está él ahí?\n(Did you see your father? Was he there?)",
+		"continue":false,
+		"Branch":true,
+		"Choices":[
+			"Tell her the truth",
+			"Lie"
+		]
+	},
+
+	{
+		"id":"tellTheTruth1",
+		"num": 65,
+		"speaker":"Carla",
+		"Text":"Carla: Sí...Papá está ahí pero me dijo que no te diga.\n(Yeah...Papá is there, but he told me not to tell you.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"tellTheTruth2",
+		"num": 66,
+		"speaker":"Mama",
+		"Text":"Mamá: No.. Alonso!",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"tellTheTruth3",
+		"num": 67,
+		"speaker":"Carla",
+		"Text":"Carla: Mamá, no llores aquí. Vamos a casa.\n(Mamá, don’t cry here. Let’s go home.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"tellTheTruth4",
+		"num": 68,
+		"speaker":"ICECop",
+		"Text":"Officer: Move it along.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"tellTheTruth5",
+		"num": 69,
+		"speaker":"Carla",
+		"Text":"Carla: Mamá vamos.\n(Mamá let’s go.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"tellTheTruth6",
+		"num": 70,
+		"speaker":"ICECop",
+		"Text":"Officer: Actually, let's see some photo ID.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"tellTheTruth7",
+		"num": 71,
+		"speaker":"Carla",
+		"Text":"Carla: For what? Isn’t this the land of the free and liberty and justice for all… we didn’t do anything so leave us alone.",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"tellTheTruth8",
+		"num": 72,
+		"speaker":"ICECop",
+		"Text":"Officer: That only applies to U.S citizens. Which you are not. Both of you place your hands on top of your head.",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"lie1",
+		"num": 73,
+		"speaker":"Carla",
+		"Text":"Carla: Um no. No lo había visto. A lo mejor ya está en casa.\n(Um no. I didn’t see him. He's probably already home.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie2",
+		"num": 74,
+		"speaker":"Mama",
+		"Text":"Mamá: Oh gracias a Dios! Bueno, vamos por la comida y vamos a casa.\n(Oh thank God! Okay, well let’s get the food and head home.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie3",
+		"num": 75,
+		"speaker":"Carla",
+		"Text":"Carla: Okay Mamá...",
+		"continue":false,
+		"Branch":false
+	},
+
+	{
+		"id":"lie4",
+		"num": 76,
+		"speaker":"Mama",
+		"Text":"Mamá: Tu padre ya debe de haber llegado...\n(Your father should had been home now...)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie5",
+		"num": 77,
+		"speaker":"Carla",
+		"Text":"Carla: ...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie6",
+		"num": 78,
+		"speaker":"Mama",
+		"Text":"Mamá: Carla...?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie7",
+		"num": 79,
+		"speaker":"Isabel",
+		"Text":"Isabel: Hey. Why is everyone just standing in the living room?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie8",
+		"num": 80,
+		"speaker":"Mama",
+		"Text":"Mamá: Tu papá todavía no ha llegado.\n(Your father isn’t back...he was suppose to be an hour ago.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie9",
+		"num": 81,
+		"speaker":"Emma",
+		"Text":"Emma: Habian controles de ICE hoy, piensas que...(There were ICE checkpoints today, do you think...)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie10",
+		"num": 82,
+		"speaker":"Mama",
+		"Text":"Mamá: No. Carla me dijo que no estaba ahí que se fijó.\n(No. Carla said he wasn’t there when she checked.)",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie11",
+		"num": 83,
+		"speaker":"Carla",
+		"Text":"Carla: ...",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie12",
+		"num": 84,
+		"speaker":"Isabel",
+		"Text":"Isabel: ...Carla?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie13",
+		"num": 85,
+		"speaker":"Carla",
+		"Text":"Carla: Yes?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie14",
+		"num": 86,
+		"speaker":"Isabel",
+		"Text":"Isabel: Was he there?",
+		"continue":true,
+		"Branch":false
+	},
+
+	{
+		"id":"lie15",
+		"num": 87,
+		"speaker":"Carla",
+		"Text":"Carla: ...Se fuerte...I always have to stay strong...se fuerte Carla...",
+		"continue":false,
+		"Branch":false
+	}
+
+]

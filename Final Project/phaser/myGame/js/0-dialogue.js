@@ -160,6 +160,7 @@ function printText(key){
 
 function nextWord(){
 	text0.text = text0.text.concat(line[wordIndex] + " ");
+	game.world.bringToTop(text0);
 	wordIndex++;
 	if(wordIndex === line.length){
 		wordLock = false;
