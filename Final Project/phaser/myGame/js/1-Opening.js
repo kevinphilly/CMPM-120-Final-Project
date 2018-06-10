@@ -26,7 +26,7 @@ mainMenu.prototype = {
 		game.load.image('mainMenu', 'assets/img/mainMenu.png');
 		game.load.image('mainMenuDA', 'assets/img/mainMenuDA.png');
 		game.load.spritesheet('mainMenuTV', 'assets/img/mainMenuTV.png', 555, 336, 20);
-		game.load.audio('mainMenuMusic', 'assets/audio/CrazyHeart.MP3');
+		game.load.audio('mainMenuMusic', 'assets/audio/CrossroadOfStyle.MP3');
 		game.load.image('DeAndrePortrait', 'assets/img/deAndrePortrait.png', 200, 200);
 		game.load.image('momPortrait', 'assets/img/momPortrait.png', 200, 200);
 		game.load.image('sisterPortrait', 'assets/img/sisterPortrait.png', 200, 200);
@@ -42,7 +42,7 @@ mainMenu.prototype = {
 			menuBackground = this.game.add.tileSprite(0, 0, 1200, 600, 'mainMenu');
 		}
 		
-		playButton = game.add.button(304, 100, 'button1', play, this, 0);
+		playButton = game.add.button(304, 100, 'button1', showWarning, this, 0);
 		playButton.scale.setTo(1.1, 4.61);
 
 		controlsButton = game.add.button(200, 600, 'controlsButton', showControls, this, 0);
@@ -92,6 +92,11 @@ mainMenu.prototype = {
 	}
 }
 
+function showWarning(){
+    mainMenuTV.animations.stop();
+    mainMenuTV.frame = 18;
+    game.time.events.add(5000, play, this);
+}
 
 function play(){
 	if(showingInfo == false){
@@ -250,7 +255,7 @@ bedroom.prototype = {
 
 		//Player can interact with the door
 		if(game.physics.arcade.overlap(player, door) && interactDoor == null){
-			interactDoor = game.add.text(door.x, door.y - 50, 'E', {fill:"#facade"});
+			interactDoor = game.add.text(door.x, door.y - 50, 'E', {fill:"#00ff00"});
 		}
 
 		//Remove the text if the player steps away from the door
@@ -270,7 +275,7 @@ bedroom.prototype = {
 
 		//Interact with the tv in the room
 		if(game.physics.arcade.overlap(player, tv) && interactTV == null && bedroomNews == false){
-			interactTV = game.add.text(tv.x, tv.y - 50, 'E', {fill:"#facade"});
+			interactTV = game.add.text(tv.x, tv.y - 50, 'E', {fill:"#00ff00"});
 		}
 
 		//Remove the text if the player steps away from the tv
@@ -290,7 +295,7 @@ bedroom.prototype = {
 
 		//Code to interact with shelf
 		if(game.physics.arcade.overlap(player, shelf) && interactShelf == null && bedroomNews == false){
-			interactShelf = game.add.text(shelf.x, shelf.y - 50, 'E', {fill:"#facade"});
+			interactShelf = game.add.text(shelf.x, shelf.y - 50, 'E', {fill:"#00ff00"});
 		}
 
 		//Remove the text if the player steps away from the shelf
@@ -414,7 +419,7 @@ kitchen.prototype = {
 
 		//Player can interact with mom
 		if(game.physics.arcade.overlap(player, mother) && interactText == null){
-			interactText = game.add.text(mother.x, mother.y - 50, 'E', {fill:"#facade"});
+			interactText = game.add.text(mother.x, mother.y - 50, 'E', {fill:"#00ff00"});
 		}
 
 		//Remove the text if the player steps away from mother
@@ -498,7 +503,7 @@ kitchen.prototype = {
 
 		//Player can interact with the door
 		if(game.physics.arcade.overlap(player, kitchenDoor) && interactKitchenDoor == null){
-			interactKitchenDoor = game.add.text(kitchenDoor.x, kitchenDoor.y - 50, 'E', {fill:"#facade"});
+			interactKitchenDoor = game.add.text(kitchenDoor.x, kitchenDoor.y - 50, 'E', {fill:"#00ff00"});
 		}
 
 		//Remove the text if the player steps away from the door
@@ -518,7 +523,7 @@ kitchen.prototype = {
 
     // Sprite debug info
 
-    	game.debug.body(mother);
+//    	game.debug.body(mother);
 
 	}
 }
@@ -596,7 +601,7 @@ livingRoom.prototype = {
 
 
 		if(game.physics.arcade.overlap(player, tv) == true && interactTextTV == null){
-			interactTextTV = game.add.text(tv.x, tv.y-50, 'E', {fill:"#facade"});
+			interactTextTV = game.add.text(tv.x, tv.y-50, 'E', {fill:"#00ff00"});
 		}
 
 		if(game.physics.arcade.overlap(player, tv) != true && interactTextTV != null){
@@ -615,7 +620,7 @@ livingRoom.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, sister) && interactText == null){
-			interactText = game.add.text(sister.body.x + 100, sister.body.y - 70, 'E', {fill:"#facade"});
+			interactText = game.add.text(sister.body.x + 100, sister.body.y - 70, 'E', {fill:"#00ff00"});
 		}
 
 		if(game.physics.arcade.overlap(player, sister) != true && interactText != null){
@@ -647,7 +652,7 @@ livingRoom.prototype = {
 
 		//Player can interact with the door
 		if(game.physics.arcade.overlap(player, door2) && interactDoor2 == null){
-			interactDoor2 = game.add.text(door2.x, door2.y - 50, 'E', {fill:"#facade"});
+			interactDoor2 = game.add.text(door2.x, door2.y - 50, 'E', {fill:"#00ff00"});
 		}
 
 		//Remove the text if the player steps away from the door

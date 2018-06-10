@@ -17,6 +17,7 @@ coffeeShop.prototype = {
 		game.load.image('MamaPortrait', 'assets/img/MamaPortrait.png');
 		game.load.image('RosaPortrait', 'assets/img/RosaPortrait.png');
 		game.load.text('coffeeShopDialogue', 'js/z-coffeeShop.json');
+        game.load.audio('coffeeMusic', 'assets/audio/coffeeShop.mp3');
 	},
 
 	create: function(){
@@ -55,6 +56,9 @@ coffeeShop.prototype = {
 		nextDialogue = 0;
 		nextText = currentScript[nextDialogue].Text;
 		currentDialogue(nextText, currentScript);
+        
+        coffeeMusic = game.add.audio('coffeeMusic');
+		coffeeMusic.play('', 0, 1, true);
 	},
 
 	update: function(){
@@ -119,6 +123,7 @@ coffeeShop.prototype = {
 }
 
 function goCar(){
+    coffeeMusic.stop();
 	game.state.start('carScene');
 }
 

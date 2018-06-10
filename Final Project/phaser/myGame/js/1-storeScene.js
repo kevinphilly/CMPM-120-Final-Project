@@ -60,7 +60,7 @@ afterSchool.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Reggie) == true && interactReggie == null && talkFriends == false){
-			interactReggie = game.add.text(Reggie.x, Reggie.y-50, 'E', {fill:"#facade"});
+			interactReggie = game.add.text(Reggie.x, Reggie.y-50, 'E', {fill:"#00ff00"});
 		}
 
 		if(game.physics.arcade.overlap(player, Reggie) != true && interactReggie != null){
@@ -80,7 +80,7 @@ afterSchool.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Shawn) == true && interactShawn == null){
-			interactShawn = game.add.text(Shawn.x, Shawn.y-50, 'E', {fill:"#facade"});
+			interactShawn = game.add.text(Shawn.x, Shawn.y-50, 'E', {fill:"#00ff00"});
 		}
 
 		if(game.physics.arcade.overlap(player, Shawn) != true && interactShawn != null){
@@ -100,7 +100,7 @@ afterSchool.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Melvin) == true && interactMelvin == null){
-			interactMelvin = game.add.text(Melvin.x, Melvin.y-50, 'E', {fill:"#facade"});
+			interactMelvin = game.add.text(Melvin.x, Melvin.y-50, 'E', {fill:"#00ff00"});
 		}
 
 		if(game.physics.arcade.overlap(player, Melvin) != true && interactMelvin != null){
@@ -150,8 +150,10 @@ insideStore.prototype = {
 	preload: function(){
 		game.load.image('store1', 'assets/img/store1.png');
 		game.load.image('store2', 'assets/img/store2.png');
+        game.load.image('ClerkPortrait', 'assets/img/ClerkPortrait.png');
 		game.load.spritesheet('clerk', 'assets/img/clerk.png');
 		game.load.text('storeScene', 'js/z-storeScene.json');
+        game.load.audio('storeMusic', 'assets/audio/CrazyHeart.mp3');
 	},
 
 	create: function(){
@@ -192,11 +194,26 @@ insideStore.prototype = {
 		game.physics.enable(clerk);
 		clerk.enableBody = true;
 		clerk.immovable = true;
+        
+        block = game.add.sprite(1611, 300, '');
+        block.enableBody = true;
+		game.physics.enable(block);
+		block.body.immovable = true;
+        
+        block2 = game.add.sprite(269, 300, '');
+        block2.enableBody = true;
+		game.physics.enable(block2);
+		block2.body.immovable = true;
+        
+        storeMusic = game.add.audio('storeMusic');
+		storeMusic.play('', 0, 1, true);
 
 	},
 
 	update: function(){
 		game.world.bringToTop(player);
+        var hitBlock = game.physics.arcade.collide(player, block);
+        var hitBlock = game.physics.arcade.collide(player, block2);
 
 		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
 			text3.destroy();
@@ -206,7 +223,7 @@ insideStore.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Reggie) == true && interactReggie == null && talkReggie == false){
-			interactReggie = game.add.text(Reggie.x, Reggie.y-50, 'E', {fill:"#facade"});
+			interactReggie = game.add.text(Reggie.x, Reggie.y-50, 'E', {fill:"#00ff00"});
 		}
 
 		if(game.physics.arcade.overlap(player, Reggie) != true && interactReggie != null){
@@ -226,7 +243,7 @@ insideStore.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Shawn) == true && interactShawn == null){
-			interactShawn = game.add.text(Shawn.x, Shawn.y-50, 'E', {fill:"#facade"});
+			interactShawn = game.add.text(Shawn.x, Shawn.y-50, 'E', {fill:"#00ff00"});
 		}
 
 		if(game.physics.arcade.overlap(player, Shawn) != true && interactShawn != null){
@@ -246,7 +263,7 @@ insideStore.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Melvin) == true && interactMelvin == null){
-			interactMelvin = game.add.text(Melvin.x, Melvin.y-50, 'E', {fill:"#facade"});
+			interactMelvin = game.add.text(Melvin.x, Melvin.y-50, 'E', {fill:"#00ff00"});
 		}
 
 		if(game.physics.arcade.overlap(player, Melvin) != true && interactMelvin != null){
@@ -307,6 +324,7 @@ insideStore.prototype = {
 }
 
 function exitStore(){
+    storeMusic.stop();
 	game.state.start('outsideStore');
 	console.log('exitStore');
 
@@ -321,12 +339,17 @@ outsideStore.prototype = {
 	preload: function(){
 		game.load.image('storeExterior', 'assets/img/storeExterior.png');
 		game.load.spritesheet('DAcop', 'assets/img/DAcop.png', 288, 288, 7);
+        game.load.audio('distortedMusic', 'assets/audio/CrazyHeartDistorted.mp3');
+        game.load.audio('gunshot', 'assets/audio/gunshot.mp3');
 	},
 
 	create: function(){
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
 		background = this.game.add.tileSprite(0, 0, 1200, 600, 'storeExterior');
+        
+        distortedMusic = game.add.audio('distortedMusic');
+		distortedMusic.play('', 0, 1, true);
 
 		//Adds the player character
 		player = new DeAndre(game, 360, 400, 'atlas', 6);
@@ -408,9 +431,14 @@ outsideStore.prototype = {
 
 function deAndreDie(){
 	game.camera.fade(0x000000, 7469);
-			player.animations.play('deAndreDeath');
-			DAcop.animations.play('fireGun');
-			game.time.events.add(8000, backToMenu, this);
+    player.animations.play('deAndreDeath');
+    DAcop.animations.play('fireGun');
+    game.time.events.add(8000, backToMenu, this);
+    distortedMusic.stop();
+    gunshot = game.add.audio('gunshot');
+    gunshot.play('', 0, 2, false);
+    
+
 }
 
 function backToMenu(){

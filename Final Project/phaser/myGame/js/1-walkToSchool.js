@@ -132,6 +132,7 @@ var outsideSchool = function(game){};
 outsideSchool.prototype = {
 	preload: function(){
 		game.load.image('school', 'assets/img/school.png');
+        game.load.image('schoolCopPortrait', 'assets/img/schoolCopPortrait.png');
 	},
 
 	create: function(){
