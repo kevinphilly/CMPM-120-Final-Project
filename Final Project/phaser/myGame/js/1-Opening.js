@@ -30,6 +30,7 @@ mainMenu.prototype = {
 		game.load.image('DeAndrePortrait', 'assets/img/deAndrePortrait.png', 200, 200);
 		game.load.image('momPortrait', 'assets/img/momPortrait.png', 200, 200);
 		game.load.image('sisterPortrait', 'assets/img/sisterPortrait.png', 200, 200);
+		game.load.image('eButton', 'assets/img/eButton.png', 75, 75);
 		game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
 		
 	},
@@ -255,7 +256,7 @@ bedroom.prototype = {
 
 		//Player can interact with the door
 		if(game.physics.arcade.overlap(player, door) && interactDoor == null){
-			interactDoor = game.add.text(door.x, door.y - 50, 'E', {fill:"#00ff00"});
+			interactDoor = game.add.sprite((door.x+door.width/2) - 37.5, door.y - 75, 'eButton');
 		}
 
 		//Remove the text if the player steps away from the door
@@ -275,7 +276,7 @@ bedroom.prototype = {
 
 		//Interact with the tv in the room
 		if(game.physics.arcade.overlap(player, tv) && interactTV == null && bedroomNews == false){
-			interactTV = game.add.text(tv.x, tv.y - 50, 'E', {fill:"#00ff00"});
+			interactTV = game.add.sprite((tv.x+tv.width/2) - 37.5, tv.y - 75, 'eButton');
 		}
 
 		//Remove the text if the player steps away from the tv
@@ -295,7 +296,7 @@ bedroom.prototype = {
 
 		//Code to interact with shelf
 		if(game.physics.arcade.overlap(player, shelf) && interactShelf == null && bedroomNews == false){
-			interactShelf = game.add.text(shelf.x, shelf.y - 50, 'E', {fill:"#00ff00"});
+			interactShelf = game.add.sprite((shelf.x+shelf.width/2) - 37.5, shelf.y - 75, 'eButton');
 		}
 
 		//Remove the text if the player steps away from the shelf
@@ -395,11 +396,11 @@ kitchen.prototype = {
 		kitchenDoor.immovable = true;
 
 		//Adds mom
-		mother = game.add.sprite(350, 258, 'mom');
+		mother = game.add.sprite(350, 220, 'mom');
 		game.physics.enable(mother);
 		mother.enableBody = true;
 		mother.immovable = true;
-		mother.scale.y = 1.15;
+		mother.scale.y = 1.3;
 		mother.body.setSize(150, 250, 70, 0);
 
 
@@ -419,7 +420,7 @@ kitchen.prototype = {
 
 		//Player can interact with mom
 		if(game.physics.arcade.overlap(player, mother) && interactText == null){
-			interactText = game.add.text(mother.x, mother.y - 50, 'E', {fill:"#00ff00"});
+			interactText = game.add.sprite((mother.x+mother.width/2) - 37.5, mother.y - 75, 'eButton');
 		}
 
 		//Remove the text if the player steps away from mother
@@ -503,7 +504,7 @@ kitchen.prototype = {
 
 		//Player can interact with the door
 		if(game.physics.arcade.overlap(player, kitchenDoor) && interactKitchenDoor == null){
-			interactKitchenDoor = game.add.text(kitchenDoor.x, kitchenDoor.y - 50, 'E', {fill:"#00ff00"});
+			interactKitchenDoor = game.add.sprite((kitchenDoor.x+kitchenDoor.width/2) - 37.5, kitchenDoor.y - 75, 'eButton');
 		}
 
 		//Remove the text if the player steps away from the door
@@ -601,7 +602,7 @@ livingRoom.prototype = {
 
 
 		if(game.physics.arcade.overlap(player, tv) == true && interactTextTV == null){
-			interactTextTV = game.add.text(tv.x, tv.y-50, 'E', {fill:"#00ff00"});
+			interactTextTV = game.add.sprite((tv.x+tv.width/2) - 37.5, tv.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, tv) != true && interactTextTV != null){
@@ -620,7 +621,7 @@ livingRoom.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, sister) && interactText == null){
-			interactText = game.add.text(sister.body.x + 100, sister.body.y - 70, 'E', {fill:"#00ff00"});
+			interactText = game.add.sprite((sister.body.x+sister.body.width/2) - 37.5, sister.body.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, sister) != true && interactText != null){
@@ -652,7 +653,7 @@ livingRoom.prototype = {
 
 		//Player can interact with the door
 		if(game.physics.arcade.overlap(player, door2) && interactDoor2 == null){
-			interactDoor2 = game.add.text(door2.x, door2.y - 50, 'E', {fill:"#00ff00"});
+			interactDoor2 = game.add.sprite((door2.x+door2.width/2) - 37.5, door2.y - 75, 'eButton');
 		}
 
 		//Remove the text if the player steps away from the door
@@ -667,6 +668,14 @@ livingRoom.prototype = {
 		}
 
 	},
+
+	// render: function() {
+
+ //   	//Sprite debug info
+
+ //   		game.debug.body(sister);
+
+	// }
 
 	
 }

@@ -19,6 +19,10 @@ WebFontConfig = {
 	}
 };
 
+function createText(){
+	//lul
+}
+
 //Style the text in the dialogue boxes
 var style = {
 	fill: "#fff",

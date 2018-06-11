@@ -33,23 +33,26 @@ coffeeShop.prototype = {
 		textBox = game.add.tileSprite(0, 600, 1200, 800, 'textBox');
 		textBox.fixedToCamera = true;
 
-		player = new Carla(game, 1500, 425, 'carlaAtlas', 6);
+		player = new Carla(game, 1500, 391, 'carlaAtlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
-		player.scale.x = 1.2;
-		player.scale.y = 1.2;
+		player.scale.x = 1.4;
+		player.scale.y = 1.5;
 		player.body.setSize(70, 200, 80, 20);
+		speed = 600;
 
-		isabel = game.add.sprite(1500, 252, 'isabel');
+		isabel = game.add.sprite(1500, 201, 'isabel');
 		isabel.enableBody = true;
 		game.physics.enable(isabel);
-		isabel.scale.y = 1.2;
+		isabel.scale.x = 1.2;
+		isabel.scale.y = 1.4;
 		isabel.body.setSize(100, 200, 80, 20);
 
-		emma = game.add.sprite(1700, 250, 'emma');
+		emma = game.add.sprite(1700, 200, 'emma');
 		emma.enableBody = true;
 		game.physics.enable(emma);
-		emma.scale.y = 1.2;
+		emma.scale.x = 1.1;
+		emma.scale.y = 1.4;
 
 		cutscene = true;
 
@@ -82,7 +85,7 @@ coffeeShop.prototype = {
 
 		if(coffee != undefined){
 			if(game.physics.arcade.overlap(player, coffee) == true && interactCoffee == null){
-				interactCoffee = game.add.text(coffee.x, coffee.y-50, 'E', {fill:"#facade"});
+				interactCoffee = game.add.sprite((coffee.x+coffee.width/2) - 37.5, coffee.y - 75, 'eButton');
 			}
 
 			if(game.physics.arcade.overlap(player, coffee) != true && interactCoffee != null){
@@ -100,7 +103,7 @@ coffeeShop.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, isabel) == true && gotCoffee == true){
-				interactIsabel = game.add.text(isabel.x+(isabel.width/2), isabel.y-50, 'E', {fill:"#facade"});
+				interactIsabel = game.add.sprite((isabel.x+isabel.width/2) - 37.5, isabel.y - 75, 'eButton');
 			}
 
 		if(game.physics.arcade.overlap(player, isabel) != true && interactIsabel != null){
@@ -111,13 +114,13 @@ coffeeShop.prototype = {
 		if(game.physics.arcade.overlap(player, isabel) == true && game.input.keyboard.justPressed(Phaser.Keyboard.E) && gotCoffee == true){
 			gotCoffee = false;
 			holdDrink = false;
-			
+
 			nextDialogue = 13;
 			nextText = currentScript[nextDialogue].Text;
 			currentDialogue(nextText, currentScript);
 
-			game.camera.fade(0x000000, 2500);
-			game.time.events.add(2500, goCar, this);
+			game.camera.fade(0x000000, 3000);
+			game.time.events.add(3000, goCar, this);
 			
 		}
 
@@ -191,8 +194,8 @@ carScene.prototype = {
 
 		if(listenIn == true && cutscene == false){
 			cutscene = true;
-			game.camera.fade(0x000000, 2500);
-			game.time.events.add(2500, goHouse, this);
+			game.camera.fade(0x000000, 5000);
+			game.time.events.add(5000, goHouse, this);
 		}
 		
 	}

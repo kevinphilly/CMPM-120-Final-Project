@@ -57,7 +57,7 @@ carlaHouse.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, carlaMama) == true && interactTextMama == null){
-			interactTextMama = game.add.text(carlaMama.x+(carlaMama.width/2), carlaMama.y-50, 'E', {fill:"#facade"});
+			interactTextMama = game.add.sprite((carlaMama.x+carlaMama.width/2) - 37.5, carlaMama.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, carlaMama) != true && interactTextMama != null){
@@ -75,8 +75,8 @@ carlaHouse.prototype = {
 		}
 
 		if(interactMama == true && cutscene == false){
-			game.camera.fade(0x000000, 3000);
-			game.time.events.add(3000, goCarlaRoom, this);
+			game.camera.fade(0x000000, 4000);
+			game.time.events.add(4000, goCarlaRoom, this);
 		}
 	}
 }
@@ -106,16 +106,17 @@ carlaRoom.prototype = {
 		background = this.game.add.tileSprite(0, 0, 1800, 600, 'carlaRoom');
 		game.world.setBounds(0, 0, 1800, 800);
 
-		player = new Carla(game, 500, 420, 'carlaAtlas', 6);
+		player = new Carla(game, 500, 328, 'carlaAtlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
-		player.scale.x = 1.2;
-		player.scale.y = 1.2;
+		player.scale.x = 2;
+		player.scale.y = 2;
 
-		isabel = game.add.sprite(200, 252, 'isabel');
+		isabel = game.add.sprite(40, 42, 'isabel');
 		isabel.enableBody = true;
 		game.physics.enable(isabel);
-		isabel.scale.y = 1.2;
+		isabel.scale.x = 1.5;
+		isabel.scale.y = 2;
 		isabel.body.setSize(100, 200, 80, 20);
 
 		cutscene = true;
@@ -159,8 +160,8 @@ carlaRoom.prototype = {
 			cutscene = true;
 			newDay = true;
 
-			game.camera.fade(0x000000, 2000);
-			game.time.events.add(2000, goNextMorning, this);
+			game.camera.fade(0x000000, 4000);
+			game.time.events.add(4000, goNextMorning, this);
 		}
 	}
 }
@@ -208,7 +209,7 @@ nextMorning.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, carlaMama) == true && interactTextMama == null){
-			interactTextMama = game.add.text(carlaMama.x, carlaMama.y-50, 'E', {fill:"#facade"});
+			interactTextMama = game.add.sprite((carlaMama.x+carlaMama.width/2) - 37.5, carlaMama.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, carlaMama) != true && interactTextMama != null){

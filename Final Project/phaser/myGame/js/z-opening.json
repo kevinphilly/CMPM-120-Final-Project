@@ -92,7 +92,7 @@
 	{
 		"id":"bedroomTV1",
 		"num": 9, 
-		"Text":"Breaking news!",
+		"Text":"Breaking News!",
 		"continue":true,
 		"Branch":false	
 	},
@@ -100,7 +100,31 @@
 	{
 		"id":"bedroomTV2",
 		"num": 10, 
-		"Text":"More news!!",
+		"Text":"Donovan Huey has been released from prison after only 4 months behind bars.",
+		"continue":true,
+		"Branch":false	
+	},
+
+	{
+		"id":"bedroomTV3",
+		"num": 11, 
+		"Text":"Huey was arrested after having sexually assaulted an unconscious woman at a fraternity party.",
+		"continue":true,
+		"Branch":false	
+	},
+
+	{
+		"id":"bedroomTV4",
+		"num": 12, 
+		"Text":"His release was met with outrage from the public, many of which believed he deserved a much longer sentence.",
+		"continue":true,
+		"Branch":false	
+	},
+
+	{
+		"id":"bedroomTV5",
+		"num": 13, 
+		"Text":"The story is still in development. More details to come.",
 		"continue":false,
 		"Branch":false	
 	}

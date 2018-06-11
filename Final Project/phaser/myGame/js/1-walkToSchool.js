@@ -151,10 +151,11 @@ outsideSchool.prototype = {
 		player.scale.y = 1.12;
 
 		//Adds a police officer
-		police1 = game.add.sprite(600, 305, 'police1');
+		police1 = game.add.sprite(600, 266, 'police1');
 		game.physics.enable(police1);
 		police1.enableBody = true;
 		police1.immovable = true;
+		police1.scale.y = 1.15;
 	},
 
 	update: function(){

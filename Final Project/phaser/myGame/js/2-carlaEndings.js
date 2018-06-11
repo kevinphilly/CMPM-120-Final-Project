@@ -64,8 +64,8 @@ finalHouse.prototype = {
 		}
 		
 		if(finished == true && cutscene == false){
-			game.camera.fade(0x000000, 2000);
-			game.time.events.add(2000, goEnd, this);
+			game.camera.fade(0x000000, 4000);
+			game.time.events.add(4000, goEnd, this);
 		}
 	}
 }

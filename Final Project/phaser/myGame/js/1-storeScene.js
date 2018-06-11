@@ -60,7 +60,7 @@ afterSchool.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Reggie) == true && interactReggie == null && talkFriends == false){
-			interactReggie = game.add.text(Reggie.x, Reggie.y-50, 'E', {fill:"#00ff00"});
+			interactReggie = game.add.sprite((Reggie.x+Reggie.width/2) - 37.5, Reggie.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, Reggie) != true && interactReggie != null){
@@ -80,7 +80,7 @@ afterSchool.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Shawn) == true && interactShawn == null){
-			interactShawn = game.add.text(Shawn.x, Shawn.y-50, 'E', {fill:"#00ff00"});
+			interactShawn = game.add.sprite((Shawn.x+Shawn.width/2) - 37.5, Shawn.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, Shawn) != true && interactShawn != null){
@@ -100,7 +100,7 @@ afterSchool.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Melvin) == true && interactMelvin == null){
-			interactMelvin = game.add.text(Melvin.x, Melvin.y-50, 'E', {fill:"#00ff00"});
+			interactMelvin = game.add.sprite((Melvin.x+Melvin.width/2) - 37.5, Melvin.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, Melvin) != true && interactMelvin != null){
@@ -168,17 +168,17 @@ insideStore.prototype = {
 		currentScript = storeDialogue;
 
 		//Adds the player character
-		player = new DeAndre(game, 1333, 390, 'atlas', 6);
+		player = new DeAndre(game, 1333, 405, 'atlas', 6);
 		game.add.existing(player);
 		game.camera.follow(player);
-		player.scale.y = 1.12;
+		player.scale.y = 1;
 
 		Reggie = game.add.sprite(1000, 262, 'reggie');
 		game.physics.enable(Reggie);
 		Reggie.enableBody = true;
 		Reggie.immovable = true;
 
-		Shawn = game.add.sprite(300, 272, 'shawn');
+		Shawn = game.add.sprite(300, 262, 'shawn');
 		game.physics.enable(Shawn);
 		Shawn.enableBody = true;
 		Shawn.immovable = true;
@@ -223,7 +223,7 @@ insideStore.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Reggie) == true && interactReggie == null && talkReggie == false){
-			interactReggie = game.add.text(Reggie.x, Reggie.y-50, 'E', {fill:"#00ff00"});
+			interactReggie = game.add.sprite((Reggie.x+Reggie.width/2) - 37.5, Reggie.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, Reggie) != true && interactReggie != null){
@@ -243,7 +243,7 @@ insideStore.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Shawn) == true && interactShawn == null){
-			interactShawn = game.add.text(Shawn.x, Shawn.y-50, 'E', {fill:"#00ff00"});
+			interactShawn = game.add.sprite((Shawn.x+Shawn.width/2) - 37.5, Shawn.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, Shawn) != true && interactShawn != null){
@@ -263,7 +263,7 @@ insideStore.prototype = {
 		}
 
 		if(game.physics.arcade.overlap(player, Melvin) == true && interactMelvin == null){
-			interactMelvin = game.add.text(Melvin.x, Melvin.y-50, 'E', {fill:"#00ff00"});
+			interactMelvin = game.add.sprite((Melvin.x+Melvin.width/2) - 37.5, Melvin.y - 75, 'eButton');
 		}
 
 		if(game.physics.arcade.overlap(player, Melvin) != true && interactMelvin != null){

@@ -7,10 +7,14 @@ var ending;
 var goToMarket = function(game){};
 goToMarket.prototype = {
 	preload: function(){
-		game.load.image('cityStreet1', 'assets/img/cityStreet1.png');
+		game.load.image('cityStreet1', 'assets/img/cityStreet.png');
 		game.load.image('crowdF', 'assets/img/CrowdF.png');
 		game.load.image('crowdM', 'assets/img/CrowdM.png');
+		game.load.image('crowd', 'assets/img/crowd.png');
 		game.load.image('papa', 'assets/img/Papa.png');
+		game.load.image('rosa', 'assets/img/Rosa.png');
+		game.load.image('PapaPortrait', 'assets/img/PapaPortrait.png');
+		game.load.image('ICECopPortrait', 'assets/img/ICECopPortrait.png');
 	},
 
 	create: function(){
@@ -39,12 +43,19 @@ goToMarket.prototype = {
 		carlaMama.animations.add('crying', [6, 7, 8, 9], 4, true);
 		carlaMama.animations.add('walking', [1, 2, 3, 4, 5], 20, true);
 
+		rosa = game.add.sprite(4200, 330, 'rosa');
+		rosa.scale.x = .4;
+		rosa.scale.y = .4;
+
 
 		block = game.add.sprite(4590, 380, '');
 		block.enableBody = true;
 		game.physics.enable(block);
 		block.body.immovable = true;
 
+		crowd = game.add.sprite(4400, 350, 'crowd');
+		crowd.scale.x = .5;
+		crowd.scale.y = .5;
 
 		papa = game.add.sprite(4650, 390, 'papa');
 		papa.scale.x = .4;
@@ -190,7 +201,7 @@ goToMarket.prototype = {
 		}
 
 		if(nextDialogue == 62 && game.physics.arcade.overlap(player, carlaMama) == true && interactTextMama == null){
-			interactTextMama = game.add.text(carlaMama.x, carlaMama.y-50, 'E', {fill:"#facade"});
+			interactTextMama = game.add.sprite((carlaMama.x+carlaMama.width/2) - 37.5,carlaMama.y - 75, 'eButton');
 		}
 
 		if(nextDialogue == 62 && game.physics.arcade.overlap(player, carlaMama) != true && interactTextMama != null){
