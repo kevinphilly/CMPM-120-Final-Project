@@ -88,12 +88,13 @@ coffeeShop.prototype = {
 			if(game.physics.arcade.overlap(player, coffee) != true && interactCoffee != null){
 				interactCoffee.destroy();
 				interactCoffee = null;
+
 			}
 
 			if(game.physics.arcade.overlap(player, coffee) == true && game.input.keyboard.justPressed(Phaser.Keyboard.E)){
 				coffee.destroy();
 				gotCoffee = true;
-
+				holdDrink = true;
 				//game.state.start('carScene');
 			}
 		}
@@ -109,7 +110,8 @@ coffeeShop.prototype = {
 
 		if(game.physics.arcade.overlap(player, isabel) == true && game.input.keyboard.justPressed(Phaser.Keyboard.E) && gotCoffee == true){
 			gotCoffee = false;
-
+			holdDrink = false;
+			
 			nextDialogue = 13;
 			nextText = currentScript[nextDialogue].Text;
 			currentDialogue(nextText, currentScript);

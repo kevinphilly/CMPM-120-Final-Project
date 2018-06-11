@@ -271,7 +271,7 @@
 	{
 		"id":"runToCheckpoint1",
 		"num": 29,
-		"speaker":"Mamá",
+		"speaker":"Mama",
 		"Text":"Mamá: CARLA!!",
 		"continue":false,
 		"Branch":false
@@ -379,7 +379,7 @@
 	{
 		"id":"stayBehind1",
 		"num": 41,
-		"speaker":"Mamá",
+		"speaker":"Mama",
 		"Text":"Mamá: No...no, no, NO. Vamos Carla. Vamos a casa.\n(No...no, no, NO. Let's go Carla. We're going home.",
 		"continue":true,
 		"Branch":false
@@ -397,7 +397,7 @@
 	{
 		"id":"stayBehind3",
 		"num": 43,
-		"speaker":"Mamá",
+		"speaker":"Mama",
 		"Text":"Mamá: No! Nos vamos ahorita!\n(No! We're going home now!)",
 		"continue":true,
 		"Branch":false
@@ -418,7 +418,7 @@
 		"speaker":"Mama",
 		"Text":"Mamá: ¡¿Alonso....Alonso!! Estás aqui?!\n(Alonso....Alonso!! Are you here?!)",
 		"continue":true,
-		"Branch":false
+		"Branch":false 
 	},
 
 	{
@@ -698,7 +698,7 @@
 		"id":"lie4",
 		"num": 76,
 		"speaker":"Mama",
-		"Text":"Mamá: Tu padre ya debe de haber llegado...\n(Your father should had been home now...)",
+		"Text":"Mamá: Tu padre ya debe de haber llegado...\n(Your father should have been home by now...)",
 		"continue":true,
 		"Branch":false
 	},
@@ -725,7 +725,7 @@
 		"id":"lie7",
 		"num": 79,
 		"speaker":"Isabel",
-		"Text":"Isabel: Hey. Why is everyone just standing in the living room?",
+		"Text":"Isabel: Hey. Why does everyone look so depressing?",
 		"continue":true,
 		"Branch":false
 	},

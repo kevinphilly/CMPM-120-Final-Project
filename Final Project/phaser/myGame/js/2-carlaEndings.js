@@ -21,7 +21,7 @@ finalHouse.prototype = {
 		game.add.existing(player);
 		game.camera.follow(player);
 
-		carlaMama = game.add.sprite(1400, 304, 'carlaMama');
+		carlaMama = game.add.sprite(200, 304, 'carlaMama');
 		carlaMama.enableBody = true;
 		game.physics.enable(carlaMama);
 
@@ -40,7 +40,7 @@ finalHouse.prototype = {
 
 			isabel = game.add.sprite(600, 252, 'isabel');
 			isabel.enableBody = true;
-			game.physics.enable(isabel);
+			game.physics.enable(isabel);   
 			isabel.scale.y = 1.2;
 			isabel.body.setSize(100, 200, 80, 20);
 
@@ -56,6 +56,13 @@ finalHouse.prototype = {
 	},
 
 	update: function(){
+		if(cutscene == true && game.input.keyboard.justPressed(Phaser.Keyboard.SPACEBAR) && wordLock == false){
+			text3.destroy();
+
+			console.log('spacePressed');
+			currentDialogue(nextText, currentScript);
+		}
+		
 		if(finished == true && cutscene == false){
 			game.camera.fade(0x000000, 2000);
 			game.time.events.add(2000, goEnd, this);
